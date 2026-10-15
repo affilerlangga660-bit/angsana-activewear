@@ -3,1310 +3,1271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGSANA OUTDOOR - Premium Adventure Gear & Fast Order WA</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <title>ANGSANA OUTDOOR - Premium Outdoor Gear & Activewear</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome 6 Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            forest: '#1b382b',     // Deep Forest Green
-                            pine: 'black',       // Pine Green
-                            amber: '#333333',      // Adventure Orange/Amber
-                            terracotta: '#d35400', // Terracotta
-                            charcoal: '#1a1d1a',   // Dark Slate
-                            sand: '',       // Light Earthy Neutral Background
-                            cardBg: '#ffffff',
-                            wa: '#25D366',         // WhatsApp Color
-                            waDark: '#128C7E'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        heading: ['"Outfit"', 'sans-serif'],
-                    }
-                }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                tan: '#C17F44',
+                amber: '#D28835',
+                darktan: '#9F602F',
+                charcoal: '#1A1919',
+                sand: '#F6F4EF',
+                khaki: '#D2CEBD',
+                accent: '#D93630'
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              heading: ['"Outfit"', 'sans-serif']
             }
+          }
         }
+      }
     </script>
 
     <style>
-        .glass-header {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(12px);
-        }
-       hero-bg {
-  position: relative;
-  overflow: hidden;
-}
+      .glass-header {
+        background: rgba(17, 17, 17, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
 
-/* Tambahkan kelas transisi fade untuk slide */
-.hero-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: 0;
-}
+      .hero-slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1000ms ease-in-out, transform 8000ms ease-out;
+        transform: scale(1.08);
+        pointer-events: none;
+      }
 
-.hero-slide.active {
-  opacity: 1;
-}
-        
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        /* Color Swatch Ring Effect */
-        .swatch-btn.active {
-            ring-width: 2px;
-            ring-color: #e67e22;
-            border-color: #1b382b;
-            transform: scale(1.08);
-        }
+      .hero-slide.active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1A1919;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #C17F44;
+        border-radius: 4px;
+      }
     </style>
 </head>
-<body class="bg-brand-sand text-brand-charcoal font-sans flex flex-col min-h-screen antialiased selection:bg-brand-amber selection:text-white">
-
-    <!-- TOAST NOTIFICATION CONTAINER -->
-    <div id="toastContainer" class="fixed top-24 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
+<body class="bg-brand-sand text-brand-charcoal font-sans antialiased selection:bg-brand-tan selection:text-white">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-40 glass-header text-white shadow-xl border-b border-emerald-800/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo Brand Manual dengan Tag <img> -->
-                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <img id="brand-logo-img" src="" alt="ANGSANA OUTDOOR Logo" class="h-10 w-auto object-contain rounded-lg shadow-sm border border-emerald-700/50 bg-white/10 p-1">
-                    <div>
-                        <span class="font-heading font-black text-2xl tracking-wider text-white block leading-none">ANGSANA</span>
-                        <span class="text-[10px] tracking-[0.28em] font-bold uppercase block">Activewear</span>
-                    </div>
-                </div>
-
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center gap-8 font-medium text-xs tracking-wider uppercase">
-                    <a href="#hero" class="hover:text-brand-amber transition-colors">Beranda</a>
-                    <a href="#katalog" class="hover:text-brand-amber transition-colors">Katalog Produk</a>
-                    <a href="#keunggulan" class="hover:text-brand-amber transition-colors">Keunggulan</a>
-                    <a href="#cara-order" class="hover:text-brand-amber transition-colors">Order WA</a>
-                </nav>
-
-                <!-- Header Actions (Search & Cart) -->
-                <div class="flex items-center gap-3">
-                    <!-- Search Input -->
-                    <div class="relative hidden sm:block w-48 lg:w-64">
-                        <input type="text" id="searchInput" placeholder="Cari tenda, jaket..." oninput="handleSearch()" class="w-full bg-brand-pine/60 border border-emerald-700/60 rounded-full py-2 pl-9 pr-4 text-xs text-white placeholder-emerald-200/60 focus:outline-none focus:ring-2 focus:ring-brand-amber transition-all">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-emerald-200/60"></i>
-                    </div>
-
-                    <!-- Cart Button with Badge -->
-                    <button onclick="toggleCartDrawer(true)" class="relative p-2.5 bg-brand-pine hover:bg-brand-amber text-white rounded-full transition-all shadow-md group">
-                        <i class="fa-solid fa-basket-shopping text-base group-hover:scale-110 transition-transform"></i>
-                        <span id="cartBadge" class="absolute -top-1 -right-1 bg-brand-terracotta text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-brand-forest shadow transition-transform scale-0">0</span>
-                    </button>
-
-                    <!-- Direct WA CS Button -->
-                    <a href="https://wa.me/6281268888651?text=Halo%20Admin%20ANGSANA%20OUTDOOR,%20saya%20ingin%20bertanya%20produk." target="_blank" class="hidden sm:flex items-center gap-2 px-3.5 py-2 bg-brand-wa hover:bg-emerald-600 text-white font-bold rounded-full text-xs shadow-md transition-all transform hover:scale-105">
-                        <i class="fa-brands fa-whatsapp text-sm"></i>
-                        <span>CS Admin</span>
-                    </a>
-
-                    <!-- Mobile Menu Trigger -->
-                    <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-white hover:text-brand-amber focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
-                    </button>
-                </div>
+    <header class="sticky top-0 z-50 glass-header text-white border-b border-white/10 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 gap-4">
+          
+          <!-- Logo Brand -->
+          <a href="#hero" class="flex items-center gap-3 cursor-pointer group flex-shrink-0">
+            <img 
+              id="brand-logo-img"
+              src="WhatsApp Image 2026-10-11 at 10.15.00.jpeg" 
+              alt="ANGSANA OUTDOOR Logo" 
+              class="h-10 w-auto object-contain rounded-lg shadow-sm border border-brand-amber/30 bg-white/10 p-1 transition-transform group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1A1919/D28835?text=ANGSANA';"
+            />
+            <div class="flex flex-col">
+              <span class="font-heading font-black text-xl tracking-wider text-white block leading-none group-hover:text-brand-amber transition-colors">
+                ANGSANA
+              </span>
+              <span class="text-[10px] tracking-[0.25em] font-bold text-brand-amber uppercase block mt-1">
+                ACTIVEWEAR
+              </span>
             </div>
+          </a>
+
+          <!-- Desktop Navigation Menu -->
+          <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wider uppercase">
+            <a href="#hero" class="text-brand-amber transition-colors flex items-center gap-2 font-bold">
+              <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Beranda
+            </a>
+            <a href="#katalog" class="hover:text-brand-amber transition-colors">Katalog Produk</a>
+            <a href="#keunggulan" class="hover:text-brand-amber transition-colors">Keunggulan</a>
+          </nav>
+
+          <!-- Search Bar & Action Buttons -->
+          <div class="flex items-center gap-3">
+            <!-- Search Input Desktop/Tablet -->
+            <div class="relative hidden sm:block w-48 lg:w-64">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+              </span>
+              <input 
+                type="text" 
+                id="searchInput" 
+                oninput="handleSearch(this.value)"
+                placeholder="Cari produk..." 
+                class="w-full pl-9 pr-4 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber transition-all"
+              >
+            </div>
+
+            <!-- Cart Button -->
+            <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-cart-shopping text-lg text-brand-amber"></i>
+              <span id="cartBadge" class="absolute -top-1.5 -right-1.5 bg-brand-accent text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+            </button>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Hubungi WA</span>
+            </a>
+          </div>
+
+        </div>
+        
+        <!-- Mobile Search Input (Muncul di bawah header pada layar kecil) -->
+        <div class="pb-3 sm:hidden">
+          <div class="relative w-full">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+              <i class="fa-solid fa-magnifying-glass text-xs"></i>
+            </span>
+            <input 
+              type="text" 
+              id="mobileSearchInput" 
+              oninput="handleSearch(this.value)"
+              placeholder="Cari produk Angsana..." 
+              class="w-full pl-9 pr-4 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
+            >
+          </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-brand-forest border-t border-emerald-800 px-4 pt-3 pb-6 space-y-3">
-            <div class="mb-3">
-                <input type="text" placeholder="Cari peralatan outdoor..." oninput="handleSearchMobile(this.value)" class="w-full bg-brand-pine border border-emerald-700 rounded-lg py-2 px-4 text-sm text-white placeholder-emerald-200/60">
-            </div>
-            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-white hover:text-brand-amber font-semibold text-xs tracking-wider">BERANDA</a>
-            <a href="#katalog" onclick="toggleMobileMenu()" class="block py-2 text-white hover:text-brand-amber font-semibold text-xs tracking-wider">KATALOG PRODUK</a>
-            <a href="#keunggulan" onclick="toggleMobileMenu()" class="block py-2 text-white hover:text-brand-amber font-semibold text-xs tracking-wider">KEUNGGULAN BRAND</a>
-            <a href="#cara-order" onclick="toggleMobileMenu()" class="block py-2 text-white hover:text-brand-amber font-semibold text-xs tracking-wider">CARA ORDER WA</a>
-        </div>
+      </div>
     </header>
 
-    <!-- HERO BANNER -->
-    <section id="hero" class="hero-bg relative min-h-[80vh] flex items-center justify-center text-white py-20 px-4 sm:px-6 lg:px-8">
-        <!-- <div class="hero-bg min-h-screen ..."> -->
-  
-  <!-- DAFTAR FOTO SLIDE BACKGROUND -->
-  <div class="hero-slide active" style="background-image: url('potone layar depan.png');"></div>
-  <div class="hero-slide" style="background-image: url('Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg');"></div>
-  <div class="hero-slide" style="background-image: url('IMG_5647.PNG');"></div>
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[78vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+      
+      <div class="hero-slide active" data-index="0">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+      </div>
 
-  <!-- Gradasi overlay (jika ada, agar teks tetap terbaca jelas di atas foto) -->
-  <!-- <div class="absolute inset-0 bg-gradient-to-l from-[#69082880] to-[rgb(26,25,25)] z-[1]"></div> -->
+      <div class="hero-slide" data-index="1">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+      </div>
 
-  <!-- ISI KONTEN HERO KAMU YANG SEKARANG (Pastikan diberi z-index agar di atas background) -->
-  <div class="relative z-10">
-    <!-- Konten teks, tombol, dll. yang sudah kamu buat -->
-  </div>
-        <div class="max-w-4xl mx-auto text-center z-10 space-y-6">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-amber/20 border border-brand-amber/40 text-brand-amber text-xs font-bold tracking-wider uppercase backdrop-blur-md">
-                <i class="fa-brands fa-whatsapp text-brand-wa text-sm"></i> Fast WhatsApp Checkout Integrated
+      <div class="hero-slide" data-index="2">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 text-white space-y-6">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-amber/20 border border-brand-amber/50 backdrop-blur-md">
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              <span class="text-xs font-bold tracking-wider uppercase text-brand-amber">NEW REBORN COLLECTION 2026</span>
             </div>
-            <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
-                TAKLUKKAN PUNCAK BERSAMA <span class="text-brand-amber underline decoration-brand-amber decoration-wavy decoration-2">ANGSANA</span>
+
+            <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
+              EXPLORE WITHOUT <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-amber via-amber-300 to-amber-500">
+                LIMITS & BOUNDS
+              </span>
             </h1>
-            <p class="text-sm sm:text-lg text-emerald-100 max-w-2xl mx-auto font-light leading-relaxed">
-                Peralatan outdoor ultra-durable buatan anak bangsa. Lengkap dengan varian warna interaktif & sistem pemesanan langsung ke WhatsApp admin.
+
+            <p class="text-gray-300 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+              Peralatan outdoor dan perlengkapan pendakian generasi terbaru. Didesain dengan material super ringan, breathable, dan ergonomis.
             </p>
-            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#katalog" class="w-full sm:w-auto px-8 py-4 bg-brand-amber hover:bg-brand-terracotta text-white font-extrabold text-xs tracking-widest uppercase rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                    <span>Jelajahi Produk</span>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="https://wa.me/6281268888651?text=Halo%20ANGSANA%20OUTDOOR,%20minta%20info%20katalog%20terbaru" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-brand-wa hover:bg-emerald-600 text-white font-extrabold text-xs tracking-widest uppercase rounded-xl shadow-xl transition-all flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-base"></i>
-                    <span>Hubungi Admin WA</span>
-                </a>
+
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <a href="#katalog" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all">
+                <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
+              </a>
             </div>
+          </div>
+
+          <!-- FEATURED HIGHLIGHT CARD -->
+          <div class="lg:col-span-5 relative">
+            <div class="p-6 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+              <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                <div>
+                  <span class="text-[10px] uppercase font-bold tracking-widest text-brand-amber block">Featured Highlight</span>
+                  <h3 id="cardTitle" class="font-heading font-extrabold text-2xl text-white">TENDA DOME 4P</h3>
+                </div>
+                <span id="cardPrice" class="px-3 py-1.5 rounded-lg bg-brand-tan text-white font-bold text-sm shadow">
+                  Rp 899.000
+                </span>
+              </div>
+
+              <div class="relative h-64 rounded-2xl overflow-hidden bg-black/30 mb-4 group">
+                <img id="cardImage" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase border border-white/20">
+                  <span id="cardCategory">Camping Gear</span>
+                </div>
+                
+                <button onclick="prevFeaturedPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors">
+                  <i class="fa-solid fa-chevron-left text-xs"></i>
+                </button>
+                <button onclick="nextFeaturedPhoto()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors">
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+
+              <div class="flex items-center gap-2 overflow-x-auto pt-1" id="featuredThumbnails"></div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
+
+    <!-- KATALOG PRODUK -->
+    <section id="katalog" class="py-20 bg-brand-sand border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
+            <h2 class="font-heading font-black text-3xl sm:text-4xl text-brand-charcoal mt-1">Produk Angsana Outdoor</h2>
+          </div>
+          <div id="searchResultInfo" class="text-xs text-gray-500 mt-2 md:mt-0 italic"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGridContainer"></div>
+
+      </div>
+    </section>
+
+    <!-- MODAL DETAIL PRODUK -->
+    <div id="productDetailModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4 py-6 overflow-y-auto">
+      <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-gray-100 my-auto">
+        <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl z-10">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div>
+            <div class="relative h-72 rounded-2xl overflow-hidden bg-gray-100 mb-3">
+              <img id="detailModalImage" src="" alt="Detail Produk" class="w-full h-full object-cover">
+            </div>
+            <div class="flex items-center gap-2 overflow-x-auto" id="detailModalGallery"></div>
+          </div>
+
+          <div class="space-y-4">
+            <div>
+              <span id="detailModalCategory" class="text-xs text-brand-tan font-bold uppercase tracking-wider block"></span>
+              <h3 id="detailModalName" class="font-heading font-extrabold text-2xl text-brand-charcoal mt-1"></h3>
+              <div class="flex items-center gap-2 mt-1">
+                <span id="detailModalRating" class="text-xs font-bold text-amber-500"></span>
+                <span class="text-gray-300">|</span>
+                <span id="detailModalStockStatus" class="text-xs font-bold"></span>
+              </div>
+            </div>
+
+            <div>
+              <span class="text-xs text-gray-400 block">Harga Resmi</span>
+              <span id="detailModalPrice" class="font-black text-2xl text-brand-charcoal"></span>
+            </div>
+
+            <p id="detailModalDesc" class="text-xs text-gray-600 leading-relaxed"></p>
+
+            <div class="pt-2 border-t border-gray-100">
+              <span class="text-xs text-gray-500 block mb-1">Varian Warna: <strong id="detailModalColorName" class="text-brand-charcoal"></strong></span>
+              <div id="detailModalVariants" class="flex items-center gap-2"></div>
+            </div>
+
+            <div class="pt-1">
+              <span class="text-xs text-gray-500 block mb-1">Ukuran (Size):</span>
+              <div id="detailModalSizes" class="flex items-center gap-2"></div>
+            </div>
+
+            <div class="pt-4">
+              <button id="detailModalAddBtn" onclick="" class="w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Masukkan ke Keranjang</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOPPING CART DRAWER -->
+    <div id="cartOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden transition-opacity"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 z-50 w-full max-w-md h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+      <div class="p-5 border-b border-gray-100 flex items-center justify-between bg-brand-charcoal text-white">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-cart-shopping text-brand-amber"></i>
+          <h3 class="font-heading font-bold text-lg">Keranjang Belanja (<span id="cartCountHeader">0</span>)</h3>
+        </div>
+        <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 divide-y divide-gray-100"></div>
+
+      <div class="p-5 border-t border-gray-100 bg-brand-sand">
+        <div class="flex justify-between text-sm font-bold text-brand-charcoal mb-4">
+          <span>Subtotal Keranjang:</span>
+          <span id="cartSubtotal" class="text-brand-tan text-base">Rp 0</span>
+        </div>
+        <button onclick="openCheckoutModalFromCart()" id="checkoutCartBtn" class="w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Lanjut ke Checkout</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL CHECKOUT -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4 py-6 overflow-y-auto">
+      <div class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-gray-100 my-auto">
+        <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h3 class="font-heading font-extrabold text-2xl text-brand-charcoal mb-1">Formulir Checkout & Pembayaran</h3>
+        <p class="text-xs text-gray-500 mb-4">Lengkapi data pengiriman dan gunakan voucher diskon Anda.</p>
+
+        <div id="modalCartSummary" class="bg-brand-sand p-4 rounded-2xl mb-4 max-h-40 overflow-y-auto space-y-2 border border-brand-khaki/40"></div>
+
+        <form id="checkoutForm" onsubmit="submitCheckout(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Lengkap Penerima</label>
+            <input type="text" id="buyerName" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nomor Telepon / WhatsApp Aktif</label>
+            <input type="tel" id="buyerPhone" required placeholder="Contoh: 081234567890" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Alamat Lengkap Pengiriman</label>
+            <textarea id="buyerAddress" required rows="2" placeholder="Nama Jalan, No Rumah, RT/RW, Kecamatan, Kota, Kode Pos" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Ekspedisi Kurir</label>
+              <select id="shippingExpedition" onchange="calculateTotal()" required class="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm bg-white">
+                <option value="" disabled selected>-- Pilih Kurir --</option>
+                <option value="JNE Express" data-cost="20000">JNE Express (Rp 20.000)</option>
+                <option value="J&T Express" data-cost="18000">J&T Express (Rp 18.000)</option>
+                <option value="SiCepat Express" data-cost="15000">SiCepat Express (Rp 15.000)</option>
+                <option value="AnterAja" data-cost="17000">AnterAja (Rp 17.000)</option>
+                <option value="GoSend Instant" data-cost="35000">GoSend Instant (Rp 35.000)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Kode Voucher Diskon</label>
+              <div class="flex gap-2">
+                <input type="text" id="voucherCode" placeholder="Cth: ANGSANA20" class="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm uppercase">
+                <button type="button" onclick="applyVoucher()" class="px-3 py-2.5 bg-brand-charcoal text-white rounded-xl text-xs font-bold hover:bg-brand-tan transition-colors">Pakai</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="voucherStatus" class="text-xs font-semibold text-emerald-600 hidden"></div>
+
+          <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 space-y-1.5 text-xs">
+            <div class="flex justify-between text-gray-600">
+              <span>Subtotal Keranjang:</span>
+              <span id="summarySubtotal">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-gray-600">
+              <span>Biaya Pengiriman:</span>
+              <span id="summaryShipping">Rp 0</span>
+            </div>
+            <div class="flex justify-between text-red-500 font-medium" id="summaryDiscountRow" style="display: none;">
+              <span>Potongan Voucher:</span>
+              <span id="summaryDiscount">-Rp 0</span>
+            </div>
+            <div class="pt-2 border-t border-gray-200 flex justify-between items-center text-sm font-black text-brand-charcoal">
+              <span>Total Pembayaran:</span>
+              <span id="summaryTotal" class="text-brand-tan text-base">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-emerald-900/20 transition-all flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Kirim Pesanan ke WhatsApp</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <!-- KEUNGGULAN SECTION -->
-    <section id="keunggulan" class="py-10 bg-white border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="p-4 rounded-2xl bg-brand-sand/70 border border-stone-200/80 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-wa/10 text-brand-wa flex items-center justify-center text-2xl font-bold shrink-0">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading font-bold text-sm text-brand-forest">Pesan Otomatis WA</h4>
-                        <p class="text-[11px] text-stone-500 mt-0.5">Rincian varian warna & alamat otomatis terangkum di pesan WA.</p>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-brand-sand/70 border border-stone-200/80 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber flex items-center justify-center text-2xl font-bold shrink-0">
-                        <i class="fa-solid fa-palette"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading font-bold text-sm text-brand-forest">Foto Varian Warna</h4>
-                        <p class="text-[11px] text-stone-500 mt-0.5">Foto produk otomatis berubah saat memilih tombol varian warna.</p>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-brand-sand/70 border border-stone-200/80 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-forest/10 text-brand-forest flex items-center justify-center text-2xl font-bold shrink-0">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading font-bold text-sm text-brand-forest">Pilihan Kurir Lengkap</h4>
-                        <p class="text-[11px] text-stone-500 mt-0.5">Dukungan JNE.untuk ongkir nanti di infokan oleh admin angsana</p>
-                    </div>
-                </div>
-
-                <div class="p-4 rounded-2xl bg-brand-sand/70 border border-stone-200/80 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-terracotta/10 text-brand-terracotta flex items-center justify-center text-2xl font-bold shrink-0">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-heading font-bold text-sm text-brand-forest">Garansi resmi</h4>
-                        <p class="text-[11px] text-stone-500 mt-0.5">jika barang ada yang cacat</p>
-                    </div>
-                </div>
-            </div>
+    <section id="keunggulan" class="py-16 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-truck-fast text-3xl text-brand-tan mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Pengiriman Cepat</h3>
+            <p class="text-xs text-gray-500">Pilihan ekspedisi terpercaya ke seluruh Indonesia.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-shield-halved text-3xl text-brand-tan mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Garansi Original</h3>
+            <p class="text-xs text-gray-500">100% Produk Asli Angsana Activewear bergaransi resmi.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-headset text-3xl text-brand-tan mb-3"></i>
+            <h3 class="font-bold text-lg mb-1">Layanan Konsultasi WA</h3>
+            <p class="text-xs text-gray-500">Bebas konsultasi ukuran dan varian langsung.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- KATALOG PRODUK SECTION -->
-    <section id="katalog" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-                <span class="text-brand-amber font-extrabold text-xs tracking-widest uppercase">Perlengkapan Pilihan</span>
-                <h2 class="font-heading text-3xl font-extrabold text-brand-forest">KATALOG PETUALANGAN</h2>
-            </div>
-            
-            <!-- Sorting Controls -->
-            <div class="flex items-center gap-3">
-                <label for="sortBy" class="text-xs font-semibold text-stone-600 whitespace-nowrap">Urutkan:</label>
-                <select id="sortBy" onchange="renderProducts()" class="bg-white border border-stone-300 text-stone-700 text-xs rounded-xl px-3 py-2 focus:ring-2 focus:ring-brand-pine focus:outline-none shadow-sm cursor-pointer">
-                    <option value="featured">Paling Populer</option>
-                    <option value="low-high">Harga: Murah ke Mahal</option>
-                    <option value="high-low">Harga: Mahal ke Murah</option>
-                    <option value="rating">Rating Tertinggi</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Filter Categories Scroll Bar -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar" id="categoryFilters">
-            <!-- Dynamic Category Buttons populated via JS -->
-        </div>
-
-        <!-- Product Grid -->
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Dynamic Products Populated via JS -->
-        </div>
-
-        <!-- Empty State -->
-        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-3xl border border-dashed border-stone-300">
-            <i class="fa-solid fa-campground text-5xl text-stone-300 mb-4"></i>
-            <h3 class="font-heading text-lg font-bold text-stone-700">Produk Tidak Ditemukan</h3>
-            <p class="text-stone-500 text-xs mt-1">Coba kata kunci atau kategori pencarian lain.</p>
-            <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-brand-forest text-white text-xs font-semibold rounded-lg hover:bg-brand-pine transition-colors">
-                Reset Filter
-            </button>
-        </div>
-    </section>
-
-    <!-- CARA ORDER SECTION -->
-    <section id="cara-order" class="py-16 bg-brand-forest text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-brand-amber font-extrabold text-xs tracking-widest uppercase">Kemudahan Bertransaksi</span>
-                <h2 class="font-heading text-3xl font-bold mt-1">3 Langkah Mudah Checkout Via WhatsApp</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="bg-brand-pine/40 border border-emerald-700/50 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 bg-brand-amber text-white font-black rounded-full flex items-center justify-center text-xl mx-auto shadow-md">1</div>
-                    <h3 class="font-heading font-bold text-lg">1. Pilih Produk & Warna</h3>
-                    <p class="text-xs text-emerald-100 leading-relaxed">Pilih barang outdoor favorit Anda, lalu klik varian warna untuk melihat perubahan foto produk secara langsung.</p>
-                </div>
-
-                <div class="bg-brand-pine/40 border border-emerald-700/50 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 bg-brand-amber text-white font-black rounded-full flex items-center justify-center text-xl mx-auto shadow-md">2</div>
-                    <h3 class="font-heading font-bold text-lg">2. Isi Alamat & Ekspedisi</h3>
-                    <p class="text-xs text-emerald-100 leading-relaxed">Masukkan nama, nomor HP, alamat pengiriman, serta kurir ekspedisi untuk menghitung ongkos kirim.</p>
-                </div>
-
-                <div class="bg-brand-pine/40 border border-emerald-700/50 p-6 rounded-2xl space-y-3">
-                    <div class="w-12 h-12 bg-brand-wa text-white font-black rounded-full flex items-center justify-center text-xl mx-auto shadow-md">3</div>
-                    <h3 class="font-heading font-bold text-lg">3. Kirim Otomatis ke WA</h3>
-                    <p class="text-xs text-emerald-100 leading-relaxed">Klik tombol kirim. Teks invoice terformat rapi akan otomatis terisi dan siap dikirim ke Admin WhatsApp!</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-brand-charcoal text-stone-400 text-xs py-12 border-t border-stone-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <img id="footer-logo-img" src="" alt="ANGSANA Logo" class="h-8 w-auto object-contain rounded bg-white/10 p-1">
-                        <span class="font-heading font-black text-xl text-white tracking-wider">ANGSANA</span>
-                    </div>
-                    <p class="text-stone-400 leading-relaxed">Perlengkapan outdoor dan pendakian kualitas premium buatan Indonesia dengan varian warna interaktif & integrasi Fast WA Order.</p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold text-sm mb-4">Nomor Layanan Resmi</h4>
-                    <ul class="space-y-2.5 text-stone-400">
-                        <li class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-brand-wa text-base"></i> +62 896-7371-0255 (Order WA)</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-amber"></i> info@angsanaoutdoor.com</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-clock text-stone-500"></i> Senin - Minggu (08.00 - 21.00 WIB)</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold text-sm mb-4">Metode Pembayaran (Via WA)</h4>
-                    <ul class="space-y-2 text-stone-400">
-                        <li>• Bank BCA (Transfer Manual/VA)</li>
-                        <li>• Bank Mandiri & BRI</li>
-                        <li>• QRIS All E-Wallet (GoPay, OVO, DANA)</li>
-                        <!-- <li>• COD (Cash On Delivery)</li> -->
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-bold text-sm mb-4">store Angsana</h4>
-                    <p class="leading-relaxed mb-2">ciledug tanggerang</p>
-                    <p class="text-stone-500">Gudang & Showroom Buka Setiap Hari.</p>
-                </div>
-            </div>
-
-            <div class="border-t border-stone-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-stone-500">
-                <p>&copy; 2026 ANGSANA OUTDOOR. All Rights Reserved.</p>
-                <div class="flex items-center gap-2 text-brand-wa font-bold">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Fast WhatsApp Order Integrated</span>
-                </div>
-            </div>
+    <footer class="bg-brand-charcoal text-white py-12 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <img src="logo.png" alt="Angsana Logo" class="h-8 w-auto object-contain rounded bg-white/10 p-0.5" onerror="this.style.display='none'">
+          <span class="font-heading font-bold text-lg tracking-wider">ANGSANA OUTDOOR</span>
         </div>
+        <p class="text-xs text-gray-400">© 2026 Angsana Outdoor Activewear. All rights reserved.</p>
+      </div>
     </footer>
-
-    <!-- CART DRAWER MODAL -->
-    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300 opacity-0">
-        <div id="cartBackdrop" onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
-
-        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div id="cartContent" class="w-screen max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 pointer-events-auto">
-                
-                <div class="p-6 bg-brand-forest text-white flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-basket-shopping text-brand-amber"></i>
-                        <h3 class="font-heading font-bold text-lg">Keranjang Belanja</h3>
-                    </div>
-                    <button onclick="toggleCartDrawer(false)" class="p-2 text-stone-300 hover:text-white rounded-lg">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Items List Container -->
-                <div id="cartItemsList" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-stone-100">
-                    <!-- Populated via JS -->
-                </div>
-
-                <!-- Drawer Footer Summary -->
-                <div class="p-6 bg-stone-50 border-t border-stone-200 space-y-4">
-                    <div class="space-y-1.5 text-xs text-stone-600">
-                        <div class="flex justify-between">
-                            <span>Subtotal Produk</span>
-                            <span id="cartSubtotal" class="font-bold text-stone-800">Rp 0</span>
-                        </div>
-                        <div class="flex justify-between text-base font-bold text-brand-forest pt-2 border-t border-stone-200">
-                            <span>Total Barang</span>
-                            <span id="cartTotal" class="text-brand-terracotta">Rp 0</span>
-                        </div>
-                    </div>
-
-                    <button id="btnCheckout" onclick="openCheckoutModal()" disabled class="w-full py-3.5 bg-brand-wa hover:bg-emerald-600 disabled:bg-stone-300 text-white font-bold rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2 cursor-pointer">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>Checkout via WhatsApp</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PRODUCT DETAIL MODAL WITH DYNAMIC COLOR PHOTO VARIANT -->
-    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-        <div onclick="closeProductModal()" class="fixed inset-0 bg-black/75 backdrop-blur-sm"></div>
-        <div class="relative bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl z-10 border border-stone-100 p-6 sm:p-8 my-auto">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-stone-100 text-stone-500 hover:text-brand-forest hover:bg-stone-200 flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-            <div id="productModalContent" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Rendered Dynamically via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- CHECKOUT MODAL -->
-    <div id="checkoutModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
-        <div onclick="closeCheckoutModal()" class="fixed inset-0 bg-black/75 backdrop-blur-md"></div>
-
-        <div class="relative bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col shadow-2xl z-10 overflow-hidden my-auto">
-            
-            <!-- Modal Header -->
-            <div class="px-6 py-4 bg-brand-forest text-white flex items-center justify-between border-b border-emerald-800">
-                <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-xl bg-brand-wa flex items-center justify-center text-white text-xl font-bold">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-heading font-bold text-lg leading-tight">Checkout Fast WhatsApp</h3>
-                        <p class="text-[11px] text-emerald-200">Format Order & Varian Warna Terisi Otomatis</p>
-                    </div>
-                </div>
-                <button onclick="closeCheckoutModal()" class="text-stone-300 hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-
-            <!-- Modal Content -->
-            <div class="flex-1 overflow-y-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
-                
-                <!-- Shipping Form (7 Cols) -->
-                <div class="lg:col-span-7 space-y-5">
-                    
-                    <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-3">
-                        <div class="flex items-center gap-2 font-bold text-sm text-brand-forest border-b border-stone-200 pb-2">
-                            <i class="fa-solid fa-truck-ramp-box text-brand-amber"></i>
-                            <span>1. Data Pengiriman & Alamat Tujuan</span>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            <div>
-                                <label class="block font-semibold text-stone-700 mb-1">Nama Lengkap Penerima *</label>
-                                <input type="text" id="shipName" placeholder="Contoh: Budi Santoso" class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block font-semibold text-stone-700 mb-1">Nomor WhatsApp / HP *</label>
-                                <input type="tel" id="shipPhone" placeholder="081234567890" class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none">
-                            </div>
-                        </div>
-
-                        <div class="text-xs">
-                            <label class="block font-semibold text-stone-700 mb-1">Alamat Lengkap (Jalan, RT/RW, Kel/Kec) *</label>
-                            <textarea id="shipAddress" rows="2" placeholder="Jl. Merdeka No. 45, RT 02/RW 05, Kel. Ciumbuleuit, Kec. Cidadap..." class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none"></textarea>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                            <div>
-                                <label class="block font-semibold text-stone-700 mb-1">Kota / Kabupaten *</label>
-                                <input type="text" id="shipCity" placeholder="Bandung" class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none">
-                            </div>
-                            <div>
-                                <label class="block font-semibold text-stone-700 mb-1">Pilih Ekspedisi Kurir *</label>
-                                <select id="shippingCourier" onchange="calculateCheckoutTotals()" class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none bg-white">
-                                    <option value="0|JNE Express Reguler">JNE Express Reguler (ongkir bisa hubungi admin) </option>
-                                    <!-- <option value="0|J&T Express">J&T Express </option> -->
-                                    <!-- <option value="0|SiCepat REG">SiCepat REG </option> -->
-                                    <!-- <option value="0|Pos Indonesia">Pos Indonesia </option> -->
-                                    <option value="0|Ambil di Store Bandung">Ambil di Store Angsana (Gratis)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="text-xs">
-                            <label class="block font-semibold text-stone-700 mb-1">Catatan Tambahan (Opsional)</label>
-                            <input type="text" id="shipNotes" placeholder="Contoh: Titip di pos satpam jika rumah kosong" class="w-full px-3 py-2 rounded-lg border border-stone-300 focus:ring-2 focus:ring-brand-pine focus:outline-none">
-                        </div>
-                    </div>
-
-                    <!-- Payment Option -->
-                    <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-3">
-                        <div class="flex items-center gap-2 font-bold text-sm text-brand-forest border-b border-stone-200 pb-2">
-                            <i class="fa-solid fa-wallet text-brand-amber"></i>
-                            <span>2. Metode Pembayaran Diinginkan</span>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-                            <label class="p-2.5 border rounded-xl bg-white flex items-center gap-2 cursor-pointer border-brand-amber">
-                                <input type="radio" name="paymentMethod" value="Transfer Bank BCA/Mandiri" checked class="text-brand-amber">
-                                <span class="font-bold text-stone-700">Transfer Bank</span>
-                            </label>
-                            <label class="p-2.5 border rounded-xl bg-white flex items-center gap-2 cursor-pointer border-stone-300">
-                                <input type="radio" name="paymentMethod" value="QRIS / E-Wallet" class="text-brand-amber">
-                                <span class="font-bold text-stone-700">QRIS / E-Wallet</span>
-                            </label>
-                            <!-- <label class="p-2.5 border rounded-xl bg-white flex items-center gap-2 cursor-pointer border-stone-300"> -->
-                                <!-- <input type="radio" name="paymentMethod" value="COD (Bayar di Tempat)" class="text-brand-amber"> -->
-                                <!-- <span class="font-bold text-stone-700">COD (Tempat)</span> -->
-                            </label>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Summary & WA Send (5 Cols) -->
-                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 space-y-3">
-                            <h4 class="font-bold text-xs text-brand-forest uppercase tracking-wider flex items-center justify-between">
-                                <span>Rincian Pesanan</span>
-                                <span id="checkoutItemCount" class="text-stone-500 font-normal">0 Item</span>
-                            </h4>
-
-                            <!-- Cart Items Mini View -->
-                            <div id="checkoutMiniItems" class="max-h-44 overflow-y-auto space-y-2 pr-1 divide-y divide-stone-100">
-                                <!-- Populated via JS -->
-                            </div>
-
-                            <!-- Coupon Code -->
-                            <div class="pt-2">
-                                <label class="block font-semibold text-[11px] text-stone-600 mb-1">Gunakan Kode Kupon Promo</label>
-                                <div class="flex gap-2">
-                                    <input type="text" id="couponCode" placeholder="" class="flex-grow uppercase px-3 py-1.5 rounded-lg border border-stone-300 text-xs focus:ring-1 focus:ring-brand-pine focus:outline-none">
-                                    <button type="button" onclick="applyDiscountCoupon()" class="px-3 py-1.5 bg-brand-forest hover:bg-brand-pine text-white text-xs font-bold rounded-lg transition-colors">
-                                        Pakai
-                                    </button>
-                                </div>
-                                <p id="couponMsg" class="text-[10px] mt-1 font-semibold hidden"></p>
-                            </div>
-
-                            <!-- Total Cost Breakdown -->
-                            <div class="space-y-1.5 pt-3 border-t border-stone-200 text-xs text-stone-600">
-                                <div class="flex justify-between">
-                                    <span>Subtotal Produk</span>
-                                    <span id="summarySubtotal" class="font-medium text-stone-800">Rp 0</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span>Biaya Pengiriman</span>
-                                    <span id="summaryShipping" class="font-medium text-stone-800">Rp 0</span>
-                                </div>
-                                <div id="discountRow" class="flex justify-between text-emerald-700 font-bold hidden">
-                                    <span>Diskon Kupon</span>
-                                    <span id="summaryDiscount">- Rp 0</span>
-                                </div>
-                                <div class="flex justify-between text-base font-black text-brand-forest pt-2 border-t border-stone-200">
-                                    <span>Total Tagihan</span>
-                                    <span id="summaryGrandTotal" class="text-brand-terracotta">Rp 0</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Direct Send WA Button -->
-                    <button type="button" onclick="submitToWhatsApp()" class="w-full py-4 bg-brand-wa hover:bg-emerald-600 text-white font-extrabold text-sm rounded-2xl shadow-xl transition-all transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                        <span>KIRIM PESAN KE WHATSAPP</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // =========================================================================
-        // CONFIG : UBAH LINK LOGO BRAND DENGAN URL / PATH FILE LOKAL ANDA DI SINI
-        // =========================================================================
-        const BRAND_LOGO_URL = "WhatsApp Image 2026-10-11 at 10.15.00.jpeg";
-
-        // DATA KATALOG PRODUK LENGKAP DENGAN VARIAN WARNA DAN FOTO TERIKAT
-        const products = [
+      const catalogProducts = [
+        {
+          id: "vest-running-apollo",
+          name: "Vest Running Angsana series Apollo 7,5 Liter",
+          category: "VEST RUNNING",
+          priceValue: 299000,
+          priceText: "Rp 299.000",
+          rating: "",
+          description: "Vest Running Angsana series Apollo 7,5 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech/Breathable Fabric,Comfortable Pattern,Dynamic of Movement,Durable selection,Great component,Functional fiture. Spesifikasi : Nylon | Spandek,Brethable fabric,YKK zipper,Astra Coach,Bartack,Nylon Strap,Premium Rope,Acetal Buckle,stitch distance measured",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "Standard",
+          sizes: ["S","M","L","XL"],
+          variants: [
             {
-                id: 101,
-                name: "Vest Running Angsana series Athena 10 Liter",
-                category: "Vest Running",
-                price: 315000,
-                rating: 4.9,
-                reviews: 142,
-                description: " :).",
-                sizes: ["S", "M", "L", "XL", "XXL"],
-                specs: ["Nylon,Spandek", "Brethable fabric", "Zipper: YKK", "astra coats","bartack","nylon strap","Premium rope", "acetal buckle"],
-                // Varian Warna & Foto Spesifik Terikat
-                colors: [
-                    { name: "Dark grey", hex: "#333333", image: "id-11134201-81ztj-mthvqj6c45c597 (1).jpeg" },
-                    { name: "Dark grey", hex: "#333333", image: "id-11134201-81ztc-mthvqj6nfi16f1.jpeg" },
-                    { name: "Drak grey", hex: "#333333", image: "id-11134201-81ztj-mthvqj4keade5d.jpeg" },
-                    { name: "Drak grey", hex: "#333333", image: "Screenshot 2026-09-29 at 21.34.41.jpeg" }
-                ]
+              colorName: "Candy Pink",
+              colorHex: "#E86361",
+              stock: 6,
+              gallery: [
+                "id-11134207-81ztq-mqvlth3z124qc8.jpeg",
+                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
+              ]
             },
             {
-                id: 102,
-                name: "Vest Running Angsana series Apollo 7,5 Liter",
-                category: "Vest Running",
-                price: 299000,
-                rating: 4.9,
-                reviews: 98,
-                description: "Vest Running Angsana series Apollo 7,5 Liter Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology,Light Tech,Breathable Fabric,Comfortable Pattern,Dynamic of Movement,Durable selection,Great component,Functional fiture.Vest Running seri Apollo 7,5 Liter cocok dipakai untuk Training Endurance, Peak Training, short Trail event dengan kapabilitas sesuai kebutuhan Fun Runners",
-                sizes: ["S", "M", "L", "XL"],
-                specs: ["Nylon | Spandek", "Brethable fabric", "YKK zipper", "Astra Coach","Bartack","Nylon Strap","Premium Rope","Acetal Buckle","stitch distance measured",],
-                colors: [
-                    { name: "Tan", hex: "#C17F44", image: "id-11134207-822wi-mp2cqi1dvqbx48.jpeg" },
-                    { name: "Candy Pink", hex: "#f17276", image: "id-11134207-81ztq-mqvlth3z124qc8.jpeg" },
-                    { name: "Blue Sky", hex: "#87ceeb", image: "id-11134201-81zto-mrmffbdl5p8hdf.jpeg" }
-                ]
+              colorName: "blue sky",
+              colorHex: "#87CEEB",
+              stock: 6,
+              gallery: [
+                "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
+                "id-11134207-81ztp-mqvluxmxq41x87.jpeg",
+                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
+              ]
+            },
+            {
+              colorName: "Tan",
+              colorHex: "#B07548",
+              stock: 6,
+              gallery: [
+                "id-11134207-822wi-mp2cqi1dvqbx48.jpeg",
+                "id-11134207-822wo-mp2cpgenej9c91.jpeg",
+                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
+              ]
+            }
+          ]
+        },
+        {
+          id: "vest-running-athena",
+          name: "Vest Running Angsana series Athena 10 Liter",
+          category: "Vest Running",
+          priceValue: 315000,
+          priceText: "Rp 315.000",
+          rating: "",
+          description: "Vest Running Angsana series Athena 10 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech,Breathable Fabric,Comfortable Pattern,Dynamic of Movement, Durable selection,Great component,Functional fiture",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "",
+          sizes: ["M", "L", "XL"],
+          variants: [
+            {
+              colorName: "Dark Grey",
+              colorHex: "#1A1919",
+              stock: 4,
+              gallery: [
+                "id-11134201-81ztj-mthvqj6c45c597.jpeg",
+                "id-11134201-81ztc-mthvqj6nfi16f1.jpeg",
+                "id-11134201-81ztj-mthvqj4keade5d.jpeg",
+                "id-11134201-81zto-mthvqj7z4007df.jpeg"
+              ]
+            }
+          ]
+        },
+        {
+          id: "Vest Running seri Artemis 8 Liter",
+          name: "Vest Running seri Artemis 8 Liter",
+          category: "VEST RUNNING",
+          priceValue: 379000,
+          priceText: "Rp 379.000",
+          rating: "4.7 (86)",
+          description: "Vest Trail Running Angsana series Artemis 8 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech,Breathable Fabric,Comfortable Pattern,Dynamic of Movement,Durable selection,Great component,Functional fiture. Vest Running seri Artemis 8 Liter cocok dipakai Training Endurance, Peak Training, short Trail event dengan kapabilitas sesuai kebutuhan Fun Runners :)",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "STANDARD",
+          sizes: ["S","M", "L", "XL"],
+          variants: [
+            {
+              colorName: "Dark Gray",
+              colorHex: "#1A1919",
+              stock: 10,
+              gallery: [
+                "id-11134207-81zth-mr5euy1id9n0db.jpeg",
+                "id-11134207-81ztm-mr5euy1kv5z44e.jpeg",
+                "id-11134207-81ztj-mr5euy22duz085.jpeg",
+                "id-11134207-81zti-mr5evbhodhxg34.jpeg",
+                "id-11134201-81ztq-msgj914hahhg7c.jpeg"
+              ]
+            }
+            
+          ]
+        },
+        {
+          id: "Running Jersey Short Angsana Super light weight Anti UV series Memphis, Tribal, Geo & Shibori, Stones",
+          name: "Running Jersey Short Angsana Super light weight Anti UV series Memphis, Tribal, Geo & Shibori, Stones",
+          category: "JERSEY",
+          priceValue: 149000,
+          priceText: "Rp 149.000",
+          rating: "4.7 (86)",
+          description: "ersey olahraga yang didesain khusus untuk memenuhi kebutuhan olahraga kamu seperti running maupun training, jersey ini dilengkapi dengan teknologi Aeroready. Teknologi Aeroready Adalah Teknologi ini dirancang untuk menjaga atlet tetap kering dan sejuk dengan menyerap keringat dari kulit. Teknologi ini menggabungkan beberapa fitur unggulan dalam satu material yang canggih: Anti-Bacterial: Aeroready dilengkapi dengan teknologi anti-bakteri yang mencegah pertumbuhan mikroorganisme penyebab bau, menjaga kebersihan dan kesegaran kain lebih lama, bahkan setelah pemakaian intensif. Quick Dry: Teknologi ini memastikan kain cepat kering setelah terkena keringat atau air, memungkinkan sirkulasi udara yang optimal dan menjaga tubuh tetap kering dan nyaman selama aktivitas fisik.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "STANDARD",
+          sizes: ["S","M", "L", "XL"],
+          variants: [
+            {
+              colorName: "SHIBORI SHORT",
+              colorHex: "#7A7F84",
+              stock: 10,
+              gallery: [
+                "id-11134207-8224y-mgwzk74lp1cce0.jpeg",
+                "id-11134207-82251-mgwzk74fq4g958.jpeg",
+                "id-11134207-8224x-mgwzk74lktn01c.jpeg",
+            
+              ]
+            },
+            {
+              colorName: "MEMPHIS",
+              colorHex: "#3A638E",
+              stock: 10,
+              gallery: [
+                "id-11134207-8224u-mgwzk74lruh851.jpeg",
+                "/Users/macbook/Documents/latihan/id-11134207-8224s-mgwzk74li0i41d.jpeg",
+                "id-11134207-8224x-mgwzk74lktn01c.jpeg",
+            
+              ]
             },
               {
-                id: 103,
-                name: "Vest Running seri Artemis 8 Liter",
-                category: "Vest Running",
-                price: 379000,
-                rating: 4.8,
-                reviews: 89,
-                description: "Celana lapangan cepat kering dengan fleksibilitas bahan stretch 4-arah untuk keleluasaan bergerak.",
-                sizes: ["S", "M", "L", "XL", "XXL"],
-                specs: ["Bahan: Despo Elastic Quickdry", "4 Kantong Zipper YKK", "Pinggang Elastic Band", "Ringan & Breathable"],
-                colors: [
-                    { name: "Dark Grey", hex: "#333333", image: "WhatsApp Image 2026-09-29 at 20.52.20.jpeg" },
-                    { name: "Khaki", hex: "khaki", image: "id-11134207-822wk-mlrk4r5tdv5vcc.jpeg" },
-                    // { name: "Solid Black", hex: "#111111", image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&q=80&w=800" }
-                ]
-            },
+              colorName: "STONES SHORT",
+              colorHex: "#4A6B70",
+              stock: 10,
+              gallery: [
+                "id-11134207-8224r-mkjkb2rml24i98.jpeg",
+                // "/Users/macbook/Documents/latihan/id-11134207-8224s-mgwzk74li0i41d.jpeg",
+                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
             
-               
-        
-            {
-                id: 104,
-                name: "Singlet Running Man Angsana Super light weight anti UV series",
-                category: "Singlet",
-                price: 139000,
-                rating: 4.7,
-                reviews: 75,
-                image: "",
-                description: "Sepatu pendakian mid-cut dengan outsole grip cengkeraman tinggi di medan basah & berlumpur.",
-                sizes: ["S","M","L","XL"],
-                specs: ["Upper: Suede Leather & Waterproof Mesh", "Sole: High Traction Rubber Bumper", "Toe Cap Rubber Protector", "Ankle Cushion Padding"],
-                colors: [
-                    { name: "Monarch", hex: "black", image: "id-11134201-81ztm-mt63exd3zfgl1c.jpeg" },
-                    { name: "twilight", hex: "pink", image: "id-11134201-81ztk-mt63ex9lbxmsa1.jpeg" },
-                    { name: "glory", hex: "blue", image: "id-11134201-81ztd-mt63ex900zk1d2 (1).jpeg" }
-
-                ]
+              ]
             },
             {
-                id: 105,
-                name: "Celana Running Angsana Series Thunder Pocket Belt & Zipper",
-                category: "Celana",
-                price: 149000,
-                rating: 4.9,
-                reviews: 130,
-                description: "Kantung tidur model mummy berisolasi Dacron Microfiber sintetik tebal penahan suhu ekstrem gunung.",
-                sizes: ["S","M","L","XL"],
-                specs: ["Comfort Temp: 0°C | Limit: -5°C", "Inner: Soft Thermal Fleece", "Dimensi: 210 x 80 cm", "Kompresi Sack Compact"],
-                colors: [
-                    { name: "Black", hex: "black", image: "id-11134207-8224v-mgwzk74b8l5723.jpeg" },
-                    { name: "Navy", hex: "navy", image: "id-11134207-8224p-mgwzk73ucd8v70.jpeg" },
-                    { name: "Grey", hex: "grey", image: "id-11134207-8224x-mgwzk74bbea3af.jpeg" }
-                ]
-            },
-            {
-                id: 106,
-                name: "Celana Angsana Seri Katana Lite",
-                category: "Celana",
-                price: 215000,
-                rating: 4.8,
-                reviews: 165,
-                image: "/Users/macbook/Downloads/id-11134207-81zto-mrycuws4pe6cf0.jpeg",
-                description: "Set alat masak Hard-Anodized Aluminium anti-lengket, tahan gores, serta ringkas ditumpuk.",
-                sizes: ["S","M","L","XL"],
-                specs: ["Material: Hard Anodized Aluminum", "Isi: 2 Panci, 1 Wajan, 1 Cerek 0.8L", "Gagang Lipat Anti-Panas", "Free Pouch Mesh Storage"],
-                colors: [
-                    { name: "Black", hex: "black", image: "id-11134207-7ra0g-mdvasys1zk3g2d.jpeg" },
-                    { name: "Grey", hex: "grey", image: "id-11134207-7ra0i-mdvasys1wqs0bc.jpeg" },
-                    { name: "Tan", hex: "#736436", image: "id-11134207-7ra0k-mdvasys1wr9xb0.jpeg" }
-
-
-                ]
-            },
+              colorName: "GEO",
+              colorHex: "#E8D8C3",
+              stock: 10,
+              gallery: [
+                "id-11134207-8224p-mgwzk74lunm4d0.jpeg",
+                "id-11134207-8224q-mgwzk74lqfws9b.jpeg",
+                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
             
-            {
-                id: 107,
-                name: "Angsana 404 NF Running Cap Ultralight Topi Running Quickdry",
-                category: "Topi",
-                price: 115000,
-                rating: 4.8,
-                reviews: 116,
-                description: "Tas gunung ekspedisi ergonomis dengan backsystem sirkulasi udara penyerap guncangan beban berat.",
-                sizes: ["All size"],
-                specs: ["Bahan: Nylon Cordura 500D Ripstop", "Backsystem: Adjustable Ergonomic Mesh", "Termasuk Raincover Waterproof", "Akses Depan Front Load Zipper"],
-                colors: [
-                    { name: "khaki", hex: "#a9aea8", image: "id-11134201-81ztj-mryctz4dce8182 (1).jpeg" },
-                    { name: "black", hex: "black", image: "id-11134207-81zto-mrycuws4pe6cf0.jpeg" },
-                    // { name: "Navy Cobalt", hex: "#1e3799", image: "https://images.unsplash.com/photo-1581605405669-fcdf81165afa?auto=format&fit=crop&q=80&w=800" }
-                ]
-                
+              ]
             },
-
-            {
-                id: 108,
-                name: "NEW Celana Angsana Seri Borneo Lite",
-                category: "Celana",
-                price: 239000,
-                rating: 4.6,
-                reviews: 62,
-                description: "Kompor mawar pelindung angin built-in. Api terfokus hemat gas kaleng saat diterpa angin gunung.",
-                sizes: ["Mini Compact"],
-                specs: ["Tipe Gas: Canister / Hi-Cook Adaptor", "Daya Api: 3200W High Heat", "Pemantik Piezo Elektrik Built-in", "Foldable Legs Stainless Steel"],
-                colors: [
-                    { name: "Black", hex: "black", image: "id-11134207-7ras9-m2daeorqabtu90.jpeg" },
-                    { name: "Cream", hex: "#c6cbc4", image: "id-11134207-8224z-mgxg9i0mytji78.jpeg" },
-                    { name: "Grey", hex: "#57677f", image: "id-11134207-82252-mgxg9i0jvuoa8c.jpeg" }
-                ]
+             {
+              colorName: "TRIBAL",
+              colorHex: "#1E1E1E",
+              stock: 10,
+              gallery: [
+                "id-11134207-82252-mgwzk74lt91o83.jpeg",
+                "id-11134207-82251-mgwzk74lnmrwa3.jpeg",
+                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
+            
+              ]
             }
-        ];
+            
+            
+            
+          ]
+        },
+            {
+          id: "Angsana 404 NF Running Cap Ultralight Topi Running Quickdry",
+          name: "Angsana 404 NF Running Cap Ultralight Topi Running Quickdry",
+          category: "TOPI",
+          priceValue: 115000,
+          priceText: "Rp 115.000",
+          rating: "",
+          description: "Dirancang untuk melindungi wajah Anda dari sinar matahari, menjaga kepala tetap sejuk dan Super ringan dipakai dengan Comfort Text membuat nya Sangat Nyaman dipakai. Filosofi 404 Not Found | “Hargai Waktu sebelum Waktu tidak lagi menghargaimu.”Laser Cut side Cap memberikan Sirkulasi Udara yang membantu topi ini selalu sejuk digunakan dalam Durasi waktu yang panjang ketiga digunakan. Spesifikasi : Brim Eva Spons Light tech, Nylon fabric Korean, Ultralight Tech, Waterrepellent, Urban Style, Quickdry tech",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "STANDARD",
+          sizes: ["All Size"],
+          variants: [
+            {
+              colorName: "KHAKI",
+              colorHex: "#9EAAA1",
+              stock: 10,
+              gallery: [
+                "id-11134201-81ztj-mryctz4dce8182.jpeg",
+                "id-11134201-81ztl-mryctyz7rtaa18.jpeg",
+                "id-11134201-81ztd-mryctyihaebq51.jpeg",
+                "id-11134201-81ztg-mryctytf6hace5.jpeg",
+                "id-11134207-81ztf-mqvlhu9uefif84.jpeg",
+                
+            
+              ]
+            },
+            {
+              colorName: "BLACK",
+              colorHex: "BLACK",
+              stock: 10,
+              gallery: [
+                "id-11134201-81ztj-mryctznh8mbo76.jpeg",
+                "id-11134201-81ztn-mrycu24exq126d.jpeg",
+                "id-11134201-81ztp-mryctyiqyr5z03.jpeg",
+                "id-11134207-81ztf-mqvlhu9uefif84.jpeg"
+            
+              ]
+            }
+            
 
-        // STATE MANAGEMENT
-        let cart = [];
-        let activeCategory = 'Semua';
-        let searchQuery = '';
-        let discountAmount = 0;
-        
-        // Modal Active State
-        let currentModalProduct = null;
-        let currentSelectedColor = null;
-        let currentSelectedSize = null;
+          ]
+        }
+      ];
 
-        // INITIALIZATION
-        window.addEventListener('DOMContentLoaded', () => {
-            initLogos();
-            renderCategories();
-            renderProducts();
-            updateCartUI();
+      let cartItems = [];
+      let appliedDiscount = 0;
+      let appliedVoucherName = "";
+      let activeDetailProductIndex = null;
+      let detailModalActiveImageIdx = 0;
+      let searchQuery = "";
+
+      function handleSearch(query) {
+        searchQuery = query.toLowerCase().trim();
+        renderCatalog();
+      }
+
+      function renderCatalog() {
+        const container = document.getElementById('productGridContainer');
+        const infoEl = document.getElementById('searchResultInfo');
+        container.innerHTML = '';
+
+        // Filter produk berdasarkan pencarian
+        const filteredProducts = catalogProducts.map((product, originalIndex) => ({ product, originalIndex })).filter(({ product }) => {
+          const matchName = product.name.toLowerCase().includes(searchQuery);
+          const matchCategory = product.category.toLowerCase().includes(searchQuery);
+          const matchDesc = product.description.toLowerCase().includes(searchQuery);
+          return matchName || matchCategory || matchDesc;
         });
 
-        function initLogos() {
-            const logoHeader = document.getElementById('brand-logo-img');
-            const logoFooter = document.getElementById('footer-logo-img');
-            if (logoHeader) logoHeader.src = BRAND_LOGO_URL;
-            if (logoFooter) logoFooter.src = BRAND_LOGO_URL;
+        if (searchQuery !== "") {
+          infoEl.innerText = `Menampilkan hasil untuk "${searchQuery}" (${filteredProducts.length} produk ditemukan)`;
+        } else {
+          infoEl.innerText = "";
         }
 
-        function formatRupiah(num) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+        if (filteredProducts.length === 0) {
+          container.innerHTML = `
+            <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-gray-100 shadow-sm">
+              <i class="fa-solid fa-face-sad-tear text-4xl text-gray-300 mb-3"></i>
+              <h3 class="font-bold text-lg text-gray-700">Produk Tidak Ditemukan</h3>
+              <p class="text-xs text-gray-400 mt-1">Coba gunakan kata kunci pencarian yang lain.</p>
+            </div>
+          `;
+          return;
         }
 
-        function showToast(message) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = "bg-brand-forest text-white px-4 py-3 rounded-xl shadow-2xl border border-emerald-600/50 flex items-center gap-3 text-xs font-bold transition-all duration-300 transform translate-x-10 opacity-0 pointer-events-auto";
-            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-wa text-base"></i><span>${message}</span>`;
-            
-            container.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.classList.remove('translate-x-10', 'opacity-0');
-            }, 10);
+        filteredProducts.forEach(({ product, originalIndex: pIndex }) => {
+          const activeVariant = product.variants[product.selectedVariantIndex];
+          const activeImage = activeVariant.gallery[product.selectedImageIndex] || activeVariant.gallery[0];
+          const isOutOfStock = activeVariant.stock <= 0;
 
-            setTimeout(() => {
-                toast.classList.add('translate-x-10', 'opacity-0');
-                setTimeout(() => toast.remove(), 300);
-            }, 2500);
-        }
-
-        function renderCategories() {
-            const categories = ['Semua', ...new Set(products.map(p => p.category))];
-            const container = document.getElementById('categoryFilters');
-            
-            container.innerHTML = categories.map(cat => `
-                <button onclick="filterByCategory('${cat}')" 
-                    class="px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap transition-all shadow-sm cursor-pointer ${activeCategory === cat ? 'bg-brand-forest text-brand-amber font-bold shadow-md scale-105' : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'}">
-                    ${cat === 'Semua' ? '<i class="fa-solid fa-layer-group mr-1.5"></i>' : ''}${cat}
-                </button>
-            `).join('');
-        }
-
-        function filterByCategory(category) {
-            activeCategory = category;
-            renderCategories();
-            renderProducts();
-        }
-
-        function handleSearch() {
-            searchQuery = (document.getElementById('searchInput')?.value || '').toLowerCase().trim();
-            renderProducts();
-        }
-
-        function handleSearchMobile(val) {
-            searchQuery = val.toLowerCase().trim();
-            renderProducts();
-        }
-
-        function resetFilters() {
-            activeCategory = 'Semua';
-            searchQuery = '';
-            if (document.getElementById('searchInput')) document.getElementById('searchInput').value = '';
-            renderCategories();
-            renderProducts();
-        }
-
-        function renderProducts() {
-            const grid = document.getElementById('productGrid');
-            const emptyState = document.getElementById('emptyState');
-            const sortBy = document.getElementById('sortBy').value;
-
-            let filtered = products.filter(p => {
-                const matchesCategory = activeCategory === 'Semua' || p.category === activeCategory;
-                const matchesSearch = p.name.toLowerCase().includes(searchQuery) || p.description.toLowerCase().includes(searchQuery);
-                return matchesCategory && matchesSearch;
-            });
-
-            if (sortBy === 'low-high') filtered.sort((a, b) => a.price - b.price);
-            else if (sortBy === 'high-low') filtered.sort((a, b) => b.price - a.price);
-            else if (sortBy === 'rating') filtered.sort((a, b) => b.rating - a.rating);
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            } else {
-                emptyState.classList.add('hidden');
-            }
-
-            grid.innerHTML = filtered.map(p => {
-                const defaultImg = p.colors[0]?.image || "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&q=80&w=800";
-                
-                return `
-                    <div class="bg-white rounded-3xl overflow-hidden border border-stone-200/80 hover:shadow-xl transition-all duration-300 flex flex-col group relative">
-                        <span class="absolute top-3 left-3 z-10 bg-brand-forest/90 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md shadow">
-                            ${p.category}
-                        </span>
-
-                        <div class="relative h-60 overflow-hidden bg-stone-100 cursor-pointer" onclick="openProductModal(${p.id})">
-                            <img src="${defaultImg}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            
-                            <!-- Overlay Hover -->
-                            <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="px-4 py-2 bg-white text-brand-forest text-xs font-bold rounded-xl shadow-md transform translate-y-2 group-hover:translate-y-0 transition-all flex items-center gap-1.5">
-                                    <i class="fa-solid fa-palette text-brand-amber"></i> Pilih Warna
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="p-5 flex flex-col flex-grow justify-between">
-                            <div>
-                                <div class="flex items-center justify-between text-xs text-stone-500 mb-1.5">
-                                    <div class="flex items-center text-brand-amber font-bold">
-                                        <i class="fa-solid fa-star text-xs mr-1"></i>
-                                        <span>${p.rating}</span>
-                                        <span class="text-stone-400 font-normal ml-1">(${p.reviews})</span>
-                                    </div>
-                                    <span class="text-emerald-700 text-[10px] font-bold uppercase bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                                        ${p.colors.length} Warna
-                                    </span>
-                                </div>
-
-                                <h3 class="font-heading font-bold text-base text-brand-forest group-hover:text-brand-amber transition-colors line-clamp-1 cursor-pointer" onclick="openProductModal(${p.id})">
-                                    ${p.name}
-                                </h3>
-                                <p class="text-stone-500 text-xs mt-1 line-clamp-2 leading-relaxed">
-                                    ${p.description}
-                                </p>
-                            </div>
-
-                            <!-- Color Swatches Preview Bar -->
-                            <div class="mt-3 pt-3 border-t border-stone-100 flex items-center justify-between">
-                                <div class="flex items-center gap-1.5">
-                                    ${p.colors.map(c => `
-                                        <span class="w-3.5 h-3.5 rounded-full border border-white shadow-sm inline-block" style="background-color: ${c.hex};" title="${c.name}"></span>
-                                    `).join('')}
-                                </div>
-
-                                <button onclick="openProductModal(${p.id})" class="px-3 py-1.5 bg-brand-forest hover:bg-brand-pine text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1">
-                                    <span>Detail</span>
-                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                                </button>
-                            </div>
-
-                            <div class="mt-3 pt-2 flex items-center justify-between">
-                                <div>
-                                    <span class="text-[10px] text-stone-400 block font-medium">Harga Resmi</span>
-                                    <span class="font-heading font-extrabold text-base text-brand-terracotta">
-                                        ${formatRupiah(p.price)}
-                                    </span>
-                                </div>
-
-                                <button onclick="openProductModal(${p.id})" class="p-2.5 bg-brand-amber hover:bg-brand-terracotta text-white rounded-xl shadow transition-all active:scale-95" title="Beli Produk">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        // OPEN PRODUCT MODAL WITH DYNAMIC COLOR VARIANTS
-        function openProductModal(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product) return;
-
-            currentModalProduct = product;
-            currentSelectedColor = product.colors[0]; // Default First Color
-            currentSelectedSize = product.sizes[0];   // Default First Size
-
-            renderModalContent();
-            document.getElementById('productModal').classList.remove('hidden');
-        }
-
-        function closeProductModal() {
-            document.getElementById('productModal').classList.add('hidden');
-        }
-
-        function renderModalContent() {
-            const modalContent = document.getElementById('productModalContent');
-            const product = currentModalProduct;
-
-            modalContent.innerHTML = `
-                <!-- Main Product Image with Smooth Transition -->
-                <div class="flex flex-col gap-3">
-                    <div class="relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-stone-100 border border-stone-200">
-                        <img id="modalMainImg" src="${currentSelectedColor.image}" alt="${product.name}" class="w-full h-full object-cover transition-opacity duration-300">
-                        <span id="modalColorBadge" class="absolute bottom-3 left-3 bg-brand-forest/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl backdrop-blur-md shadow flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full border border-white" style="background-color: ${currentSelectedColor.hex}"></span>
-                            <span>Varian: ${currentSelectedColor.name}</span>
-                        </span>
-                    </div>
-
-                    <!-- Mini Color Swatches Gallery -->
-                    <div class="flex items-center gap-2 overflow-x-auto pb-1">
-                        ${product.colors.map((c, idx) => `
-                            <button onclick="changeModalColor(${idx})" class="relative w-14 h-14 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${c.name === currentSelectedColor.name ? 'border-brand-amber ring-2 ring-brand-amber' : 'border-stone-200 opacity-70 hover:opacity-100'}">
-                                <img src="${c.image}" class="w-full h-full object-cover">
-                            </button>
-                        `).join('')}
-                    </div>
-                </div>
-
-                <!-- Product Specifications & Selectors -->
-                <div class="flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-extrabold text-brand-amber uppercase tracking-widest">${product.category}</span>
-                        <h2 class="font-heading text-2xl font-black text-brand-forest mt-1">${product.name}</h2>
-                        
-                        <div class="flex items-center gap-2 mt-2">
-                            <div class="flex text-brand-amber text-xs">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <span class="text-xs font-bold text-stone-700">${product.rating}</span>
-                            <span class="text-xs text-stone-400">(${product.reviews} Ulasan)</span>
-                        </div>
-
-                        <div class="my-3 p-3 bg-brand-sand rounded-xl border border-stone-200/80 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-stone-500 block">Harga Resmi Angsana</span>
-                                <div class="text-2xl font-black text-brand-terracotta">${formatRupiah(product.price)}</div>
-                            </div>
-                            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-lg">Stok Ready</span>
-                        </div>
-
-                        <!-- COLOR SELECTION SWATCHES -->
-                        <div class="mb-4">
-                            <label class="block font-bold text-xs text-stone-700 mb-2">
-                                Pilih Varian Warna: <span id="colorNameLabel" class="text-brand-amber font-extrabold">${currentSelectedColor.name}</span>
-                            </label>
-                            <div class="flex flex-wrap gap-2">
-                                ${product.colors.map((c, idx) => `
-                                    <button onclick="changeModalColor(${idx})" 
-                                        class="px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-2 border transition-all cursor-pointer ${c.name === currentSelectedColor.name ? 'bg-brand-forest text-white border-brand-forest shadow-md scale-105' : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'}">
-                                        <span class="w-3.5 h-3.5 rounded-full border border-white/50 shadow-sm" style="background-color: ${c.hex}"></span>
-                                        <span>${c.name}</span>
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <!-- SIZE SELECTION BUTTONS -->
-                        <div class="mb-4">
-                            <label class="block font-bold text-xs text-stone-700 mb-2">Pilih Ukuran / Kapasitas:</label>
-                            <div class="flex flex-wrap gap-2">
-                                ${product.sizes.map(s => `
-                                    <button onclick="changeModalSize('${s}')" 
-                                        class="px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-all cursor-pointer ${s === currentSelectedSize ? 'bg-brand-amber text-white border-brand-amber shadow-sm' : 'bg-white text-stone-700 border-stone-300 hover:bg-stone-50'}">
-                                        ${s}
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <p class="text-xs text-stone-600 leading-relaxed mb-4">${product.description}</p>
-
-                        <div class="mb-4 bg-stone-50 p-3 rounded-xl border border-stone-200">
-                            <h4 class="font-bold text-[11px] text-brand-forest mb-1 uppercase tracking-wider">Spesifikasi Teknis:</h4>
-                            <ul class="space-y-1">
-                                ${product.specs.map(spec => `<li class="text-[11px] text-stone-600 flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600 text-[10px]"></i> ${spec}</li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 border-t border-stone-200 flex gap-3">
-                        <button onclick="addModalItemToCart()" class="w-full py-3.5 bg-brand-forest hover:bg-brand-pine text-white font-extrabold rounded-xl text-xs transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
-                            <i class="fa-solid fa-cart-plus text-base"></i>
-                            <span>TAMBAHKAN KE KERANJANG</span>
-                        </button>
-                    </div>
-                </div>
+          let galleryHtml = '';
+          activeVariant.gallery.forEach((imgUrl, imgIndex) => {
+            const isActive = imgIndex === product.selectedImageIndex;
+            galleryHtml += `
+              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+                <img src="${imgUrl}" class="w-full h-full object-cover">
+              </button>
             `;
-        }
+          });
 
-        // TRIGGER CHANGE PHOTO BASED ON COLOR VARIANT
-        function changeModalColor(colorIndex) {
-            if (!currentModalProduct) return;
-            currentSelectedColor = currentModalProduct.colors[colorIndex];
-            
-            const mainImg = document.getElementById('modalMainImg');
-            if (mainImg) {
-                mainImg.style.opacity = '0.3';
-                setTimeout(() => {
-                    mainImg.src = currentSelectedColor.image;
-                    mainImg.style.opacity = '1';
-                }, 150);
-            }
+          let variantsHtml = '';
+          product.variants.forEach((varItem, vIndex) => {
+            const isSelected = vIndex === product.selectedVariantIndex;
+            variantsHtml += `
+              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-7 h-7 rounded-full border-2 transition-transform transform hover:scale-110 flex items-center justify-center ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-110' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+                ${isSelected ? '<i class="fa-solid fa-check text-[10px] text-white drop-shadow"></i>' : ''}
+              </button>
+            `;
+          });
 
-            renderModalContent();
-        }
+          let sizesHtml = '';
+          product.sizes.forEach((size) => {
+            const isSizeSelected = size === product.selectedSize;
+            sizesHtml += `
+              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all ${isSizeSelected ? 'bg-brand-charcoal text-white shadow' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}">
+                ${size}
+              </button>
+            `;
+          });
 
-        function changeModalSize(sizeStr) {
-            currentSelectedSize = sizeStr;
-            renderModalContent();
-        }
+          const cardHtml = `
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+              <div class="relative h-72 overflow-hidden bg-gray-100">
+                <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-3 left-3 px-3 py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[10px] font-extrabold uppercase">
+                  ${isOutOfStock ? 'Stok Habis' : 'Tersedia'}
+                </span>
+                ${product.rating ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-amber-400 text-[10px] font-bold"><i class="fa-solid fa-star text-amber-400"></i> ${product.rating}</span>` : ''}
+              </div>
 
-        function addModalItemToCart() {
-            if (!currentModalProduct || !currentSelectedColor || !currentSelectedSize) return;
+              <div class="px-6 pt-4 flex items-center gap-2 overflow-x-auto">
+                ${galleryHtml}
+              </div>
 
-            const cartKey = `${currentModalProduct.id}-${currentSelectedSize}-${currentSelectedColor.name}`;
-            const existing = cart.find(i => i.cartKey === cartKey);
-
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({
-                    ...currentModalProduct,
-                    cartKey: cartKey,
-                    selectedSize: currentSelectedSize,
-                    selectedColor: currentSelectedColor.name,
-                    selectedColorImage: currentSelectedColor.image,
-                    qty: 1
-                });
-            }
-
-            updateCartUI();
-            closeProductModal();
-            showToast(`${currentModalProduct.name} (${currentSelectedColor.name}) ditambahkan!`);
-            toggleCartDrawer(true);
-        }
-
-        function toggleCartDrawer(open) {
-            const drawer = document.getElementById('cartDrawer');
-            const content = document.getElementById('cartContent');
-
-            if (open) {
-                drawer.classList.remove('pointer-events-none', 'opacity-0');
-                drawer.classList.add('opacity-100');
-                content.classList.remove('translate-x-full');
-            } else {
-                drawer.classList.add('pointer-events-none', 'opacity-0');
-                drawer.classList.remove('opacity-100');
-                content.classList.add('translate-x-full');
-            }
-        }
-
-        function updateCartQty(cartKey, change) {
-            const item = cart.find(i => i.cartKey === cartKey);
-            if (!item) return;
-
-            item.qty += change;
-            if (item.qty <= 0) {
-                cart = cart.filter(i => i.cartKey !== cartKey);
-            }
-
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const badge = document.getElementById('cartBadge');
-            const list = document.getElementById('cartItemsList');
-            const subtotalEl = document.getElementById('cartSubtotal');
-            const totalEl = document.getElementById('cartTotal');
-            const btnCheckout = document.getElementById('btnCheckout');
-
-            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-            badge.textContent = totalItems;
-            if (totalItems > 0) {
-                badge.classList.remove('scale-0');
-                badge.classList.add('scale-100');
-                btnCheckout.disabled = false;
-            } else {
-                badge.classList.remove('scale-100');
-                badge.classList.add('scale-0');
-                btnCheckout.disabled = true;
-            }
-
-            if (cart.length === 0) {
-                list.innerHTML = `
-                    <div class="text-center py-12 text-stone-400">
-                        <i class="fa-solid fa-basket-shopping text-4xl mb-3 text-stone-300"></i>
-                        <p class="text-xs font-semibold">Keranjang Belanja Masih Kosong</p>
-                        <p class="text-[10px] mt-1">Pilih peralatan outdoor favorit Anda!</p>
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-xs text-brand-tan font-bold uppercase tracking-wider block mb-1">${product.category}</span>
+                  <h3 class="font-bold text-lg text-brand-charcoal">${product.name}</h3>
+                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">${product.description}</p>
+                  
+                  <div class="mt-4 pt-3 border-t border-gray-100">
+                    <div class="flex justify-between items-center text-xs mb-2">
+                      <span class="text-gray-500">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
+                      <span class="text-[11px] font-bold ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
+                        Stok: ${activeVariant.stock} pcs
+                      </span>
                     </div>
-                `;
-            } else {
-                list.innerHTML = cart.map(item => `
-                    <div class="pt-4 flex items-center gap-3">
-                        <img src="${item.selectedColorImage || item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl border border-stone-200">
-                        <div class="flex-grow">
-                            <h4 class="font-bold text-xs text-brand-forest line-clamp-1">${item.name}</h4>
-                            <span class="text-[10px] text-stone-500 font-semibold block">Varian: ${item.selectedSize} / ${item.selectedColor}</span>
-                            <span class="text-xs font-extrabold text-brand-terracotta block mt-0.5">${formatRupiah(item.price)}</span>
-                            
-                            <div class="flex items-center gap-2 mt-1.5">
-                                <button onclick="updateCartQty('${item.cartKey}', -1)" class="w-6 h-6 rounded bg-stone-100 hover:bg-stone-200 text-stone-600 text-xs flex items-center justify-center font-bold">
-                                    -
-                                </button>
-                                <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
-                                <button onclick="updateCartQty('${item.cartKey}', 1)" class="w-6 h-6 rounded bg-stone-100 hover:bg-stone-200 text-stone-600 text-xs flex items-center justify-center font-bold">
-                                    +
-                                </button>
-                            </div>
-                        </div>
-                        <button onclick="updateCartQty('${item.cartKey}', -${item.qty})" class="text-stone-400 hover:text-red-500 p-1">
-                            <i class="fa-solid fa-trash-can text-xs"></i>
-                        </button>
+                    <div class="flex items-center gap-2">
+                      ${variantsHtml}
                     </div>
-                `).join('');
-            }
+                  </div>
 
-            subtotalEl.textContent = formatRupiah(subtotal);
-            totalEl.textContent = formatRupiah(subtotal);
-        }
-
-        function openCheckoutModal() {
-            if (cart.length === 0) return;
-            
-            toggleCartDrawer(false);
-            renderCheckoutMiniItems();
-            calculateCheckoutTotals();
-
-            document.getElementById('checkoutModal').classList.remove('hidden');
-        }
-
-        function closeCheckoutModal() {
-            document.getElementById('checkoutModal').classList.add('hidden');
-        }
-
-        function renderCheckoutMiniItems() {
-            const container = document.getElementById('checkoutMiniItems');
-            const itemCount = document.getElementById('checkoutItemCount');
-            
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            itemCount.textContent = `${totalQty} Item`;
-
-            container.innerHTML = cart.map(item => `
-                <div class="py-1.5 text-xs">
-                    <div class="flex justify-between items-center">
-                        <span class="font-bold text-brand-forest line-clamp-1 max-w-[180px]">${item.qty}x ${item.name}</span>
-                        <span class="font-bold text-stone-800">${formatRupiah(item.price * item.qty)}</span>
+                  <div class="mt-3">
+                    <span class="text-xs text-gray-500 block mb-1.5">Pilih Ukuran (Size):</span>
+                    <div class="flex items-center gap-2">
+                      ${sizesHtml}
                     </div>
-                    <span class="text-[10px] text-stone-400 block">Varian: ${item.selectedSize} | ${item.selectedColor}</span>
+                  </div>
                 </div>
-            `).join('');
+
+                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                  <div>
+                    <span class="text-[10px] text-gray-400 block">Harga Resmi</span>
+                    <span class="font-black text-lg text-brand-charcoal">${product.priceText}</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button onclick="openProductDetailModal(${pIndex})" class="px-3 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-xs font-bold transition-colors">
+                      Detail
+                    </button>
+                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="px-3 py-2.5 rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan text-white'} text-xs font-bold transition-colors">
+                      <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+
+          container.innerHTML += cardHtml;
+        });
+      }
+
+      function changeProductGallery(pIndex, imgIndex) {
+        catalogProducts[pIndex].selectedImageIndex = imgIndex;
+        renderCatalog();
+      }
+
+      function changeProductVariant(pIndex, vIndex) {
+        catalogProducts[pIndex].selectedVariantIndex = vIndex;
+        catalogProducts[pIndex].selectedImageIndex = 0;
+        renderCatalog();
+      }
+
+      function changeProductSize(pIndex, size) {
+        catalogProducts[pIndex].selectedSize = size;
+        renderCatalog();
+      }
+
+      // MODAL DETAIL PRODUK LOGIC
+      function openProductDetailModal(pIndex) {
+        activeDetailProductIndex = pIndex;
+        detailModalActiveImageIdx = catalogProducts[pIndex].selectedImageIndex || 0;
+        renderProductDetailModalContent();
+        document.getElementById('productDetailModal').classList.remove('hidden');
+      }
+
+      function closeProductDetailModal() {
+        document.getElementById('productDetailModal').classList.add('hidden');
+      }
+
+      function renderProductDetailModalContent() {
+        if (activeDetailProductIndex === null) return;
+        const product = catalogProducts[activeDetailProductIndex];
+        const activeVariant = product.variants[product.selectedVariantIndex];
+        const activeImage = activeVariant.gallery[detailModalActiveImageIdx] || activeVariant.gallery[0];
+        const isOutOfStock = activeVariant.stock <= 0;
+
+        document.getElementById('detailModalCategory').innerText = product.category;
+        document.getElementById('detailModalName').innerText = product.name;
+        document.getElementById('detailModalRating').innerHTML = product.rating ? `<i class="fa-solid fa-star"></i> ${product.rating}` : '';
+        document.getElementById('detailModalStockStatus').innerHTML = isOutOfStock ? '<span class="text-red-500">Stok Habis</span>' : `<span class="text-emerald-600">Stok Tersedia (${activeVariant.stock} pcs)</span>`;
+        document.getElementById('detailModalPrice').innerText = product.priceText;
+        document.getElementById('detailModalDesc').innerText = product.description;
+        document.getElementById('detailModalColorName').innerText = activeVariant.colorName;
+        document.getElementById('detailModalImage').src = activeImage;
+
+        const galleryContainer = document.getElementById('detailModalGallery');
+        galleryContainer.innerHTML = '';
+        activeVariant.gallery.forEach((imgUrl, imgIdx) => {
+          const isActive = imgIdx === detailModalActiveImageIdx;
+          galleryContainer.innerHTML += `
+            <button onclick="setDetailModalImage(${imgIdx})" class="w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+              <img src="${imgUrl}" class="w-full h-full object-cover">
+            </button>
+          `;
+        });
+
+        const variantsContainer = document.getElementById('detailModalVariants');
+        variantsContainer.innerHTML = '';
+        product.variants.forEach((varItem, vIdx) => {
+          const isSelected = vIdx === product.selectedVariantIndex;
+          variantsContainer.innerHTML += `
+            <button onclick="setDetailModalVariant(${vIdx})" title="${varItem.colorName}" class="w-7 h-7 rounded-full border-2 transition-transform transform hover:scale-110 flex items-center justify-center ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-110' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+              ${isSelected ? '<i class="fa-solid fa-check text-[10px] text-white drop-shadow"></i>' : ''}
+            </button>
+          `;
+        });
+
+        const sizesContainer = document.getElementById('detailModalSizes');
+        sizesContainer.innerHTML = '';
+        product.sizes.forEach((size) => {
+          const isSizeSelected = size === product.selectedSize;
+          sizesContainer.innerHTML += `
+            <button onclick="setDetailModalSize('${size}')" class="px-3 py-1 rounded-md text-xs font-bold transition-all ${isSizeSelected ? 'bg-brand-charcoal text-white shadow' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}">
+              ${size}
+            </button>
+          `;
+        });
+
+        const addBtn = document.getElementById('detailModalAddBtn');
+        if (isOutOfStock) {
+          addBtn.disabled = true;
+          addBtn.className = "w-full py-3.5 rounded-xl bg-gray-300 cursor-not-allowed text-gray-500 font-bold text-sm uppercase tracking-wider shadow-none flex items-center justify-center gap-2";
+          addBtn.innerHTML = `<span>Stok Habis</span>`;
+        } else {
+          addBtn.disabled = false;
+          addBtn.className = "w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2";
+          addBtn.innerHTML = `<i class="fa-solid fa-cart-plus"></i><span>Masukkan ke Keranjang</span>`;
+          addBtn.setAttribute('onclick', `addToCartFromDetail(${activeDetailProductIndex})`);
+        }
+      }
+
+      function setDetailModalImage(idx) {
+        detailModalActiveImageIdx = idx;
+        renderProductDetailModalContent();
+      }
+
+      function setDetailModalVariant(vIdx) {
+        catalogProducts[activeDetailProductIndex].selectedVariantIndex = vIdx;
+        detailModalActiveImageIdx = 0;
+        renderProductDetailModalContent();
+        renderCatalog();
+      }
+
+      function setDetailModalSize(size) {
+        catalogProducts[activeDetailProductIndex].selectedSize = size;
+        renderProductDetailModalContent();
+        renderCatalog();
+      }
+
+      function addToCartFromDetail(pIndex) {
+        addToCart(pIndex);
+        closeProductDetailModal();
+      }
+
+      // FUNGSI KERANJANG BELANJA
+      function toggleCartDrawer() {
+        const drawer = document.getElementById('cartDrawer');
+        const overlay = document.getElementById('cartOverlay');
+        const isOpen = drawer.classList.contains('translate-x-full');
+
+        if (isOpen) {
+          drawer.classList.remove('translate-x-full');
+          overlay.classList.remove('hidden');
+        } else {
+          drawer.classList.add('translate-x-full');
+          overlay.classList.add('hidden');
+        }
+      }
+
+      function addToCart(pIndex) {
+        const product = catalogProducts[pIndex];
+        const activeVariant = product.variants[product.selectedVariantIndex];
+        const activeImage = activeVariant.gallery[product.selectedImageIndex] || activeVariant.gallery[0];
+
+        const cartItemKey = `${product.id}-${activeVariant.colorName}-${product.selectedSize}`;
+        const existingItem = cartItems.find(item => item.key === cartItemKey);
+
+        if (existingItem) {
+          existingItem.qty += 1;
+        } else {
+          cartItems.push({
+            key: cartItemKey,
+            name: product.name,
+            priceValue: product.priceValue,
+            priceText: product.priceText,
+            color: activeVariant.colorName,
+            size: product.selectedSize,
+            image: activeImage,
+            qty: 1
+          });
         }
 
-        function applyDiscountCoupon() {
-            const code = document.getElementById('couponCode').value.trim().toUpperCase();
-            const msg = document.getElementById('couponMsg');
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        updateCartUI();
+        toggleCartDrawer();
+      }
 
-            if (code === 'ANGSANA10') {
-                discountAmount = subtotal * 0.10;
-                msg.textContent = "Kupon ANGSANA10 Aktif (Diskon 10%)!";
-                msg.className = "text-[10px] mt-1 font-semibold text-emerald-600";
-                msg.classList.remove('hidden');
-            } else if (code === 'RINDUPUNCAK') {
-                discountAmount = 50000;
-                msg.textContent = "Kupon RINDUPUNCAK Aktif (Potongan Rp 50.000)!";
-                msg.className = "text-[10px] mt-1 font-semibold text-emerald-600";
-                msg.classList.remove('hidden');
-            } else {
-                discountAmount = 0;
-                msg.textContent = "Kode kupon tidak valid.";
-                msg.className = "text-[10px] mt-1 font-semibold text-red-500";
-                msg.classList.remove('hidden');
-            }
+      function updateCartQty(key, delta) {
+        const item = cartItems.find(i => i.key === key);
+        if (item) {
+          item.qty += delta;
+          if (item.qty <= 0) {
+            cartItems = cartItems.filter(i => i.key !== key);
+          }
+        }
+        updateCartUI();
+      }
 
-            calculateCheckoutTotals();
+      function updateCartUI() {
+        const container = document.getElementById('cartItemsContainer');
+        const badge = document.getElementById('cartBadge');
+        const countHeader = document.getElementById('cartCountHeader');
+        const subtotalEl = document.getElementById('cartSubtotal');
+        const checkoutBtn = document.getElementById('checkoutCartBtn');
+
+        let totalQty = 0;
+        let subtotal = 0;
+        container.innerHTML = '';
+
+        if (cartItems.length === 0) {
+          container.innerHTML = `<div class="text-center py-12 text-gray-400 text-xs">Keranjang belanja Anda masih kosong.</div>`;
+          checkoutBtn.disabled = true;
+        } else {
+          checkoutBtn.disabled = false;
+          cartItems.forEach(item => {
+            totalQty += item.qty;
+            subtotal += item.priceValue * item.qty;
+
+            container.innerHTML += `
+              <div class="py-3 flex items-center gap-3">
+                <img src="${item.image}" class="w-16 h-16 rounded-xl object-cover border border-gray-200">
+                <div class="flex-1">
+                  <h4 class="font-bold text-xs text-brand-charcoal">${item.name}</h4>
+                  <p class="text-[11px] text-gray-500">${item.color} | Ukuran: ${item.size}</p>
+                  <span class="font-bold text-brand-tan text-xs block mt-0.5">${item.priceText}</span>
+                  <div class="flex items-center gap-2 mt-2">
+                    <button onclick="updateCartQty('${item.key}', -1)" class="w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">-</button>
+                    <span class="text-xs font-bold">${item.qty}</span>
+                    <button onclick="updateCartQty('${item.key}', 1)" class="w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">+</button>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
         }
 
-        function calculateCheckoutTotals() {
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const courierVal = document.getElementById('shippingCourier')?.value || "25000|JNE Express Reguler";
-            const shippingCost = parseInt(courierVal.split('|')[0]);
+        badge.innerText = totalQty;
+        countHeader.innerText = totalQty;
+        subtotalEl.innerText = formatRupiah(subtotal);
+      }
+
+      // MODAL CHECKOUT & TOTAL LOGIC
+      function openCheckoutModalFromCart() {
+        if (cartItems.length === 0) return;
+        toggleCartDrawer();
+
+        appliedDiscount = 0;
+        appliedVoucherName = "";
+        document.getElementById('voucherCode').value = "";
+        document.getElementById('voucherStatus').classList.add('hidden');
+        document.getElementById('shippingExpedition').selectedIndex = 0;
+
+        let summaryHtml = '';
+        cartItems.forEach(item => {
+          summaryHtml += `
+            <div class="flex items-center gap-3 text-xs">
+              <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover border">
+              <div class="flex-1">
+                <p class="font-bold">${item.name} (${item.qty}x)</p>
+                <p class="text-[10px] text-gray-500">${item.color} | Size: ${item.size}</p>
+              </div>
+            </div>
+          `;
+        });
+
+        document.getElementById('modalCartSummary').innerHTML = summaryHtml;
+        document.getElementById('checkoutModal').classList.remove('hidden');
+        calculateTotal();
+      }
+
+      function closeCheckoutModal() {
+        document.getElementById('checkoutModal').classList.add('hidden');
+      }
+
+      function applyVoucher() {
+        const code = document.getElementById('voucherCode').value.trim().toUpperCase();
+        const voucherStatus = document.getElementById('voucherStatus');
+
+        if (code === "ANGSANA20") {
+          appliedDiscount = 20000;
+          appliedVoucherName = "ANGSANA20 (Potongan Rp 20.000)";
+          voucherStatus.innerText = "✓ Voucher berhasil digunakan: Potongan Rp 20.000";
+          voucherStatus.classList.remove('hidden');
+        } else if (code === "FREEOFKIR") {
+          const select = document.getElementById('shippingExpedition');
+          const selectedOption = select.options[select.selectedIndex];
+          const shippingCost = selectedOption && selectedOption.value ? parseInt(selectedOption.getAttribute('data-cost')) || 0 : 0;
+          
+          appliedDiscount = shippingCost;
+          appliedVoucherName = "FREEOFKIR (Gratis Ongkir)";
+          voucherStatus.innerText = "✓ Voucher berhasil digunakan: Gratis Ongkir";
+          voucherStatus.classList.remove('hidden');
+        } else {
+          appliedDiscount = 0;
+          appliedVoucherName = "";
+          voucherStatus.innerText = "✕ Kode voucher tidak valid!";
+          voucherStatus.classList.remove('hidden');
+          voucherStatus.className = "text-xs font-semibold text-red-500";
+          setTimeout(() => {
+            voucherStatus.className = "text-xs font-semibold text-emerald-600";
+          }, 2000);
+        }
+        calculateTotal();
+      }
+
+      function calculateTotal() {
+        let subtotal = 0;
+        cartItems.forEach(item => { subtotal += item.priceValue * item.qty; });
+
+        const select = document.getElementById('shippingExpedition');
+        const selectedOption = select.options[select.selectedIndex];
+        const shippingCost = selectedOption && selectedOption.value ? parseInt(selectedOption.getAttribute('data-cost')) || 0 : 0;
+
+        let total = subtotal + shippingCost - appliedDiscount;
+        if (total < 0) total = 0;
+
+        document.getElementById('summarySubtotal').innerText = formatRupiah(subtotal);
+        document.getElementById('summaryShipping').innerText = formatRupiah(shippingCost);
+
+        const discountRow = document.getElementById('summaryDiscountRow');
+        if (appliedDiscount > 0) {
+          discountRow.style.display = 'flex';
+          document.getElementById('summaryDiscount').innerText = "-" + formatRupiah(appliedDiscount);
+        } else {
+          discountRow.style.display = 'none';
+        }
+
+        document.getElementById('summaryTotal').innerText = formatRupiah(total);
+      }
+
+      function formatRupiah(number) {
+        return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+      }
+
+      function submitCheckout(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('buyerName').value;
+        const phone = document.getElementById('buyerPhone').value;
+        const address = document.getElementById('buyerAddress').value;
+        const expeditionSelect = document.getElementById('shippingExpedition');
+        const expedition = expeditionSelect.value;
+        const shippingCost = parseInt(expeditionSelect.options[expeditionSelect.selectedIndex].getAttribute('data-cost')) || 0;
+
+        let subtotal = 0;
+        let itemsListStr = "";
+        cartItems.forEach((item, idx) => {
+          subtotal += item.priceValue * item.qty;
+          itemsListStr += `${idx + 1}. ${item.name} (${item.qty}x) - ${item.color} - Size ${item.size} @ ${item.priceText}\n`;
+        });
+
+        let finalTotal = subtotal + shippingCost - appliedDiscount;
+        if (finalTotal < 0) finalTotal = 0;
+
+        const waMessage = `Halo Angsana Outdoor, saya ingin memesan produk berikut:
+
+*DETAIL KERANJANG:*
+${itemsListStr}
+*DATA PENGIRIMAN PELANGGAN:*
+- Nama Penerima: ${name}
+- Nomor Telepon: ${phone}
+- Alamat Lengkap: ${address}
+- Ekspedisi Kurir: ${expedition} (${formatRupiah(shippingCost)})
+${appliedVoucherName ? `- Voucher Digunakan: ${appliedVoucherName}` : ''}
+
+*RINCIAN PEMBAYARAN:*
+- Subtotal: ${formatRupiah(subtotal)}
+- Ongkir: ${formatRupiah(shippingCost)}
+${appliedDiscount > 0 ? `- Diskon: -${formatRupiah(appliedDiscount)}` : ''}
+*TOTAL PEMBAYARAN:* ${formatRupiah(finalTotal)}
+
+Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
+
+        const encodedMessage = encodeURIComponent(waMessage);
+        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        closeCheckoutModal();
+        cartItems = [];
+        updateCartUI();
+      }
+
+      // HERO SLIDER & EDITABLE FEATURED HIGHLIGHT LOGIC
+      const heroSlidesData = [
+        { 
+          title: "VEST APOLLO 7,5L", 
+          price: "Rp 299.000", 
+          category: "VEST RUNNING", 
+          photos: [
+            // "id-11134207-822wo-mp2cpgenej9c91.jpeg",
+            "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
+           "id-11134207-81ztq-mqvlth3z124qc8.jpeg"
+          ]
+        },
+        { 
+          title: "VEST ARTEMIS 8L", 
+          price: "Rp 379.000", 
+          category: "VEST RUNNING", 
+          photos: [
+            "id-11134207-81zth-mr5euy1id9n0db.jpeg",
+            "id-11134207-81zti-mr5evbhodhxg34.jpeg"
             
-            const discountRow = document.getElementById('discountRow');
-            if (discountAmount > 0) {
-                discountRow.classList.remove('hidden');
-                document.getElementById('summaryDiscount').textContent = `- ${formatRupiah(discountAmount)}`;
-            } else {
-                discountRow.classList.add('hidden');
-            }
-
-            const grandTotal = Math.max(0, subtotal + shippingCost - discountAmount);
-
-            document.getElementById('summarySubtotal').textContent = formatRupiah(subtotal);
-            document.getElementById('summaryShipping').textContent = formatRupiah(shippingCost);
-            document.getElementById('summaryGrandTotal').textContent = formatRupiah(grandTotal);
+          ] 
+        },
+        { 
+          title: "VEST ATHENA 10L", 
+          price: "Rp 315.000", 
+          category: "VEST RUNNING", 
+          photos: [
+            "id-11134201-81ztj-mthvqj6c45c597.jpeg",
+            // "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
+          ] 
         }
+      ];
 
-        function submitToWhatsApp() {
-            const name = document.getElementById('shipName').value.trim();
-            const phone = document.getElementById('shipPhone').value.trim();
-            const address = document.getElementById('shipAddress').value.trim();
-            const city = document.getElementById('shipCity').value.trim();
-            const courierVal = document.getElementById('shippingCourier')?.value || "25000|JNE Express Reguler";
-            const shippingCost = parseInt(courierVal.split('|')[0]);
-            const shippingName = courierVal.split('|')[1];
-            const notes = document.getElementById('shipNotes').value.trim() || "-";
-            
-            const paymentRad = document.querySelector('input[name="paymentMethod"]:checked');
-            const paymentMethod = paymentRad ? paymentRad.value : "Transfer Bank";
+      let currentSlide = 0;
+      let currentPhotoIndex = 0;
+      let slideInterval = null;
+      const intervalDuration = 4000;
+      const slides = document.querySelectorAll('.hero-slide');
 
-            if (!name || !phone || !address || !city) {
-                alert("Mohon lengkapi Nama, Nomor HP, Alamat, dan Kota Pengiriman!");
-                return;
-            }
+      function updateSlideUI() {
+        slides.forEach((slide, idx) => {
+          if (idx === currentSlide) { slide.classList.add('active'); } else { slide.classList.remove('active'); }
+        });
 
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const grandTotal = Math.max(0, subtotal + shippingCost - discountAmount);
-            const orderId = `#AO-${Math.floor(10000 + Math.random() * 90000)}`;
+        currentPhotoIndex = 0;
+        renderFeaturedCard();
+      }
 
-            let message = `Halo Admin *ANGSANA OUTDOOR*, saya mau pesen barang outdoor berikut:\n\n`;
-            message += `📜 *INVOICE PESANAN:* ${orderId}\n`;
-            message += `----------------------------------------\n`;
-            
-            cart.forEach((item, index) => {
-                message += `${index + 1}. *${item.name}*\n`;
-                message += `   • Ukuran: ${item.selectedSize}\n`;
-                message += `   • Warna: ${item.selectedColor}\n`;
-                message += `   • Kuantitas: ${item.qty} x ${formatRupiah(item.price)}\n`;
-                message += `   • Subtotal: ${formatRupiah(item.price * item.qty)}\n\n`;
-            });
+      function renderFeaturedCard() {
+        const data = heroSlidesData[currentSlide];
+        if (!data) return;
 
-            message += `----------------------------------------\n`;
-            message += `💵 *RINGKASAN BIAYA:*\n`;
-            message += `• Subtotal Produk: ${formatRupiah(subtotal)}\n`;
-            if (discountAmount > 0) {
-                message += `• Diskon Promo: -${formatRupiah(discountAmount)}\n`;
-            }
-            message += `• Ongkir (${shippingName}): ${formatRupiah(shippingCost)}\n`;
-            message += `*TOTAL KESELURUHAN: ${formatRupiah(grandTotal)}*\n\n`;
+        if (document.getElementById('cardTitle')) document.getElementById('cardTitle').innerText = data.title;
+        if (document.getElementById('cardPrice')) document.getElementById('cardPrice').innerText = data.price;
+        if (document.getElementById('cardCategory')) document.getElementById('cardCategory').innerText = data.category;
+        
+        const activePhoto = data.photos[currentPhotoIndex] || data.photos[0];
+        if (document.getElementById('cardImage')) document.getElementById('cardImage').src = activePhoto;
 
-            message += `----------------------------------------\n`;
-            message += `🚚 *DATA PENGIRIMAN:*\n`;
-            message += `• *Nama:* ${name}\n`;
-            message += `• *No. HP/WA:* ${phone}\n`;
-            message += `• *Alamat:* ${address}\n`;
-            message += `• *Kota/Kab:* ${city}\n`;
-            message += `• *Metode Bayar:* ${paymentMethod}\n`;
-            message += `• *Catatan:* ${notes}\n\n`;
-
-            message += `Mohon beri instruksi nomor rekening / QRIS untuk penyelesaian pembayaran. Terima kasih!`;
-
-            const waNumber = "6281268888651"; // Nomor WA Admin Angsana Outdoor
-            const encodedText = encodeURIComponent(message);
-            window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
-
-            closeCheckoutModal();
+        const thumbContainer = document.getElementById('featuredThumbnails');
+        if (thumbContainer) {
+          thumbContainer.innerHTML = '';
+          data.photos.forEach((photoUrl, idx) => {
+            const isActive = idx === currentPhotoIndex;
+            thumbContainer.innerHTML += `
+              <button onclick="setFeaturedPhoto(${idx})" class="w-12 h-10 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-white/20 opacity-60 hover:opacity-100'}">
+                <img src="${photoUrl}" class="w-full h-full object-cover">
+              </button>
+            `;
+          });
         }
+      }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-        document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.hero-slide');
-    let currentIndex = 0;
-    const intervalTime = 4000; // Ganti gambar tiap 4 detik (4000ms)
+      function setFeaturedPhoto(idx) {
+        currentPhotoIndex = idx;
+        renderFeaturedCard();
+      }
 
-    function nextSlide() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
-    }
+      function nextFeaturedPhoto() {
+        const data = heroSlidesData[currentSlide];
+        currentPhotoIndex = (currentPhotoIndex + 1) % data.photos.length;
+        renderFeaturedCard();
+      }
 
-    if (slides.length > 1) {
-      setInterval(nextSlide, intervalTime);
-    }
-  });
+      function prevFeaturedPhoto() {
+        const data = heroSlidesData[currentSlide];
+        currentPhotoIndex = (currentPhotoIndex - 1 + data.photos.length) % data.photos.length;
+        renderFeaturedCard();
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlideUI();
+      }
+
+      function startAutoplay() {
+        if (slideInterval) clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalDuration);
+        updateSlideUI();
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        renderCatalog();
+        startAutoplay();
+      });
     </script>
 </body>
 </html>
