@@ -2,7 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ANGSANA OUTDOOR - Premium Outdoor Gear & Activewear</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,7 +39,7 @@
 
     <style>
       .glass-header {
-        background: rgba(17, 17, 17, 0.85);
+        background: rgba(17, 17, 17, 0.92);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
@@ -61,8 +61,18 @@
         pointer-events: auto;
       }
 
+      /* Custom Horizontal Scrollbar Hiding for Category Bar */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
+        height: 6px;
       }
       ::-webkit-scrollbar-track {
         background: #1A1919;
@@ -71,37 +81,42 @@
         background: #C17F44;
         border-radius: 4px;
       }
+
+      /* Mobile Safe Area Padding */
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+      }
     </style>
 </head>
-<body class="bg-brand-sand text-brand-charcoal font-sans antialiased selection:bg-brand-tan selection:text-white">
+<body class="bg-brand-sand text-brand-charcoal font-sans antialiased selection:bg-brand-tan selection:text-white pb-20 md:pb-0">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="sticky top-0 z-50 glass-header text-white border-b border-white/10 transition-all duration-300">
+    <header class="sticky top-0 z-40 glass-header text-white border-b border-white/10 transition-all duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20 gap-4">
+        <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           
           <!-- Logo Brand -->
-          <a href="#hero" class="flex items-center gap-3 cursor-pointer group flex-shrink-0">
+          <a href="#hero" class="flex items-center gap-2 sm:gap-3 cursor-pointer group flex-shrink-0">
             <img 
               id="brand-logo-img"
               src="WhatsApp Image 2026-10-11 at 10.15.00.jpeg" 
               alt="ANGSANA OUTDOOR Logo" 
-              class="h-10 w-auto object-contain rounded-lg shadow-sm border border-brand-amber/30 bg-white/10 p-1 transition-transform group-hover:scale-105"
-              onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1A1919/D28835?text=ANGSANA';"
+              class="h-8 sm:h-10 w-auto object-contain rounded-lg shadow-sm border border-brand-amber/30 bg-white/10 p-1 transition-transform group-hover:scale-105"
+              onerror="this.onerror=null; this.src='https://placehold.co/150x50/1A1919/D28835?text=ANGSANA';"
             />
             <div class="flex flex-col">
-              <span class="font-heading font-black text-xl tracking-wider text-white block leading-none group-hover:text-brand-amber transition-colors">
+              <span class="font-heading font-black text-lg sm:text-xl tracking-wider text-white block leading-none group-hover:text-brand-amber transition-colors">
                 ANGSANA
               </span>
-              <span class="text-[10px] tracking-[0.25em] font-bold text-brand-amber uppercase block mt-1">
+              <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-bold text-brand-amber uppercase block mt-0.5 sm:mt-1">
                 ACTIVEWEAR
               </span>
             </div>
           </a>
 
           <!-- Desktop Navigation Menu -->
-          <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wider uppercase">
-            <a href="#hero" class="text-brand-amber transition-colors flex items-center gap-2 font-bold">
+          <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-xs lg:text-sm tracking-wider uppercase">
+            <a href="#hero" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
               <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Beranda
             </a>
             <a href="#katalog" class="hover:text-brand-amber transition-colors">Katalog Produk</a>
@@ -109,9 +124,9 @@
           </nav>
 
           <!-- Search Bar & Action Buttons -->
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 sm:gap-3">
             <!-- Search Input Desktop/Tablet -->
-            <div class="relative hidden sm:block w-48 lg:w-64">
+            <div class="relative hidden sm:block w-40 sm:w-48 lg:w-64">
               <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
@@ -125,21 +140,21 @@
             </div>
 
             <!-- Cart Button -->
-            <button onclick="toggleCartDrawer()" class="relative p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center justify-center flex-shrink-0">
-              <i class="fa-solid fa-cart-shopping text-lg text-brand-amber"></i>
-              <span id="cartBadge" class="absolute -top-1.5 -right-1.5 bg-brand-accent text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md">0</span>
+            <button onclick="toggleCartDrawer()" class="relative p-2 sm:p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-cart-shopping text-base sm:text-lg text-brand-amber"></i>
+              <span id="cartBadge" class="absolute -top-1.5 -right-1.5 bg-brand-accent text-white font-black text-[10px] w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center shadow-md">0</span>
             </button>
 
             <!-- WhatsApp Button -->
-            <a href="https://wa.me/?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
-              <i class="fa-brands fa-whatsapp text-lg"></i>
-              <span>Hubungi WA</span>
+            <a href="https://wa.me/?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
+              <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+              <span class="hidden lg:inline">Hubungi WA</span>
             </a>
           </div>
 
         </div>
         
-        <!-- Mobile Search Input (Muncul di bawah header pada layar kecil) -->
+        <!-- Mobile Search Input -->
         <div class="pb-3 sm:hidden">
           <div class="relative w-full">
             <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
@@ -150,81 +165,107 @@
               id="mobileSearchInput" 
               oninput="handleSearch(this.value)"
               placeholder="Cari produk Angsana..." 
-              class="w-full pl-9 pr-4 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
+              class="w-full pl-9 pr-8 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
             >
+            <button onclick="clearSearch()" id="clearSearchBtn" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hidden">
+              <i class="fa-solid fa-circle-xmark text-xs"></i>
+            </button>
           </div>
         </div>
 
       </div>
     </header>
 
+    <!-- MOBILE BOTTOM NAVBAR (Sticky HP Navigation) -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-3 py-2 flex items-center justify-around shadow-2xl">
+      <a href="#hero" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-1">
+        <i class="fa-solid fa-house text-lg"></i>
+        <span class="text-[10px] font-medium mt-0.5">Beranda</span>
+      </a>
+      <a href="#katalog" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-1">
+        <i class="fa-solid fa-layer-group text-lg"></i>
+        <span class="text-[10px] font-medium mt-0.5">Katalog</span>
+      </a>
+      <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-400 hover:text-brand-amber relative py-1">
+        <div class="relative">
+          <i class="fa-solid fa-cart-shopping text-lg"></i>
+          <span id="mobileBottomCartBadge" class="absolute -top-2 -right-3 bg-brand-accent text-white font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </div>
+        <span class="text-[10px] font-medium mt-0.5">Keranjang</span>
+      </button>
+      <a href="https://wa.me/?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-1">
+        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <span class="text-[10px] font-medium mt-0.5">WhatsApp</span>
+      </a>
+    </div>
+
     <!-- HERO SECTION -->
-    <section id="hero" class="relative min-h-[78vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+    <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[78vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
       
       <div class="hero-slide active" data-index="0">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <div class="hero-slide" data-index="1">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <div class="hero-slide" data-index="2">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-80"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
-      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <div class="lg:col-span-7 text-white space-y-6">
-            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-amber/20 border border-brand-amber/50 backdrop-blur-md">
-              <span class="relative flex h-3 w-3">
+          <div class="lg:col-span-7 text-white space-y-4 sm:space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-amber/20 border border-brand-amber/50 backdrop-blur-md">
+              <span class="relative flex h-2.5 w-2.5">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span class="text-xs font-bold tracking-wider uppercase text-brand-amber">NEW REBORN COLLECTION 2026</span>
+              <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">NEW REBORN COLLECTION 2026</span>
             </div>
 
-            <h1 class="font-heading font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.1]">
-              EXPLORE WITHOUT <br>
+            <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.15]">
+              EXPLORE WITHOUT <br class="hidden sm:inline">
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-amber via-amber-300 to-amber-500">
                 LIMITS & BOUNDS
               </span>
             </h1>
 
-            <p class="text-gray-300 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+            <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
               Peralatan outdoor dan perlengkapan pendakian generasi terbaru. Didesain dengan material super ringan, breathable, dan ergonomis.
             </p>
 
-            <div class="flex flex-wrap items-center gap-4 pt-4">
-              <a href="#katalog" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all">
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <a href="#katalog" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
                 <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
               </a>
             </div>
           </div>
 
           <!-- FEATURED HIGHLIGHT CARD -->
-          <div class="lg:col-span-5 relative">
-            <div class="p-6 rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
-              <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+          <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+            <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+              <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:pb-4 sm:mb-4">
                 <div>
-                  <span class="text-[10px] uppercase font-bold tracking-widest text-brand-amber block">Featured Highlight</span>
-                  <h3 id="cardTitle" class="font-heading font-extrabold text-2xl text-white">TENDA DOME 4P</h3>
+                  <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-brand-amber block">Featured Highlight</span>
+                  <h3 id="cardTitle" class="font-heading font-extrabold text-lg sm:text-2xl text-white">TENDA DOME 4P</h3>
                 </div>
-                <span id="cardPrice" class="px-3 py-1.5 rounded-lg bg-brand-tan text-white font-bold text-sm shadow">
+                <span id="cardPrice" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-brand-tan text-white font-bold text-xs sm:text-sm shadow">
                   Rp 899.000
                 </span>
               </div>
 
-              <div class="relative h-64 rounded-2xl overflow-hidden bg-black/30 mb-4 group">
-                <img id="cardImage" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase border border-white/20">
+              <div class="relative h-48 sm:h-60 lg:h-64 rounded-xl sm:rounded-2xl overflow-hidden bg-black/30 mb-3 sm:mb-4 group">
+                <img id="cardImage" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1A1919/D28835?text=Angsana+Outdoor';">
+                <div class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/20">
                   <span id="cardCategory">Camping Gear</span>
                 </div>
                 
@@ -236,7 +277,7 @@
                 </button>
               </div>
 
-              <div class="flex items-center gap-2 overflow-x-auto pt-1" id="featuredThumbnails"></div>
+              <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="featuredThumbnails"></div>
             </div>
           </div>
 
@@ -245,68 +286,74 @@
     </section>
 
     <!-- KATALOG PRODUK -->
-    <section id="katalog" class="py-20 bg-brand-sand border-t border-gray-200">
+    <section id="katalog" class="py-8 sm:py-16 bg-brand-sand border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-2">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
-            <h2 class="font-heading font-black text-3xl sm:text-4xl text-brand-charcoal mt-1">Produk Angsana Outdoor</h2>
+            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
+            <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal mt-0.5">Produk Angsana Outdoor</h2>
           </div>
-          <div id="searchResultInfo" class="text-xs text-gray-500 mt-2 md:mt-0 italic"></div>
+          <div id="searchResultInfo" class="text-xs text-gray-500 italic"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productGridContainer"></div>
+        <!-- CATEGORY FILTER TABS (Mobile Friendly Scroll with Touch-friendly Paddings) -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-5 sm:mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer">
+          <!-- Filled via JavaScript -->
+        </div>
+
+        <!-- PRODUCT GRID (Single Column / Large Card Layout on Mobile for High Readability) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6" id="productGridContainer"></div>
 
       </div>
     </section>
 
     <!-- MODAL DETAIL PRODUK -->
-    <div id="productDetailModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4 py-6 overflow-y-auto">
-      <div class="bg-white w-full max-w-2xl rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-gray-100 my-auto">
-        <button onclick="closeProductDetailModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl z-10">
+    <div id="productDetailModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm hidden p-0 sm:p-6 overflow-y-auto">
+      <div class="bg-white w-full max-w-2xl rounded-t-3xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl relative border border-gray-100 my-0 sm:my-auto max-h-[92vh] sm:max-h-[90vh] overflow-y-auto">
+        <button onclick="closeProductDetailModal()" class="absolute top-4 right-4 sm:top-5 sm:right-5 w-9 h-9 rounded-full bg-gray-100 text-gray-600 hover:text-gray-900 flex items-center justify-center text-lg z-10 transition-colors shadow-sm">
           <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-start pt-2 sm:pt-0">
           <div>
-            <div class="relative h-72 rounded-2xl overflow-hidden bg-gray-100 mb-3">
+            <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-gray-100 mb-3 shadow-inner">
               <img id="detailModalImage" src="" alt="Detail Produk" class="w-full h-full object-cover">
             </div>
-            <div class="flex items-center gap-2 overflow-x-auto" id="detailModalGallery"></div>
+            <div class="flex items-center gap-2.5 overflow-x-auto pb-1 no-scrollbar" id="detailModalGallery"></div>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3 sm:space-y-4">
             <div>
               <span id="detailModalCategory" class="text-xs text-brand-tan font-bold uppercase tracking-wider block"></span>
-              <h3 id="detailModalName" class="font-heading font-extrabold text-2xl text-brand-charcoal mt-1"></h3>
-              <div class="flex items-center gap-2 mt-1">
+              <h3 id="detailModalName" class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal mt-1 leading-snug"></h3>
+              <div class="flex items-center gap-2.5 mt-2">
                 <span id="detailModalRating" class="text-xs font-bold text-amber-500"></span>
                 <span class="text-gray-300">|</span>
                 <span id="detailModalStockStatus" class="text-xs font-bold"></span>
               </div>
             </div>
 
-            <div>
-              <span class="text-xs text-gray-400 block">Harga Resmi</span>
-              <span id="detailModalPrice" class="font-black text-2xl text-brand-charcoal"></span>
+            <div class="bg-brand-sand/60 p-3 rounded-xl border border-brand-khaki/30">
+              <span class="text-[10px] sm:text-xs text-gray-500 uppercase font-semibold block">Harga Resmi</span>
+              <span id="detailModalPrice" class="font-black text-2xl sm:text-2xl text-brand-charcoal"></span>
             </div>
 
-            <p id="detailModalDesc" class="text-xs text-gray-600 leading-relaxed"></p>
+            <p id="detailModalDesc" class="text-xs sm:text-sm text-gray-600 leading-relaxed max-h-32 overflow-y-auto pr-1"></p>
 
             <div class="pt-2 border-t border-gray-100">
-              <span class="text-xs text-gray-500 block mb-1">Varian Warna: <strong id="detailModalColorName" class="text-brand-charcoal"></strong></span>
-              <div id="detailModalVariants" class="flex items-center gap-2"></div>
+              <span class="text-xs text-gray-500 block mb-2">Varian Warna: <strong id="detailModalColorName" class="text-brand-charcoal"></strong></span>
+              <div id="detailModalVariants" class="flex items-center gap-2.5 flex-wrap"></div>
             </div>
 
             <div class="pt-1">
-              <span class="text-xs text-gray-500 block mb-1">Ukuran (Size):</span>
-              <div id="detailModalSizes" class="flex items-center gap-2"></div>
+              <span class="text-xs text-gray-500 block mb-2">Ukuran (Size):</span>
+              <div id="detailModalSizes" class="flex items-center gap-2 flex-wrap"></div>
             </div>
 
-            <div class="pt-4">
-              <button id="detailModalAddBtn" onclick="" class="w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-cart-plus"></i>
+            <div class="pt-3">
+              <button id="detailModalAddBtn" onclick="" class="w-full py-4 sm:py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95">
+                <i class="fa-solid fa-cart-plus text-base"></i>
                 <span>Masukkan ke Keranjang</span>
               </button>
             </div>
@@ -316,26 +363,26 @@
     </div>
 
     <!-- SHOPPING CART DRAWER -->
-    <div id="cartOverlay" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden transition-opacity"></div>
-    <div id="cartDrawer" class="fixed top-0 right-0 z-50 w-full max-w-md h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-      <div class="p-5 border-b border-gray-100 flex items-center justify-between bg-brand-charcoal text-white">
+    <div id="cartOverlay" onclick="toggleCartDrawer()" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden transition-opacity"></div>
+    <div id="cartDrawer" class="fixed top-0 right-0 z-50 w-full max-w-sm sm:max-w-md h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+      <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-brand-charcoal text-white">
         <div class="flex items-center gap-2">
           <i class="fa-solid fa-cart-shopping text-brand-amber"></i>
-          <h3 class="font-heading font-bold text-lg">Keranjang Belanja (<span id="cartCountHeader">0</span>)</h3>
+          <h3 class="font-heading font-bold text-base sm:text-lg">Keranjang Belanja (<span id="cartCountHeader">0</span>)</h3>
         </div>
-        <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-xl">
+        <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white text-xl p-1">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 divide-y divide-gray-100"></div>
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 divide-y divide-gray-100"></div>
 
-      <div class="p-5 border-t border-gray-100 bg-brand-sand">
-        <div class="flex justify-between text-sm font-bold text-brand-charcoal mb-4">
+      <div class="p-4 sm:p-5 border-t border-gray-100 bg-brand-sand pb-safe">
+        <div class="flex justify-between text-xs sm:text-sm font-bold text-brand-charcoal mb-4">
           <span>Subtotal Keranjang:</span>
-          <span id="cartSubtotal" class="text-brand-tan text-base">Rp 0</span>
+          <span id="cartSubtotal" class="text-brand-tan text-sm sm:text-base">Rp 0</span>
         </div>
-        <button onclick="openCheckoutModalFromCart()" id="checkoutCartBtn" class="w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+        <button onclick="openCheckoutModalFromCart()" id="checkoutCartBtn" class="w-full py-3 sm:py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
           <i class="fa-solid fa-bag-shopping"></i>
           <span>Lanjut ke Checkout</span>
         </button>
@@ -343,37 +390,37 @@
     </div>
 
     <!-- MODAL CHECKOUT -->
-    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4 py-6 overflow-y-auto">
-      <div class="bg-white w-full max-w-lg rounded-3xl p-6 sm:p-8 shadow-2xl relative border border-gray-100 my-auto">
-        <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 text-xl">
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-3 py-4 sm:p-6 overflow-y-auto">
+      <div class="bg-white w-full max-w-lg rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl relative border border-gray-100 my-auto max-h-[92vh] overflow-y-auto">
+        <button onclick="closeCheckoutModal()" class="absolute top-3 right-3 sm:top-5 sm:right-5 w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:text-gray-900 flex items-center justify-center text-lg z-10">
           <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <h3 class="font-heading font-extrabold text-2xl text-brand-charcoal mb-1">Formulir Checkout & Pembayaran</h3>
-        <p class="text-xs text-gray-500 mb-4">Lengkapi data pengiriman dan gunakan voucher diskon Anda.</p>
+        <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal mb-1">Formulir Checkout & Pembayaran</h3>
+        <p class="text-xs text-gray-500 mb-3 sm:mb-4">Lengkapi data pengiriman dan gunakan voucher diskon Anda.</p>
 
-        <div id="modalCartSummary" class="bg-brand-sand p-4 rounded-2xl mb-4 max-h-40 overflow-y-auto space-y-2 border border-brand-khaki/40"></div>
+        <div id="modalCartSummary" class="bg-brand-sand p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 max-h-36 overflow-y-auto space-y-2 border border-brand-khaki/40"></div>
 
-        <form id="checkoutForm" onsubmit="submitCheckout(event)" class="space-y-4">
+        <form id="checkoutForm" onsubmit="submitCheckout(event)" class="space-y-3 sm:space-y-4">
           <div>
-            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Lengkap Penerima</label>
-            <input type="text" id="buyerName" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm">
+            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Nama Lengkap Penerima</label>
+            <input type="text" id="buyerName" required placeholder="Contoh: Budi Santoso" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm">
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nomor Telepon / WhatsApp Aktif</label>
-            <input type="tel" id="buyerPhone" required placeholder="Contoh: 081234567890" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm">
+            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Nomor Telepon / WhatsApp Aktif</label>
+            <input type="tel" id="buyerPhone" required placeholder="Contoh: 081234567890" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm">
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Alamat Lengkap Pengiriman</label>
-            <textarea id="buyerAddress" required rows="2" placeholder="Nama Jalan, No Rumah, RT/RW, Kecamatan, Kota, Kode Pos" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm"></textarea>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Alamat Lengkap Pengiriman</label>
+            <textarea id="buyerAddress" required rows="2" placeholder="Nama Jalan, No Rumah, RT/RW, Kecamatan, Kota, Kode Pos" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm"></textarea>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Ekspedisi Kurir</label>
-              <select id="shippingExpedition" onchange="calculateTotal()" required class="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm bg-white">
+              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Ekspedisi Kurir</label>
+              <select id="shippingExpedition" onchange="calculateTotal()" required class="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm bg-white">
                 <option value="" disabled selected>-- Pilih Kurir --</option>
                 <option value="JNE Express" data-cost="20000">JNE Express (Rp 20.000)</option>
                 <option value="J&T Express" data-cost="18000">J&T Express (Rp 18.000)</option>
@@ -384,17 +431,17 @@
             </div>
 
             <div>
-              <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Kode Voucher Diskon</label>
+              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Kode Voucher Diskon</label>
               <div class="flex gap-2">
-                <input type="text" id="voucherCode" placeholder="Cth: ANGSANA20" class="w-full px-3 py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-sm uppercase">
-                <button type="button" onclick="applyVoucher()" class="px-3 py-2.5 bg-brand-charcoal text-white rounded-xl text-xs font-bold hover:bg-brand-tan transition-colors">Pakai</button>
+                <input type="text" id="voucherCode" placeholder="ANGSANA20" class="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm uppercase">
+                <button type="button" onclick="applyVoucher()" class="px-3 py-2 sm:py-2.5 bg-brand-charcoal text-white rounded-xl text-xs font-bold hover:bg-brand-tan transition-colors flex-shrink-0">Pakai</button>
               </div>
             </div>
           </div>
 
           <div id="voucherStatus" class="text-xs font-semibold text-emerald-600 hidden"></div>
 
-          <div class="bg-gray-50 p-4 rounded-2xl border border-gray-200 space-y-1.5 text-xs">
+          <div class="bg-gray-50 p-3.5 rounded-xl sm:rounded-2xl border border-gray-200 space-y-1.5 text-xs">
             <div class="flex justify-between text-gray-600">
               <span>Subtotal Keranjang:</span>
               <span id="summarySubtotal">Rp 0</span>
@@ -407,14 +454,14 @@
               <span>Potongan Voucher:</span>
               <span id="summaryDiscount">-Rp 0</span>
             </div>
-            <div class="pt-2 border-t border-gray-200 flex justify-between items-center text-sm font-black text-brand-charcoal">
+            <div class="pt-2 border-t border-gray-200 flex justify-between items-center text-xs sm:text-sm font-black text-brand-charcoal">
               <span>Total Pembayaran:</span>
-              <span id="summaryTotal" class="text-brand-tan text-base">Rp 0</span>
+              <span id="summaryTotal" class="text-brand-tan text-sm sm:text-base">Rp 0</span>
             </div>
           </div>
 
-          <div class="pt-2">
-            <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-emerald-900/20 transition-all flex items-center justify-center gap-2">
+          <div class="pt-1">
+            <button type="submit" class="w-full py-3 sm:py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-emerald-900/20 transition-all flex items-center justify-center gap-2">
               <i class="fa-brands fa-whatsapp text-lg"></i>
               <span>Kirim Pesanan ke WhatsApp</span>
             </button>
@@ -424,22 +471,22 @@
     </div>
 
     <!-- KEUNGGULAN SECTION -->
-    <section id="keunggulan" class="py-16 bg-white border-t border-gray-100">
+    <section id="keunggulan" class="py-12 sm:py-16 bg-white border-t border-gray-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div class="p-6 rounded-2xl bg-brand-sand">
-            <i class="fa-solid fa-truck-fast text-3xl text-brand-tan mb-3"></i>
-            <h3 class="font-bold text-lg mb-1">Pengiriman Cepat</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
+          <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-truck-fast text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
+            <h3 class="font-bold text-base sm:text-lg mb-1">Pengiriman Cepat</h3>
             <p class="text-xs text-gray-500">Pilihan ekspedisi terpercaya ke seluruh Indonesia.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-brand-sand">
-            <i class="fa-solid fa-shield-halved text-3xl text-brand-tan mb-3"></i>
-            <h3 class="font-bold text-lg mb-1">Garansi Original</h3>
+          <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-shield-halved text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
+            <h3 class="font-bold text-base sm:text-lg mb-1">Garansi Original</h3>
             <p class="text-xs text-gray-500">100% Produk Asli Angsana Activewear bergaransi resmi.</p>
           </div>
-          <div class="p-6 rounded-2xl bg-brand-sand">
-            <i class="fa-solid fa-headset text-3xl text-brand-tan mb-3"></i>
-            <h3 class="font-bold text-lg mb-1">Layanan Konsultasi WA</h3>
+          <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
+            <i class="fa-solid fa-headset text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
+            <h3 class="font-bold text-base sm:text-lg mb-1">Layanan Konsultasi WA</h3>
             <p class="text-xs text-gray-500">Bebas konsultasi ukuran dan varian langsung.</p>
           </div>
         </div>
@@ -447,8 +494,8 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-brand-charcoal text-white py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer class="bg-brand-charcoal text-white py-10 sm:py-12 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-center md:text-left">
         <div class="flex items-center gap-3">
           <img src="logo.png" alt="Angsana Logo" class="h-8 w-auto object-contain rounded bg-white/10 p-0.5" onerror="this.style.display='none'">
           <span class="font-heading font-bold text-lg tracking-wider">ANGSANA OUTDOOR</span>
@@ -459,6 +506,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+      // EXTENDED CATALOG DATABASE
       const catalogProducts = [
         {
           id: "vest-running-apollo",
@@ -466,11 +514,11 @@
           category: "VEST RUNNING",
           priceValue: 299000,
           priceText: "Rp 299.000",
-          rating: "",
-          description: "Vest Running Angsana series Apollo 7,5 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech/Breathable Fabric,Comfortable Pattern,Dynamic of Movement,Durable selection,Great component,Functional fiture. Spesifikasi : Nylon | Spandek,Brethable fabric,YKK zipper,Astra Coach,Bartack,Nylon Strap,Premium Rope,Acetal Buckle,stitch distance measured",
+          rating: "4.8 (112)",
+          description: "Vest Running Angsana series Apollo 7,5 Liter. Dilengkapi teknologi Light Tech/Breathable Fabric, Comfortable Pattern, Dynamic of Movement, Durable selection, dan Functional feature.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "Standard",
+          selectedSize: "M",
           sizes: ["S","M","L","XL"],
           variants: [
             {
@@ -483,13 +531,12 @@
               ]
             },
             {
-              colorName: "blue sky",
+              colorName: "Blue Sky",
               colorHex: "#87CEEB",
               stock: 6,
               gallery: [
                 "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
-                "id-11134207-81ztp-mqvluxmxq41x87.jpeg",
-                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
+                "id-11134207-81ztp-mqvluxmxq41x87.jpeg"
               ]
             },
             {
@@ -498,8 +545,7 @@
               stock: 6,
               gallery: [
                 "id-11134207-822wi-mp2cqi1dvqbx48.jpeg",
-                "id-11134207-822wo-mp2cpgenej9c91.jpeg",
-                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
+                "id-11134207-822wo-mp2cpgenej9c91.jpeg"
               ]
             }
           ]
@@ -507,14 +553,14 @@
         {
           id: "vest-running-athena",
           name: "Vest Running Angsana series Athena 10 Liter",
-          category: "Vest Running",
+          category: "VEST RUNNING",
           priceValue: 315000,
           priceText: "Rp 315.000",
-          rating: "",
-          description: "Vest Running Angsana series Athena 10 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech,Breathable Fabric,Comfortable Pattern,Dynamic of Movement, Durable selection,Great component,Functional fiture",
+          rating: "4.9 (94)",
+          description: "Vest Running Angsana series Athena 10 Liter. Sangat cocok untuk long-distance trail running dengan kompartemen luas, jahitan bartack, dan strap elastis.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "",
+          selectedSize: "M",
           sizes: ["M", "L", "XL"],
           variants: [
             {
@@ -524,168 +570,278 @@
               gallery: [
                 "id-11134201-81ztj-mthvqj6c45c597.jpeg",
                 "id-11134201-81ztc-mthvqj6nfi16f1.jpeg",
-                "id-11134201-81ztj-mthvqj4keade5d.jpeg",
-                "id-11134201-81zto-mthvqj7z4007df.jpeg"
+                "id-11134201-81ztj-mthvqj4keade5d.jpeg"
               ]
             }
           ]
         },
         {
-          id: "Vest Running seri Artemis 8 Liter",
+          id: "vest-running-artemis",
           name: "Vest Running seri Artemis 8 Liter",
           category: "VEST RUNNING",
           priceValue: 379000,
           priceText: "Rp 379.000",
           rating: "4.7 (86)",
-          description: "Vest Trail Running Angsana series Artemis 8 Liter. Setelah melalui Research & Development dari para Elite Trail runner Angsana_activewear me Release artikel Vest proper yang telah melalui Technology : Light Tech,Breathable Fabric,Comfortable Pattern,Dynamic of Movement,Durable selection,Great component,Functional fiture. Vest Running seri Artemis 8 Liter cocok dipakai Training Endurance, Peak Training, short Trail event dengan kapabilitas sesuai kebutuhan Fun Runners :)",
+          description: "Vest Trail Running Angsana series Artemis 8 Liter. Cocok untuk Training Endurance, Peak Training, dan Short Trail event.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "STANDARD",
+          selectedSize: "L",
           sizes: ["S","M", "L", "XL"],
           variants: [
             {
               colorName: "Dark Gray",
-              colorHex: "#1A1919",
+              colorHex: "#2C2C2C",
               stock: 10,
               gallery: [
                 "id-11134207-81zth-mr5euy1id9n0db.jpeg",
                 "id-11134207-81ztm-mr5euy1kv5z44e.jpeg",
-                "id-11134207-81ztj-mr5euy22duz085.jpeg",
-                "id-11134207-81zti-mr5evbhodhxg34.jpeg",
-                "id-11134201-81ztq-msgj914hahhg7c.jpeg"
+                "id-11134207-81zti-mr5evbhodhxg34.jpeg"
               ]
             }
-            
           ]
         },
         {
-          id: "Running Jersey Short Angsana Super light weight Anti UV series Memphis, Tribal, Geo & Shibori, Stones",
-          name: "Running Jersey Short Angsana Super light weight Anti UV series Memphis, Tribal, Geo & Shibori, Stones",
+          id: "jersey-running-memphis",
+          name: "Running Jersey Short Angsana Super Light Anti UV",
           category: "JERSEY",
           priceValue: 149000,
           priceText: "Rp 149.000",
-          rating: "4.7 (86)",
-          description: "ersey olahraga yang didesain khusus untuk memenuhi kebutuhan olahraga kamu seperti running maupun training, jersey ini dilengkapi dengan teknologi Aeroready. Teknologi Aeroready Adalah Teknologi ini dirancang untuk menjaga atlet tetap kering dan sejuk dengan menyerap keringat dari kulit. Teknologi ini menggabungkan beberapa fitur unggulan dalam satu material yang canggih: Anti-Bacterial: Aeroready dilengkapi dengan teknologi anti-bakteri yang mencegah pertumbuhan mikroorganisme penyebab bau, menjaga kebersihan dan kesegaran kain lebih lama, bahkan setelah pemakaian intensif. Quick Dry: Teknologi ini memastikan kain cepat kering setelah terkena keringat atau air, memungkinkan sirkulasi udara yang optimal dan menjaga tubuh tetap kering dan nyaman selama aktivitas fisik.",
+          rating: "4.8 (142)",
+          description: "Jersey olahraga berteknologi Aeroready, Anti-Bacterial, dan Quick Dry. Memastikan sirkulasi udara optimal selama aktivitas running.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "STANDARD",
+          selectedSize: "",
           sizes: ["S","M", "L", "XL"],
           variants: [
             {
-              colorName: "SHIBORI SHORT",
+              colorName: "Shibori Short",
               colorHex: "#7A7F84",
               stock: 10,
               gallery: [
                 "id-11134207-8224y-mgwzk74lp1cce0.jpeg",
-                "id-11134207-82251-mgwzk74fq4g958.jpeg",
-                "id-11134207-8224x-mgwzk74lktn01c.jpeg",
-            
+                "id-11134207-82251-mgwzk74fq4g958.jpeg"
               ]
             },
             {
-              colorName: "MEMPHIS",
+              colorName: "Memphis",
               colorHex: "#3A638E",
-              stock: 10,
+              stock: 8,
               gallery: [
                 "id-11134207-8224u-mgwzk74lruh851.jpeg",
-                "/Users/macbook/Documents/latihan/id-11134207-8224s-mgwzk74li0i41d.jpeg",
-                "id-11134207-8224x-mgwzk74lktn01c.jpeg",
-            
-              ]
-            },
-              {
-              colorName: "STONES SHORT",
-              colorHex: "#4A6B70",
-              stock: 10,
-              gallery: [
-                "id-11134207-8224r-mkjkb2rml24i98.jpeg",
-                // "/Users/macbook/Documents/latihan/id-11134207-8224s-mgwzk74li0i41d.jpeg",
                 "id-11134207-8224x-mgwzk74lktn01c.jpeg"
-            
               ]
             },
             {
-              colorName: "GEO",
-              colorHex: "#E8D8C3",
-              stock: 10,
+              colorName: "Stones Short",
+              colorHex: "#4A6B70",
+              stock: 12,
               gallery: [
-                "id-11134207-8224p-mgwzk74lunm4d0.jpeg",
-                "id-11134207-8224q-mgwzk74lqfws9b.jpeg",
-                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
-            
+                "id-11134207-8224r-mkjkb2rml24i98.jpeg"
               ]
             },
-             {
-              colorName: "TRIBAL",
-              colorHex: "#1E1E1E",
-              stock: 10,
+            {
+              colorName: "Geo",
+              colorHex: "#E8D8C3",
+              stock: 5,
               gallery: [
-                "id-11134207-82252-mgwzk74lt91o83.jpeg",
-                "id-11134207-82251-mgwzk74lnmrwa3.jpeg",
-                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
-            
+                "id-11134207-8224p-mgwzk74lunm4d0.jpeg"
               ]
             }
-            
-            
-            
           ]
         },
-            {
-          id: "Angsana 404 NF Running Cap Ultralight Topi Running Quickdry",
-          name: "Angsana 404 NF Running Cap Ultralight Topi Running Quickdry",
+        {
+          id: "topi-running-404nf",
+          name: "Angsana 404 NF Running Cap Ultralight Quickdry",
           category: "TOPI",
           priceValue: 115000,
           priceText: "Rp 115.000",
-          rating: "",
-          description: "Dirancang untuk melindungi wajah Anda dari sinar matahari, menjaga kepala tetap sejuk dan Super ringan dipakai dengan Comfort Text membuat nya Sangat Nyaman dipakai. Filosofi 404 Not Found | “Hargai Waktu sebelum Waktu tidak lagi menghargaimu.”Laser Cut side Cap memberikan Sirkulasi Udara yang membantu topi ini selalu sejuk digunakan dalam Durasi waktu yang panjang ketiga digunakan. Spesifikasi : Brim Eva Spons Light tech, Nylon fabric Korean, Ultralight Tech, Waterrepellent, Urban Style, Quickdry tech",
+          rating: "4.9 (78)",
+          description: "Topi running super ringan dengan Laser Cut ventilation side cap, Brim Eva Spons, Nylon Fabric Korean, dan Quickdry tech.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "STANDARD",
+          selectedSize: "All Size",
           sizes: ["All Size"],
           variants: [
             {
-              colorName: "KHAKI",
+              colorName: "Khaki",
               colorHex: "#9EAAA1",
               stock: 10,
               gallery: [
                 "id-11134201-81ztj-mryctz4dce8182.jpeg",
-                "id-11134201-81ztl-mryctyz7rtaa18.jpeg",
-                "id-11134201-81ztd-mryctyihaebq51.jpeg",
-                "id-11134201-81ztg-mryctytf6hace5.jpeg",
-                "id-11134207-81ztf-mqvlhu9uefif84.jpeg",
-                
-            
+                "id-11134201-81ztl-mryctyz7rtaa18.jpeg"
               ]
             },
             {
-              colorName: "BLACK",
-              colorHex: "BLACK",
-              stock: 10,
+              colorName: "Black",
+              colorHex: "#111111",
+              stock: 14,
               gallery: [
                 "id-11134201-81ztj-mryctznh8mbo76.jpeg",
-                "id-11134201-81ztn-mrycu24exq126d.jpeg",
-                "id-11134201-81ztp-mryctyiqyr5z03.jpeg",
-                "id-11134207-81ztf-mqvlhu9uefif84.jpeg"
-            
+                "id-11134201-81ztn-mrycu24exq126d.jpeg"
               ]
             }
-            
-
+          ]
+        },
+        {
+          id: "Long sleeved T shirt Cotton SpanTech Ornamen series",
+          name: "Long sleeved T shirt Cotton SpanTech Ornamen series",
+          category: "KAOS",
+          priceValue: 149000,
+          priceText: "149.000",
+          rating: "4.9 (65)",
+          description: "Longs Sleeve Ornamen series dibuat dengan Teknologi Super Nyaman memberikan kelembutan pada kulit anda baik bersantai maupun beraktifitas. Dengan Material dari Cotton mix Spandek terbaik memberikan efek sejuk dan super lembut ketika dipakai. Spesifikasi: Terbuat dari bahan Cotton mix Spandek cool, Bahan Halus dan lembut, Type T-shirt O-neck, Gramasi 170gr/m2 untuk bahan putih",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "",
+          sizes: ["S","M","L","XL"],
+          variants: [
+            {
+              colorName: "BLACK",
+              colorHex: "BLACK",
+              stock: 5,
+              gallery: [
+                "id-11134207-81ztf-mtowdhvihkhs99.jpeg",
+                "Id-11134201-81ztn-mtow6uh8owsi19.jpeg",
+                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+              ]
+            },
+            {
+              colorName: "GREEN SAGE",
+              colorHex: "#8A9A86",
+              stock: 3,
+              gallery: [
+                "id-11134207-81ztg-mtowdoforgg258.jpeg",
+                "id-11134201-81ztq-mtow6uj54nb82b.jpeg",
+                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+              ]
+            },
+             {
+              colorName: "SALMON",
+              colorHex: "#AC525E",
+              stock: 3,
+              gallery: [
+                "id-11134207-81ztf-mtowdkud9zb4ce.jpeg",
+                "id-11134201-81zti-mtow6ugeew3lb0.jpeg",
+                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+              ]
+            }
+        //   ]
+        // }
+        // // {
+        // //   id: "sleeping-bag-ultralight",
+        // //   name: "Sleeping Bag Angsana Ultralight Down-Tech",
+        //   category: "PERALATAN",
+        //   priceValue: 245000,
+        //   priceText: "Rp 245.000",
+        //   rating: "4.8 (52)",
+        //   description: "Kantong tidur ultralight dengan isian sintetis micro-down thermal. Tahan dingin hingga batas ekstrem 5°C, hangat dan sangat ringkas saat dipacking.",
+        //   selectedImageIndex: 0,
+        //   selectedVariantIndex: 0,
+        //   selectedSize: "205 x 75 cm",
+        //   sizes: ["Standard"],
+        //   variants: [
+        //     {
+        //       colorName: "Navy Blue",
+        //       colorHex: "#1B2A4A",
+        //       stock: 8,
+        //       gallery: [
+        //         "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=800&q=80"
+        //       ]
+        //     },
+        //     {
+        //       colorName: "Terracotta",
+        //       colorHex: "#C17F44",
+        //       stock: 6,
+        //       gallery: [
+        //         "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
+        //       ]
+        //     }
+        //   ]
+        // },
+        // {
+        //   id: "raincoat-poncho-angsana",
+        //   name: "Jas Hujan Angsana Poncho Ultralight Water-Shield",
+        //   category: "PERALATAN",
+        //   priceValue: 185000,
+        //   priceText: "Rp 185.000",
+        //   rating: "4.7 (41)",
+        //   description: "Jas hujan tipe ponco berkapasitas carrier hingga 60L. Menggunakan bahan Taslan Ripstop WP dengan seal seam presisi anti-rembes.",
+        //   selectedImageIndex: 0,
+        //   selectedVariantIndex: 0,
+        //   selectedSize: "All Size",
+        //   sizes: ["All Size"],
+        //   variants: [
+        //     {
+        //       colorName: "Charcoal Black",
+        //       colorHex: "#1A1919",
+        //       stock: 12,
+        //       gallery: [
+        //         "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=800&q=80"
+        //       ]
+        //     }
           ]
         }
       ];
 
+      // GLOBAL STATE
       let cartItems = [];
       let appliedDiscount = 0;
       let appliedVoucherName = "";
       let activeDetailProductIndex = null;
       let detailModalActiveImageIdx = 0;
       let searchQuery = "";
+      let selectedCategory = "SEMUA";
+
+      const categoriesList = [
+        "SEMUA",
+        "VEST RUNNING",
+        "JERSEY",
+        "TOPI",
+        "TENDA & CAMPING",
+        "PERALATAN"
+      ];
 
       function handleSearch(query) {
         searchQuery = query.toLowerCase().trim();
+        const clearBtn = document.getElementById('clearSearchBtn');
+        if (clearBtn) {
+          if (searchQuery !== "") clearBtn.classList.remove('hidden');
+          else clearBtn.classList.add('hidden');
+        }
         renderCatalog();
+      }
+
+      function clearSearch() {
+        searchQuery = "";
+        document.getElementById('searchInput').value = "";
+        document.getElementById('mobileSearchInput').value = "";
+        document.getElementById('clearSearchBtn').classList.add('hidden');
+        renderCatalog();
+      }
+
+      function selectCategory(category) {
+        selectedCategory = category;
+        renderCategoryTabs();
+        renderCatalog();
+      }
+
+      function renderCategoryTabs() {
+        const container = document.getElementById('categoryFilterContainer');
+        if (!container) return;
+        container.innerHTML = '';
+
+        categoriesList.forEach(cat => {
+          const isActive = cat === selectedCategory;
+          container.innerHTML += `
+            <button onclick="selectCategory('${cat}')" class="px-4 py-2.5 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 min-h-[42px] sm:min-h-0 flex items-center justify-center ${
+              isActive 
+                ? 'bg-brand-charcoal text-white shadow-md' 
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+            }">
+              ${cat}
+            </button>
+          `;
+        });
       }
 
       function renderCatalog() {
@@ -693,33 +849,35 @@
         const infoEl = document.getElementById('searchResultInfo');
         container.innerHTML = '';
 
-        // Filter produk berdasarkan pencarian
+        // Filter product list
         const filteredProducts = catalogProducts.map((product, originalIndex) => ({ product, originalIndex })).filter(({ product }) => {
-          const matchName = product.name.toLowerCase().includes(searchQuery);
-          const matchCategory = product.category.toLowerCase().includes(searchQuery);
-          const matchDesc = product.description.toLowerCase().includes(searchQuery);
-          return matchName || matchCategory || matchDesc;
+          const matchCategory = selectedCategory === "SEMUA" || product.category.toUpperCase() === selectedCategory;
+          const matchQuery = searchQuery === "" || 
+            product.name.toLowerCase().includes(searchQuery) ||
+            product.category.toLowerCase().includes(searchQuery) ||
+            product.description.toLowerCase().includes(searchQuery);
+          return matchCategory && matchQuery;
         });
 
         if (searchQuery !== "") {
-          infoEl.innerText = `Menampilkan hasil untuk "${searchQuery}" (${filteredProducts.length} produk ditemukan)`;
+          infoEl.innerText = `Hasil pencarian "${searchQuery}" (${filteredProducts.length} produk)`;
         } else {
           infoEl.innerText = "";
         }
 
         if (filteredProducts.length === 0) {
           container.innerHTML = `
-            <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-gray-100 shadow-sm">
-              <i class="fa-solid fa-face-sad-tear text-4xl text-gray-300 mb-3"></i>
-              <h3 class="font-bold text-lg text-gray-700">Produk Tidak Ditemukan</h3>
-              <p class="text-xs text-gray-400 mt-1">Coba gunakan kata kunci pencarian yang lain.</p>
+            <div class="col-span-full text-center py-12 sm:py-16 bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm px-4">
+              <i class="fa-solid fa-face-sad-tear text-3xl sm:text-4xl text-gray-300 mb-2"></i>
+              <h3 class="font-bold text-base sm:text-lg text-gray-700">Produk Tidak Ditemukan</h3>
+              <p class="text-xs text-gray-400 mt-1">Coba sesuaikan kata kunci atau kategori yang Anda pilih.</p>
             </div>
           `;
           return;
         }
 
         filteredProducts.forEach(({ product, originalIndex: pIndex }) => {
-          const activeVariant = product.variants[product.selectedVariantIndex];
+          const activeVariant = product.variants[product.selectedVariantIndex] || product.variants[0];
           const activeImage = activeVariant.gallery[product.selectedImageIndex] || activeVariant.gallery[0];
           const isOutOfStock = activeVariant.stock <= 0;
 
@@ -727,8 +885,8 @@
           activeVariant.gallery.forEach((imgUrl, imgIndex) => {
             const isActive = imgIndex === product.selectedImageIndex;
             galleryHtml += `
-              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
-                <img src="${imgUrl}" class="w-full h-full object-cover">
+              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-11 h-11 sm:w-10 sm:h-10 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow-md' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+                <img src="${imgUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
               </button>
             `;
           });
@@ -737,8 +895,8 @@
           product.variants.forEach((varItem, vIndex) => {
             const isSelected = vIndex === product.selectedVariantIndex;
             variantsHtml += `
-              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-7 h-7 rounded-full border-2 transition-transform transform hover:scale-110 flex items-center justify-center ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-110' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
-                ${isSelected ? '<i class="fa-solid fa-check text-[10px] text-white drop-shadow"></i>' : ''}
+              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-7 h-7 sm:w-6 sm:h-6 rounded-full border-2 transition-transform transform active:scale-110 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-105' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+                ${isSelected ? '<i class="fa-solid fa-check text-[9px] text-white drop-shadow"></i>' : ''}
               </button>
             `;
           });
@@ -747,63 +905,65 @@
           product.sizes.forEach((size) => {
             const isSizeSelected = size === product.selectedSize;
             sizesHtml += `
-              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all ${isSizeSelected ? 'bg-brand-charcoal text-white shadow' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}">
+              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-bold transition-all min-w-[36px] min-h-[32px] sm:min-w-0 sm:min-h-0 flex items-center justify-center ${isSizeSelected ? 'bg-brand-charcoal text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
                 ${size}
               </button>
             `;
           });
 
           const cardHtml = `
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
-              <div class="relative h-72 overflow-hidden bg-gray-100">
-                <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                <span class="absolute top-3 left-3 px-3 py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[10px] font-extrabold uppercase">
+            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+              <!-- High-resolution prominent product image for mobile readability -->
+              <div class="relative h-72 sm:h-64 overflow-hidden bg-gray-100">
+                <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1A1919/D28835?text=Angsana+Outdoor';">
+                <span class="absolute top-3 left-3 px-3 py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[10px] sm:text-[9px] font-extrabold uppercase shadow-md tracking-wider">
                   ${isOutOfStock ? 'Stok Habis' : 'Tersedia'}
                 </span>
-                ${product.rating ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-amber-400 text-[10px] font-bold"><i class="fa-solid fa-star text-amber-400"></i> ${product.rating}</span>` : ''}
+                ${product.rating ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[10px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star"></i> ${product.rating}</span>` : ''}
               </div>
 
-              <div class="px-6 pt-4 flex items-center gap-2 overflow-x-auto">
+              <!-- Gallery thumbnails horizontal scrollbar -->
+              <div class="px-4 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar touch-pan-x">
                 ${galleryHtml}
               </div>
 
-              <div class="p-6 flex-1 flex flex-col justify-between">
+              <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <span class="text-xs text-brand-tan font-bold uppercase tracking-wider block mb-1">${product.category}</span>
-                  <h3 class="font-bold text-lg text-brand-charcoal">${product.name}</h3>
-                  <p class="text-xs text-gray-500 mt-1 line-clamp-2">${product.description}</p>
+                  <span class="text-[11px] sm:text-[10px] text-brand-tan font-bold uppercase tracking-wider block mb-1">${product.category}</span>
+                  <h3 class="font-heading font-extrabold text-base sm:text-base text-brand-charcoal leading-snug">${product.name}</h3>
                   
-                  <div class="mt-4 pt-3 border-t border-gray-100">
+                  <div class="mt-3 pt-3 border-t border-gray-100">
                     <div class="flex justify-between items-center text-xs mb-2">
-                      <span class="text-gray-500">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
-                      <span class="text-[11px] font-bold ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
+                      <span class="text-gray-600">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
+                      <span class="text-xs font-bold ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
                         Stok: ${activeVariant.stock} pcs
                       </span>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 flex-wrap">
                       ${variantsHtml}
                     </div>
                   </div>
 
                   <div class="mt-3">
-                    <span class="text-xs text-gray-500 block mb-1.5">Pilih Ukuran (Size):</span>
-                    <div class="flex items-center gap-2">
+                    <span class="text-xs text-gray-500 block mb-1.5 font-medium">Pilih Ukuran (Size):</span>
+                    <div class="flex items-center gap-2 flex-wrap">
                       ${sizesHtml}
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                <div class="mt-5 pt-3.5 border-t border-gray-100 flex items-center justify-between gap-3">
                   <div>
-                    <span class="text-[10px] text-gray-400 block">Harga Resmi</span>
-                    <span class="font-black text-lg text-brand-charcoal">${product.priceText}</span>
+                    <span class="text-[10px] text-gray-400 block uppercase font-medium">Harga</span>
+                    <span class="font-black text-lg sm:text-base text-brand-charcoal">${product.priceText}</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <button onclick="openProductDetailModal(${pIndex})" class="px-3 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-xs font-bold transition-colors">
+                    <button onclick="openProductDetailModal(${pIndex})" class="px-3.5 py-2.5 sm:px-2.5 sm:py-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-xs font-bold transition-colors min-h-[40px] sm:min-h-0 flex items-center justify-center">
                       Detail
                     </button>
-                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="px-3 py-2.5 rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan text-white'} text-xs font-bold transition-colors">
-                      <i class="fa-solid fa-cart-plus"></i>
+                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="px-4 py-2.5 sm:px-3 sm:py-2 rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan active:scale-95 text-white'} text-xs font-bold transition-all shadow-md min-h-[40px] sm:min-h-0 flex items-center justify-center gap-1.5">
+                      <i class="fa-solid fa-cart-plus text-sm"></i>
+                      <span class="sm:hidden font-extrabold">+ Beli</span>
                     </button>
                   </div>
                 </div>
@@ -846,7 +1006,7 @@
       function renderProductDetailModalContent() {
         if (activeDetailProductIndex === null) return;
         const product = catalogProducts[activeDetailProductIndex];
-        const activeVariant = product.variants[product.selectedVariantIndex];
+        const activeVariant = product.variants[product.selectedVariantIndex] || product.variants[0];
         const activeImage = activeVariant.gallery[detailModalActiveImageIdx] || activeVariant.gallery[0];
         const isOutOfStock = activeVariant.stock <= 0;
 
@@ -864,8 +1024,8 @@
         activeVariant.gallery.forEach((imgUrl, imgIdx) => {
           const isActive = imgIdx === detailModalActiveImageIdx;
           galleryContainer.innerHTML += `
-            <button onclick="setDetailModalImage(${imgIdx})" class="w-14 h-14 rounded-lg overflow-hidden border-2 transition-all ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
-              <img src="${imgUrl}" class="w-full h-full object-cover">
+            <button onclick="setDetailModalImage(${imgIdx})" class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+              <img src="${imgUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
             </button>
           `;
         });
@@ -895,11 +1055,11 @@
         const addBtn = document.getElementById('detailModalAddBtn');
         if (isOutOfStock) {
           addBtn.disabled = true;
-          addBtn.className = "w-full py-3.5 rounded-xl bg-gray-300 cursor-not-allowed text-gray-500 font-bold text-sm uppercase tracking-wider shadow-none flex items-center justify-center gap-2";
+          addBtn.className = "w-full py-3.5 rounded-xl bg-gray-300 cursor-not-allowed text-gray-500 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-none flex items-center justify-center gap-2";
           addBtn.innerHTML = `<span>Stok Habis</span>`;
         } else {
           addBtn.disabled = false;
-          addBtn.className = "w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2";
+          addBtn.className = "w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2";
           addBtn.innerHTML = `<i class="fa-solid fa-cart-plus"></i><span>Masukkan ke Keranjang</span>`;
           addBtn.setAttribute('onclick', `addToCartFromDetail(${activeDetailProductIndex})`);
         }
@@ -945,7 +1105,7 @@
 
       function addToCart(pIndex) {
         const product = catalogProducts[pIndex];
-        const activeVariant = product.variants[product.selectedVariantIndex];
+        const activeVariant = product.variants[product.selectedVariantIndex] || product.variants[0];
         const activeImage = activeVariant.gallery[product.selectedImageIndex] || activeVariant.gallery[0];
 
         const cartItemKey = `${product.id}-${activeVariant.colorName}-${product.selectedSize}`;
@@ -984,6 +1144,7 @@
       function updateCartUI() {
         const container = document.getElementById('cartItemsContainer');
         const badge = document.getElementById('cartBadge');
+        const mobileBottomBadge = document.getElementById('mobileBottomCartBadge');
         const countHeader = document.getElementById('cartCountHeader');
         const subtotalEl = document.getElementById('cartSubtotal');
         const checkoutBtn = document.getElementById('checkoutCartBtn');
@@ -1003,15 +1164,15 @@
 
             container.innerHTML += `
               <div class="py-3 flex items-center gap-3">
-                <img src="${item.image}" class="w-16 h-16 rounded-xl object-cover border border-gray-200">
+                <img src="${item.image}" class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border border-gray-200" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
                 <div class="flex-1">
-                  <h4 class="font-bold text-xs text-brand-charcoal">${item.name}</h4>
-                  <p class="text-[11px] text-gray-500">${item.color} | Ukuran: ${item.size}</p>
+                  <h4 class="font-bold text-xs text-brand-charcoal line-clamp-1">${item.name}</h4>
+                  <p class="text-[10px] sm:text-[11px] text-gray-500">${item.color} | Ukuran: ${item.size}</p>
                   <span class="font-bold text-brand-tan text-xs block mt-0.5">${item.priceText}</span>
-                  <div class="flex items-center gap-2 mt-2">
-                    <button onclick="updateCartQty('${item.key}', -1)" class="w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">-</button>
+                  <div class="flex items-center gap-2 mt-1.5">
+                    <button onclick="updateCartQty('${item.key}', -1)" class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">-</button>
                     <span class="text-xs font-bold">${item.qty}</span>
-                    <button onclick="updateCartQty('${item.key}', 1)" class="w-6 h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">+</button>
+                    <button onclick="updateCartQty('${item.key}', 1)" class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">+</button>
                   </div>
                 </div>
               </div>
@@ -1019,9 +1180,10 @@
           });
         }
 
-        badge.innerText = totalQty;
-        countHeader.innerText = totalQty;
-        subtotalEl.innerText = formatRupiah(subtotal);
+        if (badge) badge.innerText = totalQty;
+        if (mobileBottomBadge) mobileBottomBadge.innerText = totalQty;
+        if (countHeader) countHeader.innerText = totalQty;
+        if (subtotalEl) subtotalEl.innerText = formatRupiah(subtotal);
       }
 
       // MODAL CHECKOUT & TOTAL LOGIC
@@ -1038,10 +1200,10 @@
         let summaryHtml = '';
         cartItems.forEach(item => {
           summaryHtml += `
-            <div class="flex items-center gap-3 text-xs">
-              <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover border">
+            <div class="flex items-center gap-2.5 text-xs">
+              <img src="${item.image}" class="w-10 h-10 rounded-lg object-cover border" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
               <div class="flex-1">
-                <p class="font-bold">${item.name} (${item.qty}x)</p>
+                <p class="font-bold text-xs leading-tight line-clamp-1">${item.name} (${item.qty}x)</p>
                 <p class="text-[10px] text-gray-500">${item.color} | Size: ${item.size}</p>
               </div>
             </div>
@@ -1163,16 +1325,15 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
         updateCartUI();
       }
 
-      // HERO SLIDER & EDITABLE FEATURED HIGHLIGHT LOGIC
+      // HERO SLIDER & FEATURED HIGHLIGHT LOGIC
       const heroSlidesData = [
         { 
           title: "VEST APOLLO 7,5L", 
           price: "Rp 299.000", 
           category: "VEST RUNNING", 
           photos: [
-            // "id-11134207-822wo-mp2cpgenej9c91.jpeg",
             "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
-           "id-11134207-81ztq-mqvlth3z124qc8.jpeg"
+            "id-11134207-81ztq-mqvlth3z124qc8.jpeg"
           ]
         },
         { 
@@ -1182,24 +1343,23 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
           photos: [
             "id-11134207-81zth-mr5euy1id9n0db.jpeg",
             "id-11134207-81zti-mr5evbhodhxg34.jpeg"
-            
-          ] 
-        },
-        { 
-          title: "VEST ATHENA 10L", 
-          price: "Rp 315.000", 
-          category: "VEST RUNNING", 
-          photos: [
-            "id-11134201-81ztj-mthvqj6c45c597.jpeg",
-            // "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
           ] 
         }
+        // { 
+        //   title: "TENDA DOME 4P", 
+        //   price: "Rp 899.000", 
+        //   category: "CAMPING GEAR", 
+        //   photos: [
+        //     "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80",
+        //     "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?auto=format&fit=crop&w=800&q=80"
+        //   ] 
+        // }
       ];
 
       let currentSlide = 0;
       let currentPhotoIndex = 0;
       let slideInterval = null;
-      const intervalDuration = 4000;
+      const intervalDuration = 4500;
       const slides = document.querySelectorAll('.hero-slide');
 
       function updateSlideUI() {
@@ -1228,8 +1388,8 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
           data.photos.forEach((photoUrl, idx) => {
             const isActive = idx === currentPhotoIndex;
             thumbContainer.innerHTML += `
-              <button onclick="setFeaturedPhoto(${idx})" class="w-12 h-10 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-white/20 opacity-60 hover:opacity-100'}">
-                <img src="${photoUrl}" class="w-full h-full object-cover">
+              <button onclick="setFeaturedPhoto(${idx})" class="w-10 h-8 sm:w-12 sm:h-10 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-white/20 opacity-60 hover:opacity-100'}">
+                <img src="${photoUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
               </button>
             `;
           });
@@ -1265,6 +1425,7 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
       }
 
       document.addEventListener('DOMContentLoaded', () => {
+        renderCategoryTabs();
         renderCatalog();
         startAutoplay();
       });
