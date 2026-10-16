@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ANGSANA OUTDOOR - Premium Outdoor Gear & Activewear</title>
+    <title>ANGSANA ACTIVEWEAR - Premium Outdoor Gear & Sportswear</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -61,7 +61,6 @@
         pointer-events: auto;
       }
 
-      /* Custom Horizontal Scrollbar Hiding for Category Bar */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -82,7 +81,6 @@
         border-radius: 4px;
       }
 
-      /* Mobile Safe Area Padding */
       .pb-safe {
         padding-bottom: env(safe-area-inset-bottom, 16px);
       }
@@ -95,20 +93,14 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           
-          <!-- Logo Brand -->
-          <a href="#hero" class="flex items-center gap-2 sm:gap-3 cursor-pointer group flex-shrink-0">
-            <img 
-              id="brand-logo-img"
-              src="WhatsApp Image 2026-10-11 at 10.15.00.jpeg" 
-              alt="ANGSANA OUTDOOR Logo" 
-              class="h-8 sm:h-10 w-auto object-contain rounded-lg shadow-sm border border-brand-amber/30 bg-white/10 p-1 transition-transform group-hover:scale-105"
-              onerror="this.onerror=null; this.src='https://placehold.co/150x50/1A1919/D28835?text=ANGSANA';"
-            />
-            <div class="flex flex-col">
+          <!-- Logo Brand (Sejajar dan Proporsional dengan Teks) -->
+          <a href="#hero" class="flex items-center gap-3 cursor-pointer group flex-shrink-0">
+            <img src="Code_Generated_Image.png" alt="Logo Angsana Activewear" class="w-9 h-9 sm:w-11 sm:h-11 object-contain">
+            <div class="flex flex-col justify-center">
               <span class="font-heading font-black text-lg sm:text-xl tracking-wider text-white block leading-none group-hover:text-brand-amber transition-colors">
                 ANGSANA
               </span>
-              <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-bold text-brand-amber uppercase block mt-0.5 sm:mt-1">
+              <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-bold text-brand-amber uppercase block mt-1">
                 ACTIVEWEAR
               </span>
             </div>
@@ -119,13 +111,13 @@
             <a href="#hero" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
               <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Beranda
             </a>
+            <a href="#tentang-perusahaan" class="hover:text-brand-amber transition-colors">Tentang Kami</a>
             <a href="#katalog" class="hover:text-brand-amber transition-colors">Katalog Produk</a>
             <a href="#keunggulan" class="hover:text-brand-amber transition-colors">Keunggulan</a>
           </nav>
 
           <!-- Search Bar & Action Buttons -->
           <div class="flex items-center gap-2 sm:gap-3">
-            <!-- Search Input Desktop/Tablet -->
             <div class="relative hidden sm:block w-40 sm:w-48 lg:w-64">
               <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
@@ -146,7 +138,7 @@
             </button>
 
             <!-- WhatsApp Button -->
-            <a href="https://wa.me/6289673710255?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
+            <a href="https://wa.me/6281268888651?text=Halo%20Angsana%20Activewear,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
               <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
               <span class="hidden lg:inline">Hubungi WA</span>
             </a>
@@ -176,11 +168,15 @@
       </div>
     </header>
 
-    <!-- MOBILE BOTTOM NAVBAR (Sticky HP Navigation) -->
+    <!-- MOBILE BOTTOM NAVBAR -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-3 py-2 flex items-center justify-around shadow-2xl">
       <a href="#hero" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-1">
         <i class="fa-solid fa-house text-lg"></i>
         <span class="text-[10px] font-medium mt-0.5">Beranda</span>
+      </a>
+      <a href="#tentang-perusahaan" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-1">
+        <i class="fa-solid fa-circle-info text-lg"></i>
+        <span class="text-[10px] font-medium mt-0.5">Profil</span>
       </a>
       <a href="#katalog" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-1">
         <i class="fa-solid fa-layer-group text-lg"></i>
@@ -193,7 +189,7 @@
         </div>
         <span class="text-[10px] font-medium mt-0.5">Keranjang</span>
       </button>
-      <a href="https://wa.me/?text=Halo%20Angsana%20Outdoor,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-1">
+      <a href="https://wa.me/6281268888651?text=Halo%20Angsana%20Activewear,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-1">
         <i class="fa-brands fa-whatsapp text-xl"></i>
         <span class="text-[10px] font-medium mt-0.5">WhatsApp</span>
       </a>
@@ -204,19 +200,13 @@
       
       <div class="hero-slide active" data-index="0">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/30"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <div class="hero-slide" data-index="1">
         <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
-      </div>
-
-      <div class="hero-slide" data-index="2">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/30 to-black/30"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-black/30"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -229,23 +219,26 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">NEW REBORN COLLECTION 2026</span>
+              <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">FASTER • BETTER • LIGHTER</span>
             </div>
 
             <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.15]">
-              EXPLORE WITHOUT <br class="hidden sm:inline">
+              ANGSANA <br class="hidden sm:inline">
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-amber via-amber-300 to-amber-500">
-                LIMITS & BOUNDS
+                ACTIVEWEAR
               </span>
             </h1>
 
             <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
-              Peralatan outdoor dan perlengkapan pendakian generasi terbaru. Didesain dengan material super ringan, breathable, dan ergonomis.
+              Produsen & merek pakaian olahraga performa tinggi untuk lari road, trail running, dan gym. Berdiri sejak 2024 di Kota Tangerang, menghadirkan kenyamanan maksimal dengan teknologi kain modern.
             </p>
 
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a href="#katalog" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
                 <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
+              </a>
+              <a href="#tentang-perusahaan" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
+                <i class="fa-solid fa-building mr-2"></i> Profil Perusahaan
               </a>
             </div>
           </div>
@@ -256,17 +249,17 @@
               <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:pb-4 sm:mb-4">
                 <div>
                   <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-brand-amber block">Featured Highlight</span>
-                  <h3 id="cardTitle" class="font-heading font-extrabold text-lg sm:text-2xl text-white">TENDA DOME 4P</h3>
+                  <h3 id="cardTitle" class="font-heading font-extrabold text-lg sm:text-2xl text-white">VEST RUNNING APOLLO</h3>
                 </div>
                 <span id="cardPrice" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-brand-tan text-white font-bold text-xs sm:text-sm shadow">
-                  Rp 899.000
+                  Rp 299.000
                 </span>
               </div>
 
               <div class="relative h-48 sm:h-60 lg:h-64 rounded-xl sm:rounded-2xl overflow-hidden bg-black/30 mb-3 sm:mb-4 group">
-                <img id="cardImage" src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1A1919/D28835?text=Angsana+Outdoor';">
+                <img id="cardImage" src="id-11134201-81zto-mrmffbdl5p8hdf.jpeg" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1A1919/D28835?text=Angsana+Activewear';">
                 <div class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/20">
-                  <span id="cardCategory">Camping Gear</span>
+                  <span id="cardCategory">VEST RUNNING</span>
                 </div>
                 
                 <button onclick="prevFeaturedPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors">
@@ -285,25 +278,183 @@
       </div>
     </section>
 
-    <!-- KATALOG PRODUK -->
-    <section id="katalog" class="py-8 sm:py-16 bg-brand-sand border-t border-gray-200">
+    <!-- TENTANG PERUSAHAAN & COMPANY PROFILE PDF SECTION -->
+    <section id="tentang-perusahaan" class="py-12 sm:py-20 bg-white border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-2">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">COMPANY PROFILE ANGSANA ACTIVEWEAR</span>
+          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Mengenal Lebih Dekat Angsana Activewear</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mt-2">Bagian dari Angsana Outdoor yang menghadirkan perlengkapan luar ruang inklusif, dinamis, dan bebas bergerak.</p>
+        </div>
+
+        <!-- TABS NAVIGASI COMPANY PROFILE -->
+        <div class="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
+          <button onclick="switchCompanyTab('tentang')" id="tabBtn-tentang" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0">
+            Tentang Perusahaan
+          </button>
+          <button onclick="switchCompanyTab('visi-misi')" id="tabBtn-visi-misi" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
+            Visi & Misi
+          </button>
+          <button onclick="switchCompanyTab('tujuan')" id="tabBtn-tujuan" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
+            Tujuan Kami
+          </button>
+          <button onclick="switchCompanyTab('layanan')" id="tabBtn-layanan" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
+            Layanan & Aktivitas
+          </button>
+          <button onclick="switchCompanyTab('sejarah')" id="tabBtn-sejarah" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
+            Sejarah Perusahaan
+          </button>
+        </div>
+
+        <!-- TAB CONTENT CONTAINER -->
+        <div class="bg-brand-sand rounded-3xl p-6 sm:p-10 border border-brand-khaki/40 shadow-sm">
+          
+          <!-- KONTEN 1: TENTANG PERUSAHAAN -->
+          <div id="companyTab-tentang" class="company-tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-4">
+              <span class="px-3 py-1 rounded-full bg-brand-tan/20 text-brand-tan text-xs font-bold uppercase">Berdiri Sejak 2024</span>
+              <h3 class="font-heading font-extrabold text-xl sm:text-3xl text-brand-charcoal">Mitra Konveksi & Produsen Sportswear Performa Tinggi</h3>
+              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                Angsana Activewear merupakan salah satu lini perusahaan dari bagian <strong>Angsana Outdoor</strong>, yang menghadirkan perlengkapan luar ruang yang lebih inklusif, mendukung gaya hidup yang dinamis, bebas bergerak, serta memfasilitasi aktivitas seperti lari (road & trail), gym, dan olahraga kasual[cite: 3].
+              </p>
+              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                Berawal dari semangat kewirausahaan untuk memenuhi kebutuhan komunitas olahraga lokal, kini kami berkembang menjadi mitra konveksi modern yang melayani permintaan skala besar, mulai dari pembuatan jersey running hingga apparel aktif harian (athleisure)[cite: 3].
+              </p>
+              <div class="pt-2 flex items-center gap-4 text-xs font-bold text-brand-charcoal">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-tan"></i> Kota Tangerang, Banten</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-industry text-brand-tan"></i> Pabrik & Konveksi Modern</div>
+              </div>
+            </div>
+            <div class="lg:col-span-6">
+              <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
+                <img src="potone layar depan.png" alt="Tentang Angsana Activewear" class="w-full h-64 sm:h-80 object-cover">
+              </div>
+            </div>
+          </div>
+
+          <!-- KONTEN 2: VISI & MISI -->
+          <div id="companyTab-visi-misi" class="company-tab-content hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-6 space-y-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">01. Visi Kami</span>
+                <h3 class="font-heading font-extrabold text-lg sm:text-2xl text-brand-charcoal mt-1">
+                  Menjadi merek sportswear lokal nomor satu yang mampu bersaing di pasar global dengan mengedepankan kualitas dan teknologi inovatif.
+                </h3>
+              </div>
+              <div class="border-t border-brand-khaki pt-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">02. Misi Kami</span>
+                <ul class="mt-2 space-y-2 text-xs sm:text-sm text-gray-700">
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
+                    <span>Memberikan kenyamanan maksimal bagi para atlet dan penggiat olahraga melalui material ramah lingkungan dan teknologi terkini.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
+                    <span>Mendukung gaya hidup sehat masyarakat dengan menghadirkan produk yang terjangkau dan berkualitas tinggi.</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
+                    <span>Terus berinovasi mengikuti tren olahraga modern secara berkelanjutan.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lg:col-span-6">
+              <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
+                <img src="IMG_5647.PNG" alt="Visi Misi Angsana" class="w-full h-64 sm:h-80 object-cover">
+              </div>
+            </div>
+          </div>
+
+          <!-- KONTEN 3: TUJUAN KAMI -->
+          <div id="companyTab-tujuan" class="company-tab-content hidden space-y-6">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Tujuan Utama Angsana Activewear</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">01</div>
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Gaya Hidup Dinamis</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Mengajak konsumen mengadopsi gaya hidup aktif dan bergerak lebih leluasa, mulai dari penggunaan sehari-hari hingga olahraga ringan.</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">02</div>
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Aktivitas Spesifik</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Menyediakan produk penunjang yang tepat (seperti running jacket & vest) yang dibuat dengan material berkualitas tinggi dan bersirkulasi udara (breathable).</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">03</div>
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Dukungan Inklusif</h4>
+                <p class="text-xs text-gray-600 leading-relaxed">Memperluas jangkauan pasar agar bisa menemani lebih banyak orang dalam berbagai kegiatan luar ruang, melengkapi produk petualangan ekstrem mereka.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- KONTEN 4: LAYANAN & APA YANG KAMI LAKUKAN -->
+          <div id="companyTab-layanan" class="company-tab-content hidden space-y-6">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Solusi End-to-End Pakaian Olahraga</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Custom Sportswear</span>
+                <h4 class="font-bold text-base text-brand-charcoal mb-2">Jersey Komunitas</h4>
+                <p class="text-xs text-gray-600">Jersey komunitas serta apparel lari kustom dengan teknologi sublimation printing berkualitas tinggi.</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Activewear</span>
+                <h4 class="font-bold text-base text-brand-charcoal mb-2">Lari Road, Trail & Gym</h4>
+                <p class="text-xs text-gray-600">Pakaian lari road, trail running, dan gym yang dirancang sangat nyaman dan breathable.</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Accessories & Outer</span>
+                <h4 class="font-bold text-base text-brand-charcoal mb-2">Jaket, Rompi & Topi</h4>
+                <p class="text-xs text-gray-600">Apparel pendukung performa seperti vest running, rompi, jaket ultralight, dan topi olahraga.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- KONTEN 5: SEJARAH PERUSAHAAN -->
+          <div id="companyTab-sejarah" class="company-tab-content hidden space-y-6">
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Perjalanan & Milestone Angsana</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="px-2.5 py-1 rounded-lg bg-brand-charcoal text-white text-xs font-bold">Tahun 2017</span>
+                <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Angsana Outdoor</h4>
+                <p class="text-xs text-gray-600">Perusahaan ritel dan manufaktur yang memproduksi serta mendistribusikan perlengkapan gaya hidup dan aktivitas luar ruang seperti mendaki gunung dan berkemah.</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="px-2.5 py-1 rounded-lg bg-brand-tan text-white text-xs font-bold">Tahun 2024</span>
+                <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Angsana Activewear</h4>
+                <p class="text-xs text-gray-600">Lini perusahaan baru dibentuk khusus untuk menghadirkan perlengkapan lari, gym, dan olahraga kasual yang inklusif serta dinamis.</p>
+              </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold">Tahun 2026</span>
+                <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Sinergi Tanpa Batas</h4>
+                <p class="text-xs text-gray-600">Kini Angsana Outdoor & Angsana Activewear berjalan berdampingan untuk menemani aktivitas luar ruang Anda secara lengkap tanpa batas.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <section id="katalog" class="py-12 sm:py-20 bg-brand-sand border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-2">
           <div>
             <span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
-            <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal mt-0.5">Produk Angsana Outdoor</h2>
+            <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal mt-0.5">Katalog Produk Angsana</h2>
           </div>
           <div id="searchResultInfo" class="text-xs text-gray-500 italic"></div>
         </div>
 
-        <!-- CATEGORY FILTER TABS (Mobile Friendly Scroll with Touch-friendly Paddings) -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-5 sm:mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer">
-          <!-- Filled via JavaScript -->
-        </div>
+        <!-- CATEGORY FILTER TABS -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer"></div>
 
-        <!-- PRODUCT GRID (Single Column / Large Card Layout on Mobile for High Readability) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6" id="productGridContainer"></div>
+        <!-- PRODUCT GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGridContainer"></div>
 
       </div>
     </section>
@@ -495,12 +646,21 @@
 
     <!-- FOOTER -->
     <footer class="bg-brand-charcoal text-white py-10 sm:py-12 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6 text-center md:text-left">
-        <div class="flex items-center gap-3">
-          <img src="logo.png" alt="Angsana Logo" class="h-8 w-auto object-contain rounded bg-white/10 p-0.5" onerror="this.style.display='none'">
-          <span class="font-heading font-bold text-lg tracking-wider">ANGSANA OUTDOOR</span>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+          <div>
+            <span class="font-heading font-bold text-lg tracking-wider block">ANGSANA ACTIVEWEAR</span>
+            <p class="text-xs text-gray-400 mt-1">Jl. Batas Peninggilan No.61, RT.001/RW.001, Sudimara Jaya, Kec. Ciledug, Kota Tangerang, Banten 15151</p>
+          </div>
+          <div class="flex items-center gap-4 text-xs text-gray-300">
+            <span><i class="fa-solid fa-phone text-brand-tan mr-1"></i> +62 812-6888-8651</span>
+            <span><i class="fa-solid fa-globe text-brand-tan mr-1"></i> www.angsanaoutdoor.com</span>
+          </div>
         </div>
-        <p class="text-xs text-gray-400">© 2026 Angsana Outdoor Activewear. All rights reserved.</p>
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
+          <p>© 2026 Angsana Outdoor Activewear. All rights reserved.</p>
+          <p class="mt-2 sm:mt-0">Faster • Better • Lighter</p>
+        </div>
       </div>
     </footer>
 
@@ -610,7 +770,7 @@
           description: "Jersey olahraga berteknologi Aeroready, Anti-Bacterial, dan Quick Dry. Memastikan sirkulasi udara optimal selama aktivitas running.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "",
+          selectedSize: "M",
           sizes: ["S","M", "L", "XL"],
           variants: [
             {
@@ -629,22 +789,6 @@
               gallery: [
                 "id-11134207-8224u-mgwzk74lruh851.jpeg",
                 "id-11134207-8224x-mgwzk74lktn01c.jpeg"
-              ]
-            },
-            {
-              colorName: "Stones Short",
-              colorHex: "#4A6B70",
-              stock: 12,
-              gallery: [
-                "id-11134207-8224r-mkjkb2rml24i98.jpeg"
-              ]
-            },
-            {
-              colorName: "Geo",
-              colorHex: "#E8D8C3",
-              stock: 5,
-              gallery: [
-                "id-11134207-8224p-mgwzk74lunm4d0.jpeg"
               ]
             }
           ]
@@ -683,26 +827,24 @@
           ]
         },
         {
-          id: "Long sleeved T shirt Cotton SpanTech Ornamen series",
+          id: "long-sleeved-tshirt-ornamen",
           name: "Long sleeved T shirt Cotton SpanTech Ornamen series",
           category: "KAOS",
           priceValue: 149000,
-          priceText: "149.000",
+          priceText: "Rp 149.000",
           rating: "4.9 (65)",
-          description: "Longs Sleeve Ornamen series dibuat dengan Teknologi Super Nyaman memberikan kelembutan pada kulit anda baik bersantai maupun beraktifitas. Dengan Material dari Cotton mix Spandek terbaik memberikan efek sejuk dan super lembut ketika dipakai. Spesifikasi: Terbuat dari bahan Cotton mix Spandek cool, Bahan Halus dan lembut, Type T-shirt O-neck, Gramasi 170gr/m2 untuk bahan putih",
+          description: "Longs Sleeve Ornamen series dibuat dengan Teknologi Super Nyaman memberikan kelembutan pada kulit anda baik bersantai maupun beraktifitas. Material Cotton mix Spandek terbaik.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
-          selectedSize: "",
+          selectedSize: "M",
           sizes: ["S","M","L","XL"],
           variants: [
             {
               colorName: "BLACK",
-              colorHex: "BLACK",
+              colorHex: "#111111",
               stock: 5,
               gallery: [
-                "id-11134207-81ztf-mtowdhvihkhs99.jpeg",
-                "Id-11134201-81ztn-mtow6uh8owsi19.jpeg",
-                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+                "id-11134207-81ztf-mtowdhvihkhs99.jpeg"
               ]
             },
             {
@@ -710,75 +852,17 @@
               colorHex: "#8A9A86",
               stock: 3,
               gallery: [
-                "id-11134207-81ztg-mtowdoforgg258.jpeg",
-                "id-11134201-81ztq-mtow6uj54nb82b.jpeg",
-                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+                "id-11134207-81ztg-mtowdoforgg258.jpeg"
               ]
             },
-             {
+            {
               colorName: "SALMON",
               colorHex: "#AC525E",
               stock: 3,
               gallery: [
-                "id-11134207-81ztf-mtowdkud9zb4ce.jpeg",
-                "id-11134201-81zti-mtow6ugeew3lb0.jpeg",
-                "id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"
+                "id-11134207-81ztf-mtowdkud9zb4ce.jpeg"
               ]
             }
-        //   ]
-        // }
-        // // {
-        // //   id: "sleeping-bag-ultralight",
-        // //   name: "Sleeping Bag Angsana Ultralight Down-Tech",
-        //   category: "PERALATAN",
-        //   priceValue: 245000,
-        //   priceText: "Rp 245.000",
-        //   rating: "4.8 (52)",
-        //   description: "Kantong tidur ultralight dengan isian sintetis micro-down thermal. Tahan dingin hingga batas ekstrem 5°C, hangat dan sangat ringkas saat dipacking.",
-        //   selectedImageIndex: 0,
-        //   selectedVariantIndex: 0,
-        //   selectedSize: "205 x 75 cm",
-        //   sizes: ["Standard"],
-        //   variants: [
-        //     {
-        //       colorName: "Navy Blue",
-        //       colorHex: "#1B2A4A",
-        //       stock: 8,
-        //       gallery: [
-        //         "https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=800&q=80"
-        //       ]
-        //     },
-        //     {
-        //       colorName: "Terracotta",
-        //       colorHex: "#C17F44",
-        //       stock: 6,
-        //       gallery: [
-        //         "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=800&q=80"
-        //       ]
-        //     }
-        //   ]
-        // },
-        // {
-        //   id: "raincoat-poncho-angsana",
-        //   name: "Jas Hujan Angsana Poncho Ultralight Water-Shield",
-        //   category: "PERALATAN",
-        //   priceValue: 185000,
-        //   priceText: "Rp 185.000",
-        //   rating: "4.7 (41)",
-        //   description: "Jas hujan tipe ponco berkapasitas carrier hingga 60L. Menggunakan bahan Taslan Ripstop WP dengan seal seam presisi anti-rembes.",
-        //   selectedImageIndex: 0,
-        //   selectedVariantIndex: 0,
-        //   selectedSize: "All Size",
-        //   sizes: ["All Size"],
-        //   variants: [
-        //     {
-        //       colorName: "Charcoal Black",
-        //       colorHex: "#1A1919",
-        //       stock: 12,
-        //       gallery: [
-        //         "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=800&q=80"
-        //       ]
-        //     }
           ]
         }
       ];
@@ -797,9 +881,26 @@
         "VEST RUNNING",
         "JERSEY",
         "TOPI",
-        "TENDA & CAMPING",
-        "PERALATAN"
+        "KAOS"
       ];
+
+      // TAB COMPANY SWITCHER LOGIC
+      function switchCompanyTab(tabId) {
+        const tabs = ['tentang', 'visi-misi', 'tujuan', 'layanan', 'sejarah'];
+        tabs.forEach(t => {
+          const contentEl = document.getElementById(`companyTab-${t}`);
+          const btnEl = document.getElementById(`tabBtn-${t}`);
+          if (t === tabId) {
+            contentEl.classList.remove('hidden');
+            contentEl.classList.add('grid');
+            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0";
+          } else {
+            contentEl.classList.add('hidden');
+            contentEl.classList.remove('grid');
+            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0";
+          }
+        });
+      }
 
       function handleSearch(query) {
         searchQuery = query.toLowerCase().trim();
@@ -849,7 +950,6 @@
         const infoEl = document.getElementById('searchResultInfo');
         container.innerHTML = '';
 
-        // Filter product list
         const filteredProducts = catalogProducts.map((product, originalIndex) => ({ product, originalIndex })).filter(({ product }) => {
           const matchCategory = selectedCategory === "SEMUA" || product.category.toUpperCase() === selectedCategory;
           const matchQuery = searchQuery === "" || 
@@ -913,16 +1013,14 @@
 
           const cardHtml = `
             <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
-              <!-- High-resolution prominent product image for mobile readability -->
               <div class="relative h-72 sm:h-64 overflow-hidden bg-gray-100">
-                <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1A1919/D28835?text=Angsana+Outdoor';">
+                <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1A1919/D28835?text=Angsana';">
                 <span class="absolute top-3 left-3 px-3 py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[10px] sm:text-[9px] font-extrabold uppercase shadow-md tracking-wider">
                   ${isOutOfStock ? 'Stok Habis' : 'Tersedia'}
                 </span>
                 ${product.rating ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[10px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star"></i> ${product.rating}</span>` : ''}
               </div>
 
-              <!-- Gallery thumbnails horizontal scrollbar -->
               <div class="px-4 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar touch-pan-x">
                 ${galleryHtml}
               </div>
@@ -1088,7 +1186,7 @@
         closeProductDetailModal();
       }
 
-      // FUNGSI KERANJANG BELANJA
+      // KERANJANG BELANJA
       function toggleCartDrawer() {
         const drawer = document.getElementById('cartDrawer');
         const overlay = document.getElementById('cartOverlay');
@@ -1186,7 +1284,7 @@
         if (subtotalEl) subtotalEl.innerText = formatRupiah(subtotal);
       }
 
-      // MODAL CHECKOUT & TOTAL LOGIC
+      // CHECKOUT & TOTAL LOGIC
       function openCheckoutModalFromCart() {
         if (cartItems.length === 0) return;
         toggleCartDrawer();
@@ -1227,15 +1325,6 @@
           appliedDiscount = 20000;
           appliedVoucherName = "ANGSANA20 (Potongan Rp 20.000)";
           voucherStatus.innerText = "✓ Voucher berhasil digunakan: Potongan Rp 20.000";
-          voucherStatus.classList.remove('hidden');
-        } else if (code === "FREEOFKIR") {
-          const select = document.getElementById('shippingExpedition');
-          const selectedOption = select.options[select.selectedIndex];
-          const shippingCost = selectedOption && selectedOption.value ? parseInt(selectedOption.getAttribute('data-cost')) || 0 : 0;
-          
-          appliedDiscount = shippingCost;
-          appliedVoucherName = "FREEOFKIR (Gratis Ongkir)";
-          voucherStatus.innerText = "✓ Voucher berhasil digunakan: Gratis Ongkir";
           voucherStatus.classList.remove('hidden');
         } else {
           appliedDiscount = 0;
@@ -1299,7 +1388,7 @@
         let finalTotal = subtotal + shippingCost - appliedDiscount;
         if (finalTotal < 0) finalTotal = 0;
 
-        const waMessage = `Halo Angsana Outdoor, saya ingin memesan produk berikut:
+        const waMessage = `Halo Angsana Activewear, saya ingin memesan produk berikut:
 
 *DETAIL KERANJANG:*
 ${itemsListStr}
@@ -1319,7 +1408,7 @@ ${appliedDiscount > 0 ? `- Diskon: -${formatRupiah(appliedDiscount)}` : ''}
 Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
 
         const encodedMessage = encodeURIComponent(waMessage);
-        window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/6281268888651?text=${encodedMessage}`, '_blank');
         closeCheckoutModal();
         cartItems = [];
         updateCartUI();
@@ -1328,7 +1417,7 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
       // HERO SLIDER & FEATURED HIGHLIGHT LOGIC
       const heroSlidesData = [
         { 
-          title: "VEST APOLLO 7,5L", 
+          title: "VEST RUNNING APOLLO", 
           price: "Rp 299.000", 
           category: "VEST RUNNING", 
           photos: [
@@ -1337,7 +1426,7 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
           ]
         },
         { 
-          title: "VEST ARTEMIS 8L", 
+          title: "VEST RUNNING ARTEMIS", 
           price: "Rp 379.000", 
           category: "VEST RUNNING", 
           photos: [
@@ -1345,15 +1434,6 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
             "id-11134207-81zti-mr5evbhodhxg34.jpeg"
           ] 
         }
-        // { 
-        //   title: "TENDA DOME 4P", 
-        //   price: "Rp 899.000", 
-        //   category: "CAMPING GEAR", 
-        //   photos: [
-        //     "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80",
-        //     "https://images.unsplash.com/photo-1478827536114-da961b7f86d2?auto=format&fit=crop&w=800&q=80"
-        //   ] 
-        // }
       ];
 
       let currentSlide = 0;
