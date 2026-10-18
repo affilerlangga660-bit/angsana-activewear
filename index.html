@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -158,7 +158,7 @@
               oninput="handleSearch(this.value)"
               placeholder="Cari produk Angsana..." 
               class="w-full pl-9 pr-8 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
-            >
+            />
             <button onclick="clearSearch()" id="clearSearchBtn" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hidden">
               <i class="fa-solid fa-circle-xmark text-xs"></i>
             </button>
@@ -195,17 +195,26 @@
       </a>
     </div>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION DENGAN SLIDER OTOMATIS & RESPONSIF HP/LAPTOP -->
     <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[78vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
       
+      <!-- SLIDE 1 (Otomatis berganti) -->
       <div class="hero-slide active" data-index="0">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
+        <!-- Khusus HP: IMG_5647.PNG -->
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Stay cool and comfortable all day long. This cotton running shirt is made of super-soft fabric t.jpg');"></div>
+        <!-- Khusus Laptop: potone layar depan.png -->
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
+        
         <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/35 to-black/35"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
+      <!-- SLIDE 2 (Otomatis berganti) -->
       <div class="hero-slide" data-index="1">
-        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
+        <!-- Khusus HP & Laptop menggunakan foto bergantian atau variasi lain -->
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('New - Montana Trail Pants.Character -• Breathable Coolmax Technology• Multifunction Pocket• Elas.jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
+
         <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/35 to-black/35"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
@@ -316,10 +325,10 @@
               <span class="px-3 py-1 rounded-full bg-brand-tan/20 text-brand-tan text-xs font-bold uppercase">Berdiri Sejak 2024</span>
               <h3 class="font-heading font-extrabold text-xl sm:text-3xl text-brand-charcoal">Mitra Konveksi & Produsen Sportswear Performa Tinggi</h3>
               <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Angsana Activewear merupakan salah satu lini perusahaan dari bagian <strong>Angsana Outdoor</strong>, yang menghadirkan perlengkapan luar ruang yang lebih inklusif, mendukung gaya hidup yang dinamis, bebas bergerak, serta memfasilitasi aktivitas seperti lari (road & trail), gym, dan olahraga kasual[cite: 3].
+                Angsana Activewear merupakan salah satu lini perusahaan dari bagian <strong>Angsana Outdoor</strong>, yang menghadirkan perlengkapan luar ruang yang lebih inklusif, mendukung gaya hidup yang dinamis, bebas bergerak, serta memfasilitasi aktivitas seperti lari (road & trail), gym, dan olahraga kasual.
               </p>
               <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Berawal dari semangat kewirausahaan untuk memenuhi kebutuhan komunitas olahraga lokal, kini kami berkembang menjadi mitra konveksi modern yang melayani permintaan skala besar, mulai dari pembuatan jersey running hingga apparel aktif harian (athleisure)[cite: 3].
+                Berawal dari semangat kewirausahaan untuk memenuhi kebutuhan komunitas olahraga lokal, kini kami berkembang menjadi mitra konveksi modern yang melayani permintaan skala besar, mulai dari pembuatan jersey running hingga apparel aktif harian (athleisure).
               </p>
               <div class="pt-2 flex items-center gap-4 text-xs font-bold text-brand-charcoal">
                 <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-tan"></i> Kota Tangerang, Banten</div>
@@ -1451,7 +1460,7 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
         updateCartUI();
       }
 
-      // HERO SLIDER & FEATURED HIGHLIGHT LOGIC
+      // HERO SLIDER OTOMATIS & FEATURED HIGHLIGHT LOGIC
       const heroSlidesData = [
         { 
           title: "VEST RUNNING APOLLO", 
@@ -1483,7 +1492,6 @@ Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
         slides.forEach((slide, idx) => {
           if (idx === currentSlide) { slide.classList.add('active'); } else { slide.classList.remove('active'); }
         });
-
         currentPhotoIndex = 0;
         renderFeaturedCard();
       }
