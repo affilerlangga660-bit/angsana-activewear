@@ -205,7 +205,7 @@
         <!-- Khusus Laptop: potone layar depan.png -->
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
         
-        <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/35 to-black/35"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-black/0-s"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -215,7 +215,7 @@
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('New - Montana Trail Pants.Character -• Breathable Coolmax Technology• Multifunction Pocket• Elas.jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5647.PNG');"></div>
 
-        <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/35 to-black/35"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-black/0"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -253,7 +253,7 @@
           </div>
 
           <!-- FEATURED HIGHLIGHT CARD -->
-          <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+          <!-- <div class="lg:col-span-5 relative mt-4 lg:mt-0">
             <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
               <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:pb-4 sm:mb-4">
                 <div>
@@ -269,17 +269,17 @@
                 <img id="cardImage" src="id-11134201-81zto-mrmffbdl5p8hdf.jpeg" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1A1919/D28835?text=Angsana+Activewear';">
                 <div class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/20">
                   <span id="cardCategory">VEST RUNNING</span>
-                </div>
+                </div> -->
                 
-                <button onclick="prevFeaturedPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors">
-                  <i class="fa-solid fa-chevron-left text-xs"></i>
-                </button>
-                <button onclick="nextFeaturedPhoto()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors">
-                  <i class="fa-solid fa-chevron-right text-xs"></i>
-                </button>
-              </div>
+                <!-- <button onclick="prevFeaturedPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"> -->
+                  <!-- <i class="fa-solid fa-chevron-left text-xs"></i> -->
+                <!-- </button> -->
+                <!-- <button onclick="nextFeaturedPhoto()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"> -->
+                  <!-- <i class="fa-solid fa-chevron-right text-xs"></i> -->
+                <!-- </button> -->
+              <!-- </div> -->
 
-              <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="featuredThumbnails"></div>
+              <!-- <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="featuredThumbnails"></div> -->
             </div>
           </div>
 
@@ -483,22 +483,22 @@
     </section>
 
     <!-- KATALOG PRODUK -->
-    <section id="katalog" class="py-12 sm:py-20 bg-brand-sand border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="katalog" class="py-8 sm:py-20 bg-brand-sand border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 sm:mb-8 gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-1 sm:gap-2">
           <div>
-            <span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
-            <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal mt-0.5">Katalog Produk Angsana</h2>
+            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
+            <h2 class="font-heading font-black text-xl sm:text-4xl text-brand-charcoal mt-0.5">Katalog Produk Angsana</h2>
           </div>
           <div id="searchResultInfo" class="text-xs text-gray-500 italic"></div>
         </div>
 
         <!-- CATEGORY FILTER TABS -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer"></div>
+        <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-3 mb-4 sm:mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer"></div>
 
-        <!-- PRODUCT GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGridContainer"></div>
+        <!-- PRODUCT GRID (2 KOLOM PADA HP, 3 KOLOM TABLET, 4 KOLOM LAPTOP) -->
+        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-6" id="productGridContainer"></div>
 
       </div>
     </section>
@@ -980,7 +980,7 @@
         categoriesList.forEach(cat => {
           const isActive = cat === selectedCategory;
           container.innerHTML += `
-            <button onclick="selectCategory('${cat}')" class="px-4 py-2.5 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 min-h-[42px] sm:min-h-0 flex items-center justify-center ${
+            <button onclick="selectCategory('${cat}')" class="px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 min-h-[36px] sm:min-h-0 flex items-center justify-center ${
               isActive 
                 ? 'bg-brand-charcoal text-white shadow-md' 
                 : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
@@ -1031,7 +1031,7 @@
           activeVariant.gallery.forEach((imgUrl, imgIndex) => {
             const isActive = imgIndex === product.selectedImageIndex;
             galleryHtml += `
-              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-11 h-11 sm:w-10 sm:h-10 rounded-xl overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow-md' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl overflow-hidden border transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow-md' : 'border-gray-200 opacity-60 hover:opacity-100'}">
                 <img src="${imgUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
               </button>
             `;
@@ -1041,8 +1041,8 @@
           product.variants.forEach((varItem, vIndex) => {
             const isSelected = vIndex === product.selectedVariantIndex;
             variantsHtml += `
-              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-7 h-7 sm:w-6 sm:h-6 rounded-full border-2 transition-transform transform active:scale-110 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-105' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
-                ${isSelected ? '<i class="fa-solid fa-check text-[9px] text-white drop-shadow"></i>' : ''}
+              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border transition-transform transform active:scale-110 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-105' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+                ${isSelected ? '<i class="fa-solid fa-check text-[7px] sm:text-[9px] text-white drop-shadow"></i>' : ''}
               </button>
             `;
           });
@@ -1051,63 +1051,63 @@
           product.sizes.forEach((size) => {
             const isSizeSelected = size === product.selectedSize;
             sizesHtml += `
-              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-3 py-1.5 sm:px-2.5 sm:py-1 rounded-lg text-xs font-bold transition-all min-w-[36px] min-h-[32px] sm:min-w-0 sm:min-h-0 flex items-center justify-center ${isSizeSelected ? 'bg-brand-charcoal text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
+              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded text-[10px] sm:text-xs font-bold transition-all min-w-[26px] sm:min-w-0 flex items-center justify-center ${isSizeSelected ? 'bg-brand-charcoal text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
                 ${size}
               </button>
             `;
           });
 
           const cardHtml = `
-            <div class="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
-              <div class="relative h-72 sm:h-64 overflow-hidden bg-gray-100">
+            <div class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+              <div class="relative h-40 sm:h-64 overflow-hidden bg-gray-100">
                 <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1A1919/D28835?text=Angsana';">
-                <span class="absolute top-3 left-3 px-3 py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[10px] sm:text-[9px] font-extrabold uppercase shadow-md tracking-wider">
-                  ${isOutOfStock ? 'Stok Habis' : 'Tersedia'}
+                <span class="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[8px] sm:text-[9px] font-extrabold uppercase shadow-md tracking-wider">
+                  ${isOutOfStock ? 'Habis' : 'Ready'}
                 </span>
-                ${product.rating ? `<span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[10px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star"></i> ${product.rating}</span>` : ''}
+                ${product.rating ? `<span class="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[8px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star text-[7px] sm:text-[9px]"></i> ${product.rating}</span>` : ''}
               </div>
 
-              <div class="px-4 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar touch-pan-x">
+              <div class="px-2 pt-2 sm:px-4 sm:pt-3 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar touch-pan-x">
                 ${galleryHtml}
               </div>
 
-              <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+              <div class="p-2.5 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <span class="text-[11px] sm:text-[10px] text-brand-tan font-bold uppercase tracking-wider block mb-1">${product.category}</span>
-                  <h3 class="font-heading font-extrabold text-base sm:text-base text-brand-charcoal leading-snug">${product.name}</h3>
+                  <span class="text-[9px] sm:text-[10px] text-brand-tan font-bold uppercase tracking-wider block mb-0.5 sm:mb-1">${product.category}</span>
+                  <h3 class="font-heading font-extrabold text-xs sm:text-base text-brand-charcoal leading-tight sm:leading-snug line-clamp-2">${product.name}</h3>
                   
-                  <div class="mt-3 pt-3 border-t border-gray-100">
-                    <div class="flex justify-between items-center text-xs mb-2">
-                      <span class="text-gray-600">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
-                      <span class="text-xs font-bold ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
-                        Stok: ${activeVariant.stock} pcs
+                  <div class="mt-1.5 sm:mt-3 pt-1.5 sm:pt-3 border-t border-gray-100">
+                    <div class="flex justify-between items-center text-[10px] sm:text-xs mb-1 sm:mb-2">
+                      <span class="text-gray-600 truncate mr-1">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
+                      <span class="text-[9px] sm:text-xs font-bold flex-shrink-0 ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
+                        Stok: ${activeVariant.stock}
                       </span>
                     </div>
-                    <div class="flex items-center gap-2 flex-wrap">
+                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">
                       ${variantsHtml}
                     </div>
                   </div>
 
-                  <div class="mt-3">
-                    <span class="text-xs text-gray-500 block mb-1.5 font-medium">Pilih Ukuran (Size):</span>
-                    <div class="flex items-center gap-2 flex-wrap">
+                  <div class="mt-1.5 sm:mt-3">
+                    <span class="text-[10px] sm:text-xs text-gray-500 block mb-1 font-medium">Size:</span>
+                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">
                       ${sizesHtml}
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-5 pt-3.5 border-t border-gray-100 flex items-center justify-between gap-3">
+                <div class="mt-2 sm:mt-5 pt-2 sm:pt-3.5 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
                   <div>
-                    <span class="text-[10px] text-gray-400 block uppercase font-medium">Harga</span>
-                    <span class="font-black text-lg sm:text-base text-brand-charcoal">${product.priceText}</span>
+                    <span class="text-[8px] sm:text-[10px] text-gray-400 block uppercase font-medium">Harga</span>
+                    <span class="font-black text-xs sm:text-base text-brand-charcoal">${product.priceText}</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <button onclick="openProductDetailModal(${pIndex})" class="px-3.5 py-2.5 sm:px-2.5 sm:py-2 rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-xs font-bold transition-colors min-h-[40px] sm:min-h-0 flex items-center justify-center">
+                  <div class="flex items-center gap-1 sm:gap-2 w-full sm:w-auto">
+                    <button onclick="openProductDetailModal(${pIndex})" class="flex-1 sm:flex-none px-2 py-1 sm:px-2.5 sm:py-2 rounded-lg sm:rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-[10px] sm:text-xs font-bold transition-colors min-h-[28px] sm:min-h-0 flex items-center justify-center">
                       Detail
                     </button>
-                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="px-4 py-2.5 sm:px-3 sm:py-2 rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan active:scale-95 text-white'} text-xs font-bold transition-all shadow-md min-h-[40px] sm:min-h-0 flex items-center justify-center gap-1.5">
-                      <i class="fa-solid fa-cart-plus text-sm"></i>
-                      <span class="sm:hidden font-extrabold">+ Beli</span>
+                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="flex-1 sm:flex-none px-2 py-1 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan active:scale-95 text-white'} text-[10px] sm:text-xs font-bold transition-all shadow-md min-h-[28px] sm:min-h-0 flex items-center justify-center gap-1">
+                      <i class="fa-solid fa-cart-plus text-[9px] sm:text-sm"></i>
+                      <span class="font-extrabold">+ Beli</span>
                     </button>
                   </div>
                 </div>
