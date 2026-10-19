@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ANGSANA ACTIVEWEAR - Premium Outdoor Gear & Sportswear</title>
+    <title>ANGSANA OUTDOOR & ACTIVEWEAR - Premium Gear & Sportswear</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -93,31 +93,33 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
           
+          <!-- Hamburger Menu Button (Mobile) -->
+          <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors focus:outline-none">
+            <i id="hamburgerIcon" class="fa-solid fa-bars text-lg"></i>
+          </button>
+
           <!-- Logo Brand -->
-          <a href="#hero" class="flex items-center gap-3 cursor-pointer group flex-shrink-0">
-            <img src="Code_Generated_Image.png" alt="Logo Angsana Activewear" class="w-9 h-9 sm:w-11 sm:h-11 object-contain">
-            <div class="flex flex-col justify-center">
-              <span class="font-heading font-black text-lg sm:text-xl tracking-wider text-white block leading-none group-hover:text-brand-amber transition-colors">
-                ANGSANA
-              </span>
-              <span class="text-[9px] sm:text-[10px] tracking-[0.2em] font-bold text-brand-amber uppercase block mt-1">
-                ACTIVEWEAR
-              </span>
-            </div>
-          </a>
-
-          <!-- Desktop Navigation Menu -->
-          <nav class="hidden md:flex items-center gap-5 lg:gap-7 font-medium text-xs lg:text-sm tracking-wider uppercase">
-            <a href="#hero" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
-              <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Beranda
+          <a href="index.html" class="flex items-center gap-0 sm:gap-0 cursor-pointer group flex-shrink-0">
+  <!-- Perbesar ukuran tinggi logo di sini -->
+         <img src="Code_Generated_Image (1).png" alt="Logo Angsana" width="130" height="130" class="object-contain">
+         <div class="flex flex-col justify-center">
+       <span class="font-heading font-black text-lg sm:text-2xl tracking-wide text-white block leading-none group-hover:text-brand-amber transition-colors">
+         ANGSANA
+    </span>
+  </div>
+</a>
+           <nav class="hidden md:flex items-center gap-4 lg:gap-6 font-medium text-xs lg:text-sm tracking-wider uppercase">
+            <a href="index.html" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
+              <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Home
             </a>
-            <a href="#tentang-perusahaan" class="hover:text-brand-amber transition-colors">Tentang Kami</a>
-            <a href="#katalog" class="hover:text-brand-amber transition-colors">Katalog</a>
-            <a href="#marketplace-section" class="hover:text-brand-amber transition-colors">Marketplace</a>
-            <a href="#keunggulan" class="hover:text-brand-amber transition-colors">Keunggulan</a>
-          </nav>
-
-          <!-- Search Bar, Logo Sosmed & Action Buttons -->
+  <!-- <a href="index.html" class="hover:text-brand-amber transition-colors flex items-center gap-1.5 font-bold">Home</a> -->
+  <a href="about.html" class="hover:text-brand-amber transition-colors">About</a>
+  <a href="catalog.html" class="hover:text-brand-amber transition-colors">Catalog</a>
+  <a href="services.html" class="hover:text-brand-amber transition-colors">Services</a>
+  <a href="marketplace.html" class="hover:text-brand-amber transition-colors">Marketplace</a>
+  <a href="features.html" class="hover:text-brand-amber transition-colors">Features</a>
+</nav>
+                    <!-- Search Bar & Action Buttons -->
           <div class="flex items-center gap-2 sm:gap-3">
             <div class="relative hidden sm:block w-28 sm:w-36 lg:w-44">
               <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
@@ -132,12 +134,12 @@
               >
             </div>
 
-            <!-- Tautan Logo Sosial Media di Header Desktop (Hanya Ikon) -->
+            <!-- Social Icons (Desktop) -->
             <div class="hidden lg:flex items-center gap-1.5">
-              <a href="https://www.instagram.com/angsana_activewear/" target="_blank" title="Instagram Angsana" class="w-9 h-9 rounded-xl bg-pink-600/20 hover:bg-pink-600 text-pink-400 hover:text-white border border-pink-500/30 transition-all flex items-center justify-center">
+              <a href="https://www.instagram.com/angsana_activewear/" target="_blank" title="Instagram" class="w-9 h-9 rounded-xl bg-pink-600/20 hover:bg-pink-600 text-pink-400 hover:text-white border border-pink-500/30 transition-all flex items-center justify-center">
                 <i class="fa-brands fa-instagram text-base"></i>
               </a>
-              <a href="https://www.youtube.com/@angsanaoutdoor" target="_blank" title="YouTube Angsana" class="w-9 h-9 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/30 transition-all flex items-center justify-center">
+              <a href="https://www.youtube.com/@angsanaoutdoor" target="_blank" title="YouTube" class="w-9 h-9 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/30 transition-all flex items-center justify-center">
                 <i class="fa-brands fa-youtube text-base"></i>
               </a>
             </div>
@@ -149,7 +151,7 @@
             </button>
 
             <!-- WhatsApp Button -->
-            <a href="https://wa.me/6281268888651?text=Halo%20Angsana%20Activewear,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
+            <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-900/35 flex-shrink-0">
               <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
               <span class="hidden lg:inline">Hubungi WA</span>
             </a>
@@ -179,27 +181,54 @@
       </div>
     </header>
 
+    <!-- MOBILE HAMBURGER DROPDOWN MENU -->
+    <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
+      <div class="px-6 py-6 space-y-4">
+        <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-house text-brand-amber w-6"></i> Beranda
+        </a>
+        <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-building text-brand-amber w-6"></i> Tentang Kami
+        </a>
+        <a href="catalog.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-layer-group text-brand-amber w-6"></i> Katalog Produk
+        </a>
+        <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-hands-holding-child text-brand-amber w-6"></i> Layanan Kami
+        </a>
+        <a href="marketplace.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-store text-brand-amber w-6"></i> Marketplace Resmi
+        </a>
+        <a href="features.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2">
+          <i class="fa-solid fa-shield-halved text-brand-amber w-6"></i> Keunggulan
+        </a>
+        <div class="pt-4 flex items-center justify-around gap-2 border-t border-white/10">
+          <a href="https://www.instagram.com/angsana_activewear/" target="_blank" class="p-2.5 rounded-xl bg-pink-600/20 text-pink-400 border border-pink-500/30 flex items-center justify-center flex-1">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <a href="https://www.youtube.com/@angsanaoutdoor" target="_blank" class="p-2.5 rounded-xl bg-red-600/20 text-red-400 border border-red-500/30 flex items-center justify-center flex-1">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="p-2.5 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-1">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- MOBILE BOTTOM NAVBAR -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-1.5 py-2 flex items-center justify-around shadow-2xl">
-      <a href="#hero" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
+      <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
         <i class="fa-solid fa-house text-sm"></i>
         <span class="text-[8px] font-medium mt-0.5">Beranda</span>
       </a>
-      <a href="#katalog" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
+      <a href="catalog.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
         <i class="fa-solid fa-layer-group text-sm"></i>
         <span class="text-[8px] font-medium mt-0.5">Katalog</span>
       </a>
-      <a href="#marketplace-section" class="flex flex-col items-center text-orange-400 hover:text-orange-300 py-0.5">
-        <i class="fa-solid fa-store text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Marketplace</span>
-      </a>
-      <a href="https://instagram.com" target="_blank" class="flex flex-col items-center text-pink-400 hover:text-pink-300 py-0.5">
-        <i class="fa-brands fa-instagram text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Instagram</span>
-      </a>
-      <a href="https://youtube.com" target="_blank" class="flex flex-col items-center text-red-400 hover:text-red-300 py-0.5">
-        <i class="fa-brands fa-youtube text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">YouTube</span>
+      <a href="services.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
+        <i class="fa-solid fa-hands-holding-child text-sm"></i>
+        <span class="text-[8px] font-medium mt-0.5">Layanan</span>
       </a>
       <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-400 hover:text-brand-amber relative py-0.5">
         <div class="relative">
@@ -208,20 +237,21 @@
         </div>
         <span class="text-[8px] font-medium mt-0.5">Keranjang</span>
       </button>
-      <a href="https://wa.me/6281268888651?text=Halo%20Angsana%20Activewear,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-0.5">
+      <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-0.5">
         <i class="fa-brands fa-whatsapp text-sm"></i>
         <span class="text-[8px] font-medium mt-0.5">WhatsApp</span>
       </a>
     </div>
 
-    <!-- HERO SECTION DENGAN SLIDER 1, 2, 3 & RESPONSIF HP/LAPTOP -->
-    <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[78vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+    
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
       
       <!-- SLIDE 1 -->
       <div class="hero-slide active" data-index="0">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Stay cool and comfortable all day long. This cotton running shirt is made of super-soft fabric t.jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-black/0"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -229,7 +259,6 @@
       <div class="hero-slide" data-index="1">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('New - Montana Trail Pants.Character -• Breathable Coolmax Technology• Multifunction Pocket• Elas.jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5892.JPG');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-black/0"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -237,71 +266,47 @@
       <div class="hero-slide" data-index="2">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('p5_img1.png');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5893.JPG');"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/0 via-black/0 to-black/0"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
-      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full">
+      <!-- TOMBOL PANAH KIRI & KANAN -->
+      <button onclick="prevSlide()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-brand-tan text-white backdrop-blur-md flex items-center justify-center transition-all shadow-lg focus:outline-none">
+        <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
+      </button>
+      <button onclick="nextSlide()" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-brand-tan text-white backdrop-blur-md flex items-center justify-center transition-all shadow-lg focus:outline-none">
+        <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
+      </button>
+
+      <!-- INDIKATOR DOTS -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        <button onclick="currentSlide = 0; updateSlideDisplay(); resetSlideTimer();" id="dot-0" class="w-8 h-2 rounded-full bg-brand-amber transition-all"></button>
+        <button onclick="currentSlide = 1; updateSlideDisplay(); resetSlideTimer();" id="dot-1" class="w-3 h-2 rounded-full bg-white/50 hover:bg-white transition-all"></button>
+        <button onclick="currentSlide = 2; updateSlideDisplay(); resetSlideTimer();" id="dot-2" class="w-3 h-2 rounded-full bg-white/50 hover:bg-white transition-all"></button>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full pointer-events-none">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <div class="lg:col-span-7 text-white space-y-4 sm:space-y-6 text-center lg:text-left">
+          <div class="lg:col-span-7 text-white space-y-4 sm:space-y-6 text-center lg:text-left pointer-events-auto">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-amber/20 border border-brand-amber/50 backdrop-blur-md">
               <span class="relative flex h-2.5 w-2.5">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">FASTER • BETTER • LIGHTER</span>
+              <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">ANGSANA ADVENTURE</span>
             </div>
 
-            <h1 class="font-heading font-black text-3xl sm:text-5xl lg:text-7xl tracking-tight leading-[1.15]">
-              <!-- ANGSANA <br class="hidden sm:inline"> -->
-              <!-- <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-amber via-amber-300 to-amber-500"> -->
-                <!-- ACTIVEWEAR -->
-              </span>
-            </h1>
-
             <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
-              Produsen & merek pakaian olahraga performa tinggi untuk lari road, trail running, dan gym. Berdiri sejak 2024 di Kota Tangerang, menghadirkan kenyamanan maksimal dengan teknologi kain modern.
+              Pusat perlengkapan petualangan luar ruang (Angsana Outdoor) dan pakaian olahraga performa tinggi (Angsana Activewear) berstandar kualitas premium.
             </p>
 
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a href="#katalog" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
                 <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
               </a>
-              <a href="#marketplace-section" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
-                <i class="fa-solid fa-store mr-2"></i> Toko Marketplace
+              <a href="#layanan" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
+                <i class="fa-solid fa-hands-holding-child mr-2"></i> Layanan Kami
               </a>
-            </div>
-          </div>
-
-          <!-- FEATURED HIGHLIGHT CARD -->
-          <!-- <div class="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div class="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/10 border border-white/20 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
-              <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-3 sm:pb-4 sm:mb-4">
-                <div>
-                  <span class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-brand-amber block">Featured Highlight</span>
-                  <h3 id="cardTitle" class="font-heading font-extrabold text-lg sm:text-2xl text-white">VEST RUNNING APOLLO</h3>
-                </div>
-                <span id="cardPrice" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-brand-tan text-white font-bold text-xs sm:text-sm shadow">
-                  Rp 299.000
-                </span>
-              </div>
-
-              <div class="relative h-48 sm:h-60 lg:h-64 rounded-xl sm:rounded-2xl overflow-hidden bg-black/30 mb-3 sm:mb-4 group">
-                <img id="cardImage" src="id-11134201-81zto-mrmffbdl5p8hdf.jpeg" alt="Featured Preview" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1A1919/D28835?text=Angsana+Activewear';">
-                <div class="absolute top-2.5 right-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] font-bold tracking-wider uppercase border border-white/20">
-                  <span id="cardCategory">VEST RUNNING</span>
-                </div> -->
-                
-                <!-- <button onclick="prevFeaturedPhoto()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"> -->
-                  <!-- <i class="fa-solid fa-chevron-left text-xs"></i> -->
-                <!-- </button> -->
-                <!-- <button onclick="nextFeaturedPhoto()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/80 transition-colors"> -->
-                  <!-- <i class="fa-solid fa-chevron-right text-xs"></i>
-                </button>
-              </div> -->
-
-              <!-- <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="featuredThumbnails"></div> -->
             </div>
           </div>
 
@@ -309,17 +314,16 @@
       </div>
     </section>
 
-    <!-- TENTANG PERUSAHAAN & COMPANY PROFILE PDF SECTION -->
+    <!-- TENTANG PERUSAHAAN SECTION -->
     <section id="tentang-perusahaan" class="py-12 sm:py-20 bg-white border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">COMPANY PROFILE ANGSANA ACTIVEWEAR</span>
-          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Mengenal Lebih Dekat Angsana Activewear</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Bagian dari Angsana Outdoor yang menghadirkan perlengkapan luar ruang inklusif, dinamis, dan bebas bergerak.</p>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">COMPANY PROFILE ANGSANA</span>
+          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Angsana Outdoor & Angsana Activewear</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mt-2">Menghadirkan perlengkapan luar ruang tangguh serta pakaian olahraga dinamis yang bebas bergerak.</p>
         </div>
 
-        <!-- TABS NAVIGASI COMPANY PROFILE -->
         <div class="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
           <button onclick="switchCompanyTab('tentang')" id="tabBtn-tentang" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0">
             Tentang Perusahaan
@@ -330,177 +334,89 @@
           <button onclick="switchCompanyTab('tujuan')" id="tabBtn-tujuan" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
             Tujuan Kami
           </button>
-          <button onclick="switchCompanyTab('layanan')" id="tabBtn-layanan" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
-            Layanan & Aktivitas
-          </button>
           <button onclick="switchCompanyTab('sejarah')" id="tabBtn-sejarah" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
             Sejarah Perusahaan
           </button>
         </div>
 
-        <!-- TAB CONTENT CONTAINER -->
         <div class="bg-brand-sand rounded-3xl p-6 sm:p-10 border border-brand-khaki/40 shadow-sm">
-          
-          <!-- KONTEN 1: TENTANG PERUSAHAAN -->
+          <!-- TENTANG PERUSAHAAN -->
           <div id="companyTab-tentang" class="company-tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-6 space-y-4">
-              <span class="px-3 py-1 rounded-full bg-brand-tan/20 text-brand-tan text-xs font-bold uppercase">Berdiri Sejak 2024</span>
-              <h3 class="font-heading font-extrabold text-xl sm:text-3xl text-brand-charcoal">Mitra Konveksi & Produsen Sportswear Performa Tinggi</h3>
+              <span class="px-3 py-1 rounded-full bg-brand-tan/20 text-brand-tan text-xs font-bold uppercase">Berdiri Sejak 2017 & 2024</span>
+              <h3 class="font-heading font-extrabold text-xl sm:text-3xl text-brand-charcoal">Produsen Perlengkapan Petualangan & Sportswear Performa Tinggi</h3>
               <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Angsana Activewear merupakan salah satu lini perusahaan dari bagian <strong>Angsana Outdoor</strong>, yang menghadirkan perlengkapan luar ruang yang lebih inklusif, mendukung gaya hidup yang dinamis, bebas bergerak, serta memfasilitasi aktivitas seperti lari (road & trail), gym, dan olahraga kasual.
-              </p>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                Berawal dari semangat kewirausahaan untuk memenuhi kebutuhan komunitas olahraga lokal, kini kami berkembang menjadi mitra konveksi modern yang melayani permintaan skala besar, mulai dari pembuatan jersey running hingga apparel aktif harian (athleisure).
+                <strong>Angsana Outdoor</strong> berfokus pada penyediaan perlengkapan mendaki gunung, berkemah, dan aktivitas alam bebas yang tangguh. Sementara <strong>Angsana Activewear</strong> merupakan lini khusus yang menghadirkan pakaian lari (road & trail), gym, serta athleisure yang dinamis dan ringan.
               </p>
               <div class="pt-2 flex items-center gap-4 text-xs font-bold text-brand-charcoal">
                 <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-tan"></i> Kota Tangerang, Banten</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-industry text-brand-tan"></i> Pabrik & Konveksi Modern</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-industry text-brand-tan"></i> Pabrik & Konveksi Sendiri</div>
               </div>
             </div>
             <div class="lg:col-span-6 grid grid-cols-2 gap-4">
               <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="p2_img1.png" alt="Tentang Angsana Activewear" class="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-300">
+                <img src="p2_img1.png" alt="Angsana Outdoor" class="w-full h-64 sm:h-80 object-cover">
               </div>
               <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="p3_img1.jpg" alt="Angsana Activewear Apparel" class="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-300">
+                <img src="p3_img1.jpg" alt="Angsana Activewear" class="w-full h-64 sm:h-80 object-cover">
               </div>
             </div>
           </div>
 
-          <!-- KONTEN 2: VISI & MISI -->
+          <!-- VISI & MISI -->
           <div id="companyTab-visi-misi" class="company-tab-content hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div class="lg:col-span-6 space-y-6">
               <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">01. Visi Kami</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">Visi Kami</span>
                 <h3 class="font-heading font-extrabold text-lg sm:text-2xl text-brand-charcoal mt-1">
-                  Menjadi merek sportswear lokal nomor satu yang mampu bersaing di pasar global dengan mengedepankan kualitas dan teknologi inovatif.
+                  Menjadi merek perlengkapan outdoor dan sportswear lokal terdepan yang mendunia melalui inovasi kualitas dan kenyamanan maksimal.
                 </h3>
-              </div>
-              <div class="border-t border-brand-khaki pt-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">02. Misi Kami</span>
-                <ul class="mt-2 space-y-2 text-xs sm:text-sm text-gray-700">
-                  <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
-                    <span>Memberikan kenyamanan maksimal bagi para atlet dan penggiat olahraga melalui material ramah lingkungan dan teknologi terkini.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
-                    <span>Mendukung gaya hidup sehat masyarakat dengan menghadirkan produk yang terjangkau dan berkualitas tinggi.</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i class="fa-solid fa-check text-brand-tan mt-0.5"></i>
-                    <span>Terus berinovasi mengikuti tren olahraga modern secara berkelanjutan.</span>
-                  </li>
-                </ul>
               </div>
             </div>
             <div class="lg:col-span-6">
               <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg" alt="Visi Misi Angsana Activewear" class="w-full h-72 sm:h-96 object-cover hover:scale-105 transition-transform duration-300">
+                <img src="Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg" alt="Visi Misi" class="w-full h-72 sm:h-96 object-cover">
               </div>
             </div>
           </div>
 
-          <!-- KONTEN 3: TUJUAN KAMI -->
+          <!-- TUJUAN KAMI -->
           <div id="companyTab-tujuan" class="company-tab-content hidden space-y-6">
-            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Tujuan Utama Angsana Activewear</h3>
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Tujuan Utama Angsana</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">01</div>
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Gaya Hidup Dinamis</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Mengajak konsumen mengadopsi gaya hidup aktif dan bergerak lebih leluasa, mulai dari penggunaan sehari-hari hingga olahraga ringan.</p>
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Ketahanan Ekstrem</h4>
+                <p class="text-xs text-gray-600">Menyediakan produk outdoor yang tangguh menghadapi medan pegunungan dan cuaca ekstrem.</p>
               </div>
               <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">02</div>
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Aktivitas Spesifik</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Menyediakan produk penunjang yang tepat (seperti running jacket & vest) yang dibuat dengan material berkualitas tinggi dan bersirkulasi udara (breathable).</p>
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Kenyamanan Olahraga</h4>
+                <p class="text-xs text-gray-600">Mendukung penggiat lari dan gym dengan kain berteknologi Tropic-Dry & Breathable.</p>
               </div>
               <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <div class="w-10 h-10 rounded-xl bg-brand-tan/10 text-brand-tan flex items-center justify-center font-bold text-base mb-3">03</div>
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Dukungan Inklusif</h4>
-                <p class="text-xs text-gray-600 leading-relaxed">Memperluas jangkauan pasar agar bisa menemani lebih banyak orang dalam berbagai kegiatan luar ruang, melengkapi produk petualangan ekstrem mereka.</p>
-              </div>
-            </div>
-            <!-- Foto Pendukung PDF untuk Tujuan Kami -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div class="rounded-2xl overflow-hidden shadow-md border border-white h-56 sm:h-64">
-                <img src="p5_img1.png" alt="Tujuan Kami - Angsana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-              </div>
-              <div class="rounded-2xl overflow-hidden shadow-md border border-white h-56 sm:h-64">
-                <img src="p5_img2.png" alt="Gaya Hidup Aktif - Angsana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Inklusif & Terjangkau</h4>
+                <p class="text-xs text-gray-600">Menjangkau seluruh kalangan penggiat gaya hidup aktif di Indonesia dengan harga kompetitif.</p>
               </div>
             </div>
           </div>
+          
 
-          <!-- KONTEN 4: LAYANAN & APA YANG KAMI LAKUKAN -->
-          <div id="companyTab-layanan" class="company-tab-content hidden space-y-6">
-            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Solusi End-to-End Pakaian Olahraga</h3>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Custom Sportswear</span>
-                  <h4 class="font-bold text-sm sm:text-base text-brand-charcoal mb-2">Jersey Komunitas</h4>
-                  <p class="text-xs text-gray-600">Jersey komunitas serta apparel lari kustom dengan teknologi sublimation printing berkualitas tinggi.</p>
-                </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Activewear</span>
-                  <h4 class="font-bold text-sm sm:text-base text-brand-charcoal mb-2">Lari Road, Trail & Gym</h4>
-                  <p class="text-xs text-gray-600">Pakaian lari road, trail running, dan gym yang dirancang sangat nyaman dan breathable.</p>
-                </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="text-[10px] font-bold text-brand-tan uppercase block mb-1">Accessories & Outer</span>
-                  <h4 class="font-bold text-sm sm:text-base text-brand-charcoal mb-2">Jaket, Rompi & Topi</h4>
-                  <p class="text-xs text-gray-600">Apparel pendukung performa seperti vest running, rompi, jaket ultralight, dan topi olahraga.</p>
-                </div>
-              </div>
-              
-              <!-- Foto Layanan & Produk PDF -->
-              <div class="lg:col-span-5 grid grid-cols-2 gap-3">
-                <div class="rounded-2xl overflow-hidden shadow-md border border-white h-52 sm:h-60">
-                  <img src="p6_img1.png" alt="Activewear Model" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="rounded-2xl overflow-hidden shadow-md border border-white h-52 sm:h-60">
-                  <img src="p7_img1.png" alt="Layanan Apparel Angsana" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- KONTEN 5: SEJARAH PERUSAHAAN -->
+          <!-- SEJARAH -->
           <div id="companyTab-sejarah" class="company-tab-content hidden space-y-6">
-            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Perjalanan & Milestone Angsana</h3>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="px-2.5 py-1 rounded-lg bg-brand-charcoal text-white text-xs font-bold">Tahun 2017</span>
-                  <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Angsana Outdoor</h4>
-                  <p class="text-xs text-gray-600">Perusahaan ritel dan manufaktur yang memproduksi serta mendistribusikan perlengkapan gaya hidup dan aktivitas luar ruang seperti mendaki gunung dan berkemah.</p>
-                </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="px-2.5 py-1 rounded-lg bg-brand-tan text-white text-xs font-bold">Tahun 2024</span>
-                  <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Angsana Activewear</h4>
-                  <p class="text-xs text-gray-600">Lini perusahaan baru dibentuk khusus untuk menghadirkan perlengkapan lari, gym, dan olahraga kasual yang inklusif serta dinamis.</p>
-                </div>
-                <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-                  <span class="px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold">Tahun 2026</span>
-                  <h4 class="font-bold text-base text-brand-charcoal mt-3 mb-1">Sinergi Tanpa Batas</h4>
-                  <p class="text-xs text-gray-600">Kini Angsana Outdoor & Angsana Activewear berjalan berdampingan untuk menemani aktivitas luar ruang Anda secara lengkap tanpa batas.</p>
-                </div>
+            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Perjalanan Perusahaan</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="bg-white p-6 rounded-2xl shadow-sm">
+                <span class="px-2.5 py-1 rounded-lg bg-brand-charcoal text-white text-xs font-bold">2017</span>
+                <h4 class="font-bold text-base text-brand-charcoal mt-2 mb-1">Pendirian Angsana Outdoor</h4>
+                <p class="text-xs text-gray-600">Memulai produksi perlengkapan dan tas pendakian gunung berkualitas tinggi di Tangerang.</p>
               </div>
-
-              <!-- Foto Sejarah Perusahaan PDF -->
-              <div class="lg:col-span-5">
-                <div class="rounded-2xl overflow-hidden shadow-lg border border-white h-64 sm:h-72">
-                  <img src="p8_img1.png" alt="Sejarah Angsana Activewear" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                </div>
+              <div class="bg-white p-6 rounded-2xl shadow-sm">
+                <span class="px-2.5 py-1 rounded-lg bg-brand-tan text-white text-xs font-bold">2024</span>
+                <h4 class="font-bold text-base text-brand-charcoal mt-2 mb-1">Peluncuran Angsana Activewear</h4>
+                <p class="text-xs text-gray-600">Memperluas lini produk ke segmen pakaian lari, vest running, dan sportswear modern.</p>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
@@ -508,20 +424,116 @@
     <section id="katalog" class="py-8 sm:py-20 bg-brand-sand border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-4 sm:mb-8 gap-1 sm:gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
           <div>
-            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Koleksi Lengkap Activewear</span>
-            <h2 class="font-heading font-black text-xl sm:text-4xl text-brand-charcoal mt-0.5">Katalog Produk Angsana</h2>
+            <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-brand-tan block">Pilih Brand Katalog</span>
+            <h2 class="font-heading font-black text-xl sm:text-4xl text-brand-charcoal mt-0.5">Katalog Produk Resmi</h2>
           </div>
           <div id="searchResultInfo" class="text-xs text-gray-500 italic"></div>
         </div>
 
-        <!-- CATEGORY FILTER TABS -->
+        <!-- 2 BRAND UTAMA -->
+        <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+          <button onclick="selectBrandCatalog('ANGSANA OUTDOOR')" id="brandTabOutdoor" class="p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg">
+            <i class="fa-solid fa-mountain text-brand-amber text-base sm:text-xl"></i>
+            <span>Angsana Outdoor</span>
+          </button>
+          <button onclick="selectBrandCatalog('ANGSANA ACTIVEWEAR')" id="brandTabActivewear" class="p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm">
+            <i class="fa-solid fa-person-running text-brand-tan text-base sm:text-xl"></i>
+            <span>Angsana Activewear</span>
+          </button>
+        </div>
+
+        <!-- SUB-CATEGORY FILTER TABS -->
         <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 sm:pb-3 mb-4 sm:mb-6 no-scrollbar touch-pan-x" id="categoryFilterContainer"></div>
 
-        <!-- PRODUCT GRID (2 KOLOM PADA HP, 3 KOLOM TABLET, 4 KOLOM LAPTOP) -->
+        <!-- PRODUCT GRID -->
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-6" id="productGridContainer"></div>
 
+      </div>
+    </section>
+
+    <!-- FITUR BARU: LAYANAN KAMI (SERVICES SECTION) -->
+    <section id="layanan" class="py-12 sm:py-20 bg-white border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">LAYANAN PROFESIONAL ANGSANA</span>
+          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Solusi & Layanan Khusus</h2>
+          <p class="text-xs sm:text-sm text-gray-600 mt-2">Selain memproduksi perlengkapan berkualitas, kami menyediakan layanan pendukung bagi komunitas dan instansi.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- Layanan 1 -->
+          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-brand-charcoal text-brand-amber flex items-center justify-center text-xl mb-4 shadow-md">
+                <i class="fa-solid fa-shirt"></i>
+              </div>
+              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Custom Jersey & Uniform Klub</h3>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                Layanan pembuatan jersey lari, kaos komunitas, atau seragam outdoor kustom dengan desain eksklusif, teknologi anti-UV, dan bahan quick-dry pilihan Anda.
+              </p>
+            </div>
+            <div>
+              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Min. order fleksibel</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Sublimasi warna tajam</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Konsultasi desain gratis</li>
+              </ul>
+              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20tertarik%20dengan%20layanan%20Custom%20Jersey%20%26%20Uniform" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Layanan 2 -->
+          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-brand-tan text-white flex items-center justify-center text-xl mb-4 shadow-md">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Perawatan & Reparasi Gear</h3>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                Layanan perawatan, perbaikan jahitan carrier, penggantian buckle, serta perbaikan tenda dan perlengkapan mendaki agar kembali prima di petualangan berikutnya.
+              </p>
+            </div>
+            <div>
+              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengecekan kondisi gratis</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Material original tahan lama</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengerjaan tenaga ahli</li>
+              </ul>
+              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20menggunakan%20layanan%20Perawatan%20%26%20Reparasi%20Gear" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Layanan 3 -->
+          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl mb-4 shadow-md">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Kerjasama B2B & Wholesale</h3>
+              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                Peluang kemitraan grosir (wholesale), reseller resmi, serta pengadaan korporat untuk instansi, event organizer, atau toko retail perlengkapan outdoor di seluruh Indonesia.
+              </p>
+            </div>
+            <div>
+              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Harga khusus grosir</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Dukungan promosi & katalog</li>
+                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengiriman logistik terpercaya</li>
+              </ul>
+              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20tertarik%20dengan%20Kerjasama%20B2B%20%26%20Wholesale" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -531,46 +543,40 @@
         <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
           <span class="px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber text-xs font-bold uppercase tracking-wider inline-block mb-2">Official Store</span>
           <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Belanja di Marketplace Resmi Kami</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Pilih platform belanja online favorit Anda untuk kemudahan transaksi, promo gratis ongkir, dan jaminan produk 100% original.</p>
+          <p class="text-xs sm:text-sm text-gray-600 mt-2">Pilih platform belanja online favorit Anda untuk kemudahan transaksi dan promo menarik.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <!-- Shopee Card -->
           <div class="bg-white rounded-3xl p-6 shadow-lg border border-orange-100 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-orange-600 text-white flex items-center justify-center text-3xl shadow-md shadow-orange-600/30 mb-4 group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-2xl bg-orange-600 text-white flex items-center justify-center text-3xl shadow-md mb-4">
               <i class="fa-solid fa-bag-shopping"></i>
             </div>
             <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">Shopee</h3>
-            <p class="text-xs text-gray-500 mb-6">Nikmati berbagai voucher diskon menarik dan gratis ongkir setiap hari.</p>
-            <a href="https://shopee.co.id/angsana_outdoor?shopCollection=255494148#product_list" target="_blank" class="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi Shopee</span>
-              <i class="fa-solid fa-arrow-right"></i>
+            <p class="text-xs text-gray-500 mb-6">Nikmati voucher diskon dan gratis ongkir setiap hari.</p>
+            <a href="https://shopee.co.id/angsana_outdoor?shopCollection=255494148#product_list" target="_blank" class="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+              <span>Kunjungi Shopee</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
-          <!-- TikTok Shop Card -->
           <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-200 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl shadow-md shadow-black/30 mb-4 group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl shadow-md mb-4">
               <i class="fa-brands fa-tiktok"></i>
             </div>
             <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">TikTok Shop</h3>
             <p class="text-xs text-gray-500 mb-6">Temukan video ulasan produk langsung dan live shopping interaktif.</p>
-            <a href="https://www.tiktok.com/@angsanaoutdoor" target="_blank" class="w-full py-3 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi TikTok</span>
-              <i class="fa-solid fa-arrow-right"></i>
+            <a href="https://www.tiktok.com/@angsanaoutdoor" target="_blank" class="w-full py-3 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+              <span>Kunjungi TikTok</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
 
-          <!-- Tokopedia Card -->
           <div class="bg-white rounded-3xl p-6 shadow-lg border border-emerald-100 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-3xl shadow-md shadow-emerald-600/30 mb-4 group-hover:scale-110 transition-transform">
+            <div class="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-3xl shadow-md mb-4">
               <i class="fa-solid fa-store"></i>
             </div>
             <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">Tokopedia</h3>
             <p class="text-xs text-gray-500 mb-6">Belanja aman dan cepat dengan berbagai pilihan pengiriman instan.</p>
-            <a href="https://www.tokopedia.com/angsanashop?entrance_name=search_suggestion_store&source=universe&st=product" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi Tokopedia</span>
-              <i class="fa-solid fa-arrow-right"></i>
+            <a href="https://www.tokopedia.com/angsanashop" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+              <span>Kunjungi Tokopedia</span> <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -616,7 +622,6 @@
             </div>
 
             <div class="pt-1">
-              <span class="text-xs text-gray-500 block mb-2"></span>
               <div id="detailModalSizes" class="flex items-center gap-2 flex-wrap"></div>
             </div>
 
@@ -665,8 +670,8 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
 
-        <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal mb-1">Formulir Checkout & Pembayaran</h3>
-        <p class="text-xs text-gray-500 mb-3 sm:mb-4">Lengkapi data pengiriman dan gunakan voucher diskon Anda.</p>
+        <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal mb-1">Formulir Checkout & Pengiriman</h3>
+        <p class="text-xs text-gray-500 mb-3 sm:mb-4">Tarif ongkir dihitung otomatis berdasarkan Kota & Provinsi tujuan ekspedisi resmi[cite: 1].</p>
 
         <div id="modalCartSummary" class="bg-brand-sand p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 max-h-36 overflow-y-auto space-y-2 border border-brand-khaki/40"></div>
 
@@ -677,25 +682,45 @@
           </div>
 
           <div>
-            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Nomor Telepon / WhatsApp Aktif</label>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Nomor WhatsApp Aktif</label>
             <input type="tel" id="buyerPhone" required placeholder="Contoh: 081234567890" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm">
-          </div>
-
-          <div>
-            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Alamat Lengkap Pengiriman</label>
-            <textarea id="buyerAddress" required rows="2" placeholder="Nama Jalan, No Rumah, RT/RW, Kecamatan, Kota, Kode Pos" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm"></textarea>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Ekspedisi Kurir</label>
+              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Provinsi Tujuan</label>
+              <select id="buyerProvince" onchange="updateCityOptions()" required class="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm bg-white">
+                <option value="" disabled selected>-- Pilih Provinsi --</option>
+                <option value="DKI Jakarta">DKI Jakarta</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                <option value="Jawa Tengah">Jawa Tengah</option>
+                <option value="Jawa Timur">Jawa Timur</option>
+                <option value="Banten">Banten</option>
+                <option value="DI Yogyakarta">DI Yogyakarta</option>
+                <option value="Luar Jawa">Luar Pulau Jawa (Sumatera/Bali/Lainnya)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Kota / Kabupaten</label>
+              <select id="buyerCity" onchange="calculateTotal()" required class="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm bg-white">
+                <option value="" disabled selected>-- Pilih Provinsi Terlebih Dahulu --</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Alamat Lengkap & Patokan</label>
+            <textarea id="buyerAddress" required rows="2" placeholder="Nama Jalan, No Rumah, RT/RW, Kecamatan" class="w-full px-3.5 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] font-bold text-gray-700 uppercase mb-1">Ekspedisi Resmi Kurir</label>
               <select id="shippingExpedition" onchange="calculateTotal()" required class="w-full px-3 py-2 sm:py-2.5 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-tan focus:outline-none text-xs sm:text-sm bg-white">
                 <option value="" disabled selected>-- Pilih Kurir --</option>
-                <option value="JNE Express" data-cost="20000">JNE Express (Rp 20.000)</option>
-                <option value="J&T Express" data-cost="18000">J&T Express (Rp 18.000)</option>
-                <option value="SiCepat Express" data-cost="15000">SiCepat Express (Rp 15.000)</option>
-                <option value="AnterAja" data-cost="17000">AnterAja (Rp 17.000)</option>
-                <option value="GoSend Instant" data-cost="35000">GoSend Instant (Rp 35.000)</option>
+                <option value="JNE Express">JNE Express (Reguler)</option>
+                <option value="GoSend Instant">GoSend Instant (Khusus Jabodetabek)</option>
               </select>
             </div>
 
@@ -716,7 +741,7 @@
               <span id="summarySubtotal">Rp 0</span>
             </div>
             <div class="flex justify-between text-gray-600">
-              <span>Biaya Pengiriman:</span>
+              <span>Biaya Pengiriman Resmi:</span>
               <span id="summaryShipping">Rp 0</span>
             </div>
             <div class="flex justify-between text-red-500 font-medium" id="summaryDiscountRow" style="display: none;">
@@ -746,16 +771,16 @@
           <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
             <i class="fa-solid fa-truck-fast text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
             <h3 class="font-bold text-base sm:text-lg mb-1">Pengiriman Cepat</h3>
-            <p class="text-xs text-gray-500">Pilihan ekspedisi terpercaya ke seluruh Indonesia.</p>
+            <p class="text-xs text-gray-500">Tarif dan ekspedisi resmi terintegrasi ke seluruh Indonesia.</p>
           </div>
           <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
             <i class="fa-solid fa-shield-halved text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
             <h3 class="font-bold text-base sm:text-lg mb-1">Garansi Original</h3>
-            <p class="text-xs text-gray-500">100% Produk Asli Angsana Activewear bergaransi resmi.</p>
+            <p class="text-xs text-gray-500">100% Produk Asli Angsana Outdoor & Activewear.</p>
           </div>
           <div class="p-5 sm:p-6 rounded-2xl bg-brand-sand">
             <i class="fa-solid fa-headset text-2xl sm:text-3xl text-brand-tan mb-2.5"></i>
-            <h3 class="font-bold text-base sm:text-lg mb-1">Layanan Konsultasi WA</h3>
+            <h3 class="font-bold text-base sm:text-lg mb-1">Konsultasi WA</h3>
             <p class="text-xs text-gray-500">Bebas konsultasi ukuran dan varian langsung.</p>
           </div>
         </div>
@@ -767,35 +792,32 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
           <div>
-            <span class="font-heading font-bold text-lg tracking-wider block">ANGSANA ACTIVEWEAR</span>
-            <p class="text-xs text-gray-400 mt-1">Jl. Batas Peninggilan No.61, RT.001/RW.001, Sudimara Jaya, Kec. Ciledug, Kota Tangerang, Banten 15151</p>
+            <span class="font-heading font-bold text-lg tracking-wider block">ANGSANA OUTDOOR & ACTIVEWEAR</span>
+            <p class="text-xs text-gray-400 mt-1">Jl. Batas Peninggilan No.61, Sudimara Jaya, Kec. Ciledug, Kota Tangerang, Banten 15151</p>
           </div>
           <div class="flex flex-col items-center md:items-end gap-3">
             <div class="flex flex-wrap items-center justify-center gap-2">
-              <a href="https://www.instagram.com/angsana_activewear/" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-600 hover:bg-pink-500 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+              <a href="https://www.instagram.com/angsana_activewear/" target="_blank" class="px-3 py-1.5 rounded-lg bg-pink-600 text-white text-xs font-bold flex items-center gap-1.5">
                 <i class="fa-brands fa-instagram"></i> Instagram
               </a>
-              <a href="https://www.youtube.com/@angsanaoutdoor" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+              <a href="https://www.youtube.com/@angsanaoutdoor" target="_blank" class="px-3 py-1.5 rounded-lg bg-red-600 text-white text-xs font-bold flex items-center gap-1.5">
                 <i class="fa-brands fa-youtube"></i> YouTube
               </a>
-              <a href="https://shopee.co.id/angsana_outdoor?shopCollection=255494148#product_list" target="_blank" class="px-3 py-1.5 rounded-lg bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+              <a href="https://shopee.co.id/angsana_outdoor" target="_blank" class="px-3 py-1.5 rounded-lg bg-orange-600 text-white text-xs font-bold flex items-center gap-1.5">
                 <i class="fa-solid fa-bag-shopping"></i> Shopee
               </a>
-              <a href="https://www.tiktok.com/@angsanaoutdoor" target="_blank" class="px-3 py-1.5 rounded-lg bg-black hover:bg-gray-800 border border-white/20 text-white text-xs font-bold transition-all flex items-center gap-1.5">
-                <i class="fa-brands fa-tiktok"></i> TikTok
-              </a>
-              <a href="https://www.tokopedia.com/angsanashop?entrance_name=search_suggestion_store&source=universe&st=product" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+              <a href="https://www.tokopedia.com/angsanashop" target="_blank" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-bold flex items-center gap-1.5">
                 <i class="fa-solid fa-store"></i> Tokopedia
               </a>
             </div>
             <div class="flex items-center gap-4 text-xs text-gray-300">
               <span><i class="fa-solid fa-phone text-brand-tan mr-1"></i> +62 812-6888-8651</span>
-              <span><i class="fa-solid fa-globe text-brand-tan mr-1"></i> www.angsanaoutdoor.com</span>
+              <span><i class="fa-solid fa-globe text-brand-tan mr-1"></i> www.angsana_adventure.com</span>
             </div>
           </div>
         </div>
         <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
-          <p>© 2026 Angsana Outdoor Activewear. All rights reserved.</p>
+          <p>© 2026 Angsana Outdoor & Activewear. All rights reserved.</p>
           <p class="mt-2 sm:mt-0">Faster • Better • Lighter</p>
         </div>
       </div>
@@ -803,248 +825,209 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-      // EXTENDED CATALOG DATABASE DENGAN PENGATURAN HARGA TIAP UKURAN (SIZE)
       const catalogProducts = [
         {
+          id: "tas-gunung-merbabu",
+          brand: "ANGSANA OUTDOOR",
+          name: "Carrier Tas Gunung Angsana Merbabu 60 Liter",
+          category: "CARRIER",
+          rating: "4.9 (45)",
+          description: "Carrier tangguh berkapasitas 60 Liter dirancang khusus untuk ekspedisi pendakian gunung jangka panjang dengan suspensi ergonomis.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "60L",
+          sizePrices: { "60L": 650000 },
+          sizes: ["60L"],
+          variants: [
+            { colorName: "Olive Green", colorHex: "#556B2F", stock: 5, gallery: ["IMG_5892.JPG", "IMG_5893.JPG"] }
+          ]
+        },
+        {
+          id: "celana-montana-trail",
+          brand: "ANGSANA OUTDOOR",
+          name: "Montana Trail Pants Outdoor Series",
+          category: "CELANA",
+          rating: "4.8 (88)",
+          description: "Celana outdoor Coolmax Technology dengan saku multifungsi, bahan elastis dan cepat kering (quickdry) untuk medan ekstrem.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "L",
+          sizePrices: { "S": 275000, "M": 285000, "L": 285000, "XL": 295000 },
+          sizes: ["S", "M", "L", "XL"],
+          variants: [
+            { colorName: "Dark Grey", colorHex: "#333333", stock: 8, gallery: ["New - Montana Trail Pants.Character -• Breathable Coolmax Technology• Multifunction Pocket• Elas.jpg"] }
+          ]
+        },
+        {
+          id: "jaket-ultralight-angsana",
+          brand: "ANGSANA OUTDOOR",
+          name: "Jaket Windbreaker Waterproof Angsana Outdoor",
+          category: "JAKET",
+          rating: "4.9 (62)",
+          description: "Jaket windbreaker tahan angin dan air intensitas ringan, sangat ringan dilipat ke dalam kantong saku.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "L",
+          sizePrices: { "M": 320000, "L": 320000, "XL": 340000 },
+          sizes: ["M", "L", "XL"],
+          variants: [
+            { colorName: "Navy Blue", colorHex: "#1B263B", stock: 7, gallery: ["potone layar depan.png"] }
+          ]
+        },
+        {
           id: "vest-running-apollo",
+          brand: "ANGSANA ACTIVEWEAR",
           name: "Vest Running Angsana series Apollo 7,5 Liter",
           category: "VEST RUNNING",
           rating: "4.8 (112)",
-          description: "Vest Running Angsana series Apollo 7,5 Liter. Dilengkapi teknologi Light Tech/Breathable Fabric, Comfortable Pattern, Dynamic of Movement, Durable selection, dan Functional feature.",
+          description: "Vest Running Angsana series Apollo 7,5 Liter. Dilengkapi teknologi Light Tech/Breathable Fabric & Dynamic Movement.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: {
-            "S": 290000,
-            "M": 299000,
-            "L": 299000,
-            "XL": 310000,
-            "XXL": 325000
-          },
-          sizes: ["S","M","L","XL","XXL"],
+          sizePrices: { "S": 290000, "M": 299000, "L": 299000, "XL": 310000, "XXL": 325000 },
+          sizes: ["S", "M", "L", "XL", "XXL"],
           variants: [
-            {
-              colorName: "Candy Pink",
-              colorHex: "#E86361",
-              stock: 6,
-              gallery: [
-                "id-11134207-81ztq-mqvlth3z124qc8.jpeg",
-                "id-11134207-8224s-mgxg9i0yv8r034.jpeg"
-              ]
-            },
-            {
-              colorName: "Blue Sky",
-              colorHex: "#87CEEB",
-              stock: 6,
-              gallery: [
-                "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
-                "id-11134207-81ztp-mqvluxmxq41x87.jpeg"
-              ]
-            },
-            {
-              colorName: "Tan",
-              colorHex: "#B07548",
-              stock: 6,
-              gallery: [
-                "id-11134207-822wi-mp2cqi1dvqbx48.jpeg",
-                "id-11134207-822wo-mp2cpgenej9c91.jpeg"
-              ]
-            }
+            { colorName: "Candy Pink", colorHex: "#E86361", stock: 6, gallery: ["id-11134207-81ztq-mqvlth3z124qc8.jpeg", "id-11134207-8224s-mgxg9i0yv8r034.jpeg"] },
+            { colorName: "Blue Sky", colorHex: "#87CEEB", stock: 6, gallery: ["id-11134201-81zto-mrmffbdl5p8hdf.jpeg", "id-11134207-81ztp-mqvluxmxq41x87.jpeg"] },
+            { colorName: "Tan", colorHex: "#B07548", stock: 6, gallery: ["id-11134207-822wi-mp2cqi1dvqbx48.jpeg"] }
           ]
         },
         {
           id: "vest-running-athena",
+          brand: "ANGSANA ACTIVEWEAR",
           name: "Vest Running Angsana series Athena 10 Liter",
           category: "VEST RUNNING",
           rating: "4.9 (94)",
-          description: "Vest Running Angsana series Athena 10 Liter. Sangat cocok untuk long-distance trail running dengan kompartemen luas, jahitan bartack, dan strap elastis.",
+          description: "Vest Running Angsana series Athena 10 Liter untuk long-distance trail running dengan kompartemen luas.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: {
-            "M": 315000,
-            "L": 315000,
-            "XL": 330000,
-            "XXL": 345000
-          },
+          sizePrices: { "M": 315000, "L": 315000, "XL": 330000, "XXL": 345000 },
           sizes: ["M", "L", "XL", "XXL"],
           variants: [
-            {
-              colorName: "Dark Grey",
-              colorHex: "#1A1919",
-              stock: 4,
-              gallery: [
-                "id-11134201-81ztj-mthvqj6c45c597.jpeg",
-                "id-11134201-81ztc-mthvqj6nfi16f1.jpeg",
-                "id-11134201-81ztj-mthvqj4keade5d.jpeg"
-              ]
-            }
-          ]
-        },
-        {
-          id: "vest-running-artemis",
-          name: "Vest Running seri Artemis 8 Liter",
-          category: "VEST RUNNING",
-          rating: "4.7 (86)",
-          description: "Vest Trail Running Angsana series Artemis 8 Liter. Cocok untuk Training Endurance, Peak Training, dan Short Trail event.",
-          selectedImageIndex: 0,
-          selectedVariantIndex: 0,
-          selectedSize: "L",
-          sizePrices: {
-            "S": 369000,
-            "M": 379000,
-            "L": 379000,
-            "XL": 395000,
-            "XXL": 410000
-          },
-          sizes: ["S","M", "L", "XL", "XXL"],
-          variants: [
-            {
-              colorName: "Dark Gray",
-              colorHex: "#2C2C2C",
-              stock: 10,
-              gallery: [
-                "id-11134207-81zth-mr5euy1id9n0db.jpeg",
-                "id-11134207-81ztm-mr5euy1kv5z44e.jpeg",
-                "id-11134207-81zti-mr5evbhodhxg34.jpeg"
-              ]
-            }
+            { colorName: "Dark Grey", colorHex: "#1A1919", stock: 4, gallery: ["id-11134201-81ztj-mthvqj6c45c597.jpeg", "id-11134201-81ztc-mthvqj6nfi16f1.jpeg"] }
           ]
         },
         {
           id: "jersey-running-memphis",
+          brand: "ANGSANA ACTIVEWEAR",
           name: "Running Jersey Short Angsana Super Light Anti UV",
           category: "JERSEY",
           rating: "4.8 (142)",
-          description: "Jersey olahraga berteknologi Aeroready, Anti-Bacterial, dan Quick Dry. Memastikan sirkulasi udara optimal selama aktivitas running.",
+          description: "Jersey olahraga aeroready, Anti-Bacterial, dan Quick Dry untuk sirkulasi udara optimal saat lari.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: {
-            "S": 140000,
-            "M": 149000,
-            "L": 149000,
-            "XL": 160000,
-            "XXL": 175000
-          },
-          sizes: ["S","M", "L", "XL", "XXL"],
+          sizePrices: { "S": 140000, "M": 149000, "L": 149000, "XL": 160000, "XXL": 175000 },
+          sizes: ["S", "M", "L", "XL", "XXL"],
           variants: [
-            {
-              colorName: "Shibori Short",
-              colorHex: "#7A7F84",
-              stock: 10,
-              gallery: [
-                "id-11134207-8224y-mgwzk74lp1cce0.jpeg",
-                "id-11134207-82251-mgwzk74fq4g958.jpeg"
-              ]
-            },
-            {
-              colorName: "Memphis",
-              colorHex: "#3A638E",
-              stock: 8,
-              gallery: [
-                "id-11134207-8224u-mgwzk74lruh851.jpeg",
-                "id-11134207-8224x-mgwzk74lktn01c.jpeg"
-              ]
-            }
+            { colorName: "Shibori Short", colorHex: "#7A7F84", stock: 10, gallery: ["id-11134207-8224y-mgwzk74lp1cce0.jpeg"] },
+            { colorName: "Memphis", colorHex: "#3A638E", stock: 8, gallery: ["id-11134207-8224u-mgwzk74lruh851.jpeg"] }
           ]
         },
         {
           id: "topi-running-404nf",
+          brand: "ANGSANA ACTIVEWEAR",
           name: "Angsana 404 NF Running Cap Ultralight Quickdry",
           category: "TOPI",
           rating: "4.9 (78)",
-          description: "Topi running super ringan dengan Laser Cut ventilation side cap, Brim Eva Spons, Nylon Fabric Korean, dan Quickdry tech.",
+          description: "Topi running super ringan dengan Laser Cut ventilation side cap dan Quickdry tech.",
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "All Size",
-          sizePrices: {
-            "All Size": 115000
-          },
+          sizePrices: { "All Size": 115000 },
           sizes: ["All Size"],
           variants: [
-            {
-              colorName: "Khaki",
-              colorHex: "#9EAAA1",
-              stock: 10,
-              gallery: [
-                "id-11134201-81ztj-mryctz4dce8182.jpeg",
-                "id-11134201-81ztl-mryctyz7rtaa18.jpeg"
-              ]
-            },
-            {
-              colorName: "Black",
-              colorHex: "#111111",
-              stock: 14,
-              gallery: [
-                "id-11134201-81ztj-mryctznh8mbo76.jpeg",
-                "id-11134201-81ztn-mrycu24exq126d.jpeg"
-              ]
-            }
-          ]
-        },
-        {
-          id: "long-sleeved-tshirt-ornamen",
-          name: "Long sleeved T shirt Cotton SpanTech Ornamen series",
-          category: "KAOS",
-          rating: "4.9 (65)",
-          description: "Longs Sleeve Ornamen series dibuat dengan Teknologi Super Nyaman memberikan kelembutan pada kulit anda baik bersantai maupun beraktifitas. Material Cotton mix Spandek terbaik.",
-          selectedImageIndex: 0,
-          selectedVariantIndex: 0,
-          selectedSize: "M",
-          sizePrices: {
-            "S": 140000,
-            "M": 149000,
-            "L": 149000,
-            "XL": 160000,
-            "XXL": 175000
-          },
-          sizes: ["S","M","L","XL","XXL"],
-          variants: [
-            {
-              colorName: "BLACK",
-              colorHex: "#111111",
-              stock: 5,
-              gallery: [
-                "id-11134207-81ztf-mtowdhvihkhs99.jpeg"
-              ]
-            },
-            {
-              colorName: "GREEN SAGE",
-              colorHex: "#8A9A86",
-              stock: 3,
-              gallery: [
-                "id-11134207-81ztg-mtowdoforgg258.jpeg"
-              ]
-            },
-            {
-              colorName: "SALMON",
-              colorHex: "#AC525E",
-              stock: 3,
-              gallery: [
-                "id-11134207-81ztf-mtowdkud9zb4ce.jpeg"
-              ]
-            }
+            { colorName: "Khaki", colorHex: "#9EAAA1", stock: 10, gallery: ["id-11134201-81ztj-mryctz4dce8182.jpeg"] },
+            { colorName: "Black", colorHex: "#111111", stock: 14, gallery: ["id-11134201-81ztj-mryctznh8mbo76.jpeg"] }
           ]
         }
       ];
 
-      // GLOBAL STATE
+      const cityTariffs = {
+        "DKI Jakarta": [
+          { name: "Jakarta Selatan", tariff: 12000 },
+          { name: "Jakarta Pusat", tariff: 12000 },
+          { name: "Jakarta Barat", tariff: 12000 },
+          { name: "Jakarta Timur", tariff: 12000 },
+          { name: "Jakarta Utara", tariff: 12000 }
+        ],
+        "Jawa Barat": [
+          { name: "Kota Tangerang / Bodetabek", tariff: 15000 },
+          { name: "Kota Bandung", tariff: 18000 },
+          { name: "Bekasi / Depok / Bogor", tariff: 15000 },
+          { name: "Cirebon / Indramayu", tariff: 20000 },
+          { name: "Tasikmalaya / Garut", tariff: 22000 }
+        ],
+        "Jawa Tengah": [
+          { name: "Kota Semarang", tariff: 22000 },
+          { name: "Surakarta (Solo)", tariff: 22000 },
+          { name: "Yogyakarta", tariff: 22000 },
+          { name: "Tegal / Pekalongan", tariff: 20000 }
+        ],
+        "Jawa Timur": [
+          { name: "Kota Surabaya", tariff: 27000 },
+          { name: "Malang", tariff: 27000 },
+          { name: "Sidoarjo", tariff: 27000 }
+        ],
+        "Banten": [
+          { name: "Kota Tangerang (Pusat Gudang)", tariff: 9000 },
+          { name: "Tangerang Selatan", tariff: 12000 },
+          { name: "Serang / Cilegon", tariff: 16000 }
+        ],
+        "DI Yogyakarta": [
+          { name: "Kota Yogyakarta", tariff: 22000 },
+          { name: "Sleman / Bantul", tariff: 24000 }
+        ],
+        "Luar Jawa": [
+          { name: "Medan / Sumatera Utara", tariff: 45000 },
+          { name: "Palembang / Sumatera Selatan", tariff: 40000 },
+          { name: "Denpasar / Bali", tariff: 38000 },
+          { name: "Makassar / Sulawesi Selatan", tariff: 55000 }
+        ]
+      };
+
       let cartItems = [];
       let appliedDiscount = 0;
       let appliedVoucherName = "";
       let activeDetailProductIndex = null;
       let detailModalActiveImageIdx = 0;
       let searchQuery = "";
+      let selectedBrand = "ANGSANA OUTDOOR";
       let selectedCategory = "SEMUA";
 
-      const categoriesList = [
-        "SEMUA",
-        "VEST RUNNING",
-        "JERSEY",
-        "TOPI",
-        "KAOS"
-      ];
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenuDropdown');
+        const icon = document.getElementById('hamburgerIcon');
+        const isOpen = !menu.classList.contains('-translate-y-full');
+
+        if (isOpen) {
+          menu.classList.add('-translate-y-full', 'opacity-0', 'pointer-events-none');
+          icon.className = "fa-solid fa-bars text-lg";
+        } else {
+          menu.classList.remove('-translate-y-full', 'opacity-0', 'pointer-events-none');
+          icon.className = "fa-solid fa-xmark text-lg";
+        }
+      }
+
+      function selectBrandCatalog(brandName) {
+        selectedBrand = brandName;
+        selectedCategory = "SEMUA";
+
+        const btnOutdoor = document.getElementById('brandTabOutdoor');
+        const btnActivewear = document.getElementById('brandTabActivewear');
+
+        if (brandName === "ANGSANA OUTDOOR") {
+          btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
+          btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
+        } else {
+          btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
+          btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
+        }
+
+        renderCategoryTabs();
+        renderCatalog();
+      }
 
       function getProductPrice(product, size) {
         if (product.sizePrices && product.sizePrices[size] !== undefined) {
@@ -1054,15 +1037,13 @@
       }
 
       function switchCompanyTab(tabId) {
-        const tabs = ['tentang', 'visi-misi', 'tujuan', 'layanan', 'sejarah'];
+        const tabs = ['tentang', 'visi-misi', 'tujuan', 'sejarah'];
         tabs.forEach(t => {
           const contentEl = document.getElementById(`companyTab-${t}`);
           const btnEl = document.getElementById(`tabBtn-${t}`);
           if (t === tabId) {
             contentEl.classList.remove('hidden');
-            if (t === 'tentang' || t === 'visi-misi') {
-              contentEl.classList.add('grid');
-            }
+            if (t === 'tentang' || t === 'visi-misi') contentEl.classList.add('grid');
             btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0";
           } else {
             contentEl.classList.add('hidden');
@@ -1079,14 +1060,9 @@
           if (searchQuery !== "") clearBtn.classList.remove('hidden');
           else clearBtn.classList.add('hidden');
         }
-        
         if (searchQuery !== "") {
-          const katalogSection = document.getElementById('katalog');
-          if (katalogSection) {
-            katalogSection.scrollIntoView({ behavior: 'smooth' });
-          }
+          document.getElementById('katalog').scrollIntoView({ behavior: 'smooth' });
         }
-
         renderCatalog();
       }
 
@@ -1109,13 +1085,16 @@
         if (!container) return;
         container.innerHTML = '';
 
-        categoriesList.forEach(cat => {
+        let availableCats = ["SEMUA"];
+        catalogProducts.filter(p => p.brand === selectedBrand).forEach(p => {
+          if (!availableCats.includes(p.category)) availableCats.push(p.category);
+        });
+
+        availableCats.forEach(cat => {
           const isActive = cat === selectedCategory;
           container.innerHTML += `
-            <button onclick="selectCategory('${cat}')" class="px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 min-h-[36px] sm:min-h-0 flex items-center justify-center ${
-              isActive 
-                ? 'bg-brand-charcoal text-white shadow-md' 
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+            <button onclick="selectCategory('${cat}')" class="px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold whitespace-nowrap transition-all flex-shrink-0 ${
+              isActive ? 'bg-brand-charcoal text-white shadow-md' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
             }">
               ${cat}
             </button>
@@ -1129,18 +1108,19 @@
         container.innerHTML = '';
 
         const filteredProducts = catalogProducts.map((product, originalIndex) => ({ product, originalIndex })).filter(({ product }) => {
+          const matchBrand = product.brand === selectedBrand;
           const matchCategory = selectedCategory === "SEMUA" || product.category.toUpperCase() === selectedCategory;
           const matchQuery = searchQuery === "" || 
             product.name.toLowerCase().includes(searchQuery) ||
             product.category.toLowerCase().includes(searchQuery) ||
             product.description.toLowerCase().includes(searchQuery);
-          return matchCategory && matchQuery;
+          return matchBrand && matchCategory && matchQuery;
         });
 
         if (searchQuery !== "") {
           infoEl.innerText = `Hasil pencarian "${searchQuery}" (${filteredProducts.length} produk)`;
         } else {
-          infoEl.innerText = "";
+          infoEl.innerText = `${selectedBrand} Collection`;
         }
 
         if (filteredProducts.length === 0) {
@@ -1148,7 +1128,7 @@
             <div class="col-span-full text-center py-12 sm:py-16 bg-white rounded-2xl sm:rounded-3xl border border-gray-100 shadow-sm px-4">
               <i class="fa-solid fa-face-sad-tear text-3xl sm:text-4xl text-gray-300 mb-2"></i>
               <h3 class="font-bold text-base sm:text-lg text-gray-700">Produk Tidak Ditemukan</h3>
-              <p class="text-xs text-gray-400 mt-1">Coba sesuaikan kata kunci atau kategori yang Anda pilih.</p>
+              <p class="text-xs text-gray-400 mt-1">Tidak ada produk dalam kategori ini.</p>
             </div>
           `;
           return;
@@ -1164,7 +1144,7 @@
           activeVariant.gallery.forEach((imgUrl, imgIndex) => {
             const isActive = imgIndex === product.selectedImageIndex;
             galleryHtml += `
-              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl overflow-hidden border transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow-md' : 'border-gray-200 opacity-60 hover:opacity-100'}">
+              <button onclick="changeProductGallery(${pIndex}, ${imgIndex})" class="w-7 h-7 sm:w-10 sm:h-10 rounded-lg overflow-hidden border transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60'}">
                 <img src="${imgUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
               </button>
             `;
@@ -1174,8 +1154,8 @@
           product.variants.forEach((varItem, vIndex) => {
             const isSelected = vIndex === product.selectedVariantIndex;
             variantsHtml += `
-              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border transition-transform transform active:scale-110 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-105' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
-                ${isSelected ? '<i class="fa-solid fa-check text-[7px] sm:text-[9px] text-white drop-shadow"></i>' : ''}
+              <button onclick="changeProductVariant(${pIndex}, ${vIndex})" title="${varItem.colorName}" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full border transition-transform flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-105' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+                ${isSelected ? '<i class="fa-solid fa-check text-[7px] text-white"></i>' : ''}
               </button>
             `;
           });
@@ -1184,71 +1164,60 @@
           product.sizes.forEach((size) => {
             const isSizeSelected = size === product.selectedSize;
             sizesHtml += `
-              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded text-[10px] sm:text-xs font-bold transition-all min-w-[26px] sm:min-w-0 flex items-center justify-center ${isSizeSelected ? 'bg-brand-charcoal text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
+              <button onclick="changeProductSize(${pIndex}, '${size}')" class="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded text-[10px] sm:text-xs font-bold transition-all ${isSizeSelected ? 'bg-brand-charcoal text-white shadow-sm' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
                 ${size}
               </button>
             `;
           });
 
-          const cardHtml = `
+          container.innerHTML += `
             <div class="bg-white rounded-xl sm:rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
               <div class="relative h-40 sm:h-64 overflow-hidden bg-gray-100">
                 <img src="${activeImage}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/400x300/1A1919/D28835?text=Angsana';">
-                <span class="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 px-1.5 py-0.5 sm:px-3 sm:py-1 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[8px] sm:text-[9px] font-extrabold uppercase shadow-md tracking-wider">
-                  ${isOutOfStock ? 'Habis' : 'Ready'}
+                <span class="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 px-2 py-0.5 rounded-full ${isOutOfStock ? 'bg-red-600' : 'bg-brand-tan'} text-white text-[8px] sm:text-[9px] font-extrabold uppercase shadow-md">
+                  ${isOutOfStock ? 'Habis' : product.brand}
                 </span>
-                ${product.rating ? `<span class="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[8px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star text-[7px] sm:text-[9px]"></i> ${product.rating}</span>` : ''}
+                ${product.rating ? `<span class="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 px-2 py-0.5 rounded-full bg-black/70 backdrop-blur-md text-amber-400 text-[8px] sm:text-[9px] font-bold shadow-md"><i class="fa-solid fa-star text-[7px]"></i> ${product.rating}</span>` : ''}
               </div>
 
-              <div class="px-2 pt-2 sm:px-4 sm:pt-3 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar touch-pan-x">
+              <div class="px-2 pt-2 sm:px-4 sm:pt-3 flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar">
                 ${galleryHtml}
               </div>
 
               <div class="p-2.5 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <span class="text-[9px] sm:text-[10px] text-brand-tan font-bold uppercase tracking-wider block mb-0.5 sm:mb-1">${product.category}</span>
-                  <h3 class="font-heading font-extrabold text-xs sm:text-base text-brand-charcoal leading-tight sm:leading-snug line-clamp-2">${product.name}</h3>
+                  <span class="text-[9px] sm:text-[10px] text-brand-tan font-bold uppercase tracking-wider block mb-0.5">${product.category}</span>
+                  <h3 class="font-heading font-extrabold text-xs sm:text-base text-brand-charcoal leading-tight line-clamp-2">${product.name}</h3>
                   
                   <div class="mt-1.5 sm:mt-3 pt-1.5 sm:pt-3 border-t border-gray-100">
-                    <div class="flex justify-between items-center text-[10px] sm:text-xs mb-1 sm:mb-2">
-                      <span class="text-gray-600 truncate mr-1">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
-                      <span class="text-[9px] sm:text-xs font-bold flex-shrink-0 ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">
-                        Stok: ${activeVariant.stock}
-                      </span>
+                    <div class="flex justify-between items-center text-[10px] sm:text-xs mb-1">
+                      <span class="text-gray-600">Warna: <strong class="text-brand-charcoal">${activeVariant.colorName}</strong></span>
+                      <span class="text-[9px] font-bold ${isOutOfStock ? 'text-red-500' : 'text-emerald-600'}">Stok: ${activeVariant.stock}</span>
                     </div>
-                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">
-                      ${variantsHtml}
-                    </div>
+                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">${variantsHtml}</div>
                   </div>
 
-                  <div class="mt-1.5 sm:mt-3">
-                    <span class="text-[10px] sm:text-xs text-gray-500 block mb-1 font-medium">Pilih Size:</span>
-                    <div class="flex items-center gap-1 sm:gap-2 flex-wrap">
-                      ${sizesHtml}
-                    </div>
+                  <div class="mt-1.5">
+                    <span class="text-[10px] text-gray-500 block mb-1 font-medium">Size:</span>
+                    <div class="flex items-center gap-1 flex-wrap">${sizesHtml}</div>
                   </div>
                 </div>
 
-                <div class="mt-2 sm:mt-5 pt-2 sm:pt-3.5 border-t border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-3">
+                <div class="mt-2 sm:mt-5 pt-2 sm:pt-3.5 border-t border-gray-100 flex items-center justify-between gap-1">
                   <div>
-                    <span class="text-[8px] sm:text-[10px] text-gray-400 block uppercase font-medium">Harga (${product.selectedSize})</span>
+                    <span class="text-[8px] sm:text-[10px] text-gray-400 block uppercase">Harga</span>
                     <span class="font-black text-xs sm:text-base text-brand-charcoal">${formatRupiah(currentCalculatedPrice)}</span>
                   </div>
-                  <div class="flex items-center gap-1 sm:gap-2 w-full sm:w-auto">
-                    <button onclick="openProductDetailModal(${pIndex})" class="flex-1 sm:flex-none px-2 py-1 sm:px-2.5 sm:py-2 rounded-lg sm:rounded-xl bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-[10px] sm:text-xs font-bold transition-colors min-h-[28px] sm:min-h-0 flex items-center justify-center">
-                      Detail
-                    </button>
-                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="flex-1 sm:flex-none px-2 py-1 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed text-gray-500' : 'bg-brand-charcoal hover:bg-brand-tan active:scale-95 text-white'} text-[10px] sm:text-xs font-bold transition-all shadow-md min-h-[28px] sm:min-h-0 flex items-center justify-center gap-1">
-                      <i class="fa-solid fa-cart-plus text-[9px] sm:text-sm"></i>
-                      <span class="font-extrabold">+ Beli</span>
+                  <div class="flex items-center gap-1">
+                    <button onclick="openProductDetailModal(${pIndex})" class="px-2 py-1 sm:px-2.5 sm:py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-brand-charcoal text-[10px] sm:text-xs font-bold">Detail</button>
+                    <button onclick="${isOutOfStock ? '' : `addToCart(${pIndex})`}" class="px-2 py-1 sm:px-3 sm:py-2 rounded-lg ${isOutOfStock ? 'bg-gray-300 cursor-not-allowed' : 'bg-brand-charcoal hover:bg-brand-tan text-white'} text-[10px] sm:text-xs font-bold shadow-md flex items-center gap-1">
+                      <i class="fa-solid fa-cart-plus"></i> + Beli
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           `;
-
-          container.innerHTML += cardHtml;
         });
       }
 
@@ -1287,7 +1256,7 @@
         const isOutOfStock = activeVariant.stock <= 0;
         const currentCalculatedPrice = getProductPrice(product, product.selectedSize);
 
-        document.getElementById('detailModalCategory').innerText = product.category;
+        document.getElementById('detailModalCategory').innerText = `${product.brand} • ${product.category}`;
         document.getElementById('detailModalName').innerText = product.name;
         document.getElementById('detailModalRating').innerHTML = product.rating ? `<i class="fa-solid fa-star"></i> ${product.rating}` : '';
         document.getElementById('detailModalStockStatus').innerHTML = isOutOfStock ? '<span class="text-red-500">Stok Habis</span>' : `<span class="text-emerald-600">Stok Tersedia (${activeVariant.stock} pcs)</span>`;
@@ -1302,8 +1271,8 @@
         activeVariant.gallery.forEach((imgUrl, imgIdx) => {
           const isActive = imgIdx === detailModalActiveImageIdx;
           galleryContainer.innerHTML += `
-            <button onclick="setDetailModalImage(${imgIdx})" class="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-gray-200 opacity-60 hover:opacity-100'}">
-              <img src="${imgUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
+            <button onclick="setDetailModalImage(${imgIdx})" class="w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${isActive ? 'border-brand-amber' : 'border-gray-200 opacity-60'}">
+              <img src="${imgUrl}" class="w-full h-full object-cover">
             </button>
           `;
         });
@@ -1313,8 +1282,8 @@
         product.variants.forEach((varItem, vIdx) => {
           const isSelected = vIdx === product.selectedVariantIndex;
           variantsContainer.innerHTML += `
-            <button onclick="setDetailModalVariant(${vIdx})" title="${varItem.colorName}" class="w-7 h-7 rounded-full border-2 transition-transform transform hover:scale-110 flex items-center justify-center ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-110' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
-              ${isSelected ? '<i class="fa-solid fa-check text-[10px] text-white drop-shadow"></i>' : ''}
+            <button onclick="setDetailModalVariant(${vIdx})" title="${varItem.colorName}" class="w-7 h-7 rounded-full border-2 transition-transform ${isSelected ? 'border-brand-amber ring-2 ring-brand-amber/40 scale-110' : 'border-white shadow-sm'}" style="background-color: ${varItem.colorHex};">
+              ${isSelected ? '<i class="fa-solid fa-check text-[10px] text-white"></i>' : ''}
             </button>
           `;
         });
@@ -1323,11 +1292,9 @@
         sizesContainer.innerHTML = '';
         product.sizes.forEach((size) => {
           const isSizeSelected = size === product.selectedSize;
-          const sizePriceFormatted = formatRupiah(product.sizePrices[size] || 0);
           sizesContainer.innerHTML += `
-            <button onclick="setDetailModalSize('${size}')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex flex-col items-center ${isSizeSelected ? 'bg-brand-charcoal text-white shadow' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
-              <span>${size}</span>
-              <span class="text-[9px] ${isSizeSelected ? 'text-brand-amber' : 'text-gray-500'}">${sizePriceFormatted}</span>
+            <button onclick="setDetailModalSize('${size}')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${isSizeSelected ? 'bg-brand-charcoal text-white shadow' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">
+              ${size}
             </button>
           `;
         });
@@ -1335,11 +1302,11 @@
         const addBtn = document.getElementById('detailModalAddBtn');
         if (isOutOfStock) {
           addBtn.disabled = true;
-          addBtn.className = "w-full py-3.5 rounded-xl bg-gray-300 cursor-not-allowed text-gray-500 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-none flex items-center justify-center gap-2";
+          addBtn.className = "w-full py-3.5 rounded-xl bg-gray-300 cursor-not-allowed text-gray-500 font-bold text-xs uppercase";
           addBtn.innerHTML = `<span>Stok Habis</span>`;
         } else {
           addBtn.disabled = false;
-          addBtn.className = "w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2";
+          addBtn.className = "w-full py-3.5 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase shadow-lg flex items-center justify-center gap-2";
           addBtn.innerHTML = `<i class="fa-solid fa-cart-plus"></i><span>Masukkan ke Keranjang</span>`;
           addBtn.setAttribute('onclick', `addToCartFromDetail(${activeDetailProductIndex})`);
         }
@@ -1414,9 +1381,7 @@
         const item = cartItems.find(i => i.key === key);
         if (item) {
           item.qty += delta;
-          if (item.qty <= 0) {
-            cartItems = cartItems.filter(i => i.key !== key);
-          }
+          if (item.qty <= 0) cartItems = cartItems.filter(i => i.key !== key);
         }
         updateCartUI();
       }
@@ -1444,15 +1409,15 @@
 
             container.innerHTML += `
               <div class="py-3 flex items-center gap-3">
-                <img src="${item.image}" class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border border-gray-200" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
+                <img src="${item.image}" class="w-14 h-14 rounded-xl object-cover border border-gray-200">
                 <div class="flex-1">
                   <h4 class="font-bold text-xs text-brand-charcoal line-clamp-1">${item.name}</h4>
-                  <p class="text-[10px] sm:text-[11px] text-gray-500">${item.color} | Ukuran: ${item.size}</p>
+                  <p class="text-[10px] text-gray-500">${item.color} | Ukuran: ${item.size}</p>
                   <span class="font-bold text-brand-tan text-xs block mt-0.5">${item.priceText}</span>
                   <div class="flex items-center gap-2 mt-1.5">
-                    <button onclick="updateCartQty('${item.key}', -1)" class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">-</button>
+                    <button onclick="updateCartQty('${item.key}', -1)" class="w-5 h-5 rounded bg-gray-100 font-bold">-</button>
                     <span class="text-xs font-bold">${item.qty}</span>
-                    <button onclick="updateCartQty('${item.key}', 1)" class="w-5 h-5 sm:w-6 sm:h-6 rounded bg-gray-100 hover:bg-gray-200 text-xs font-bold">+</button>
+                    <button onclick="updateCartQty('${item.key}', 1)" class="w-5 h-5 rounded bg-gray-100 font-bold">+</button>
                   </div>
                 </div>
               </div>
@@ -1474,15 +1439,17 @@
         appliedVoucherName = "";
         document.getElementById('voucherCode').value = "";
         document.getElementById('voucherStatus').classList.add('hidden');
+        document.getElementById('buyerProvince').selectedIndex = 0;
+        document.getElementById('buyerCity').innerHTML = '<option value="" disabled selected>-- Pilih Provinsi Terlebih Dahulu --</option>';
         document.getElementById('shippingExpedition').selectedIndex = 0;
 
         let summaryHtml = '';
         cartItems.forEach(item => {
           summaryHtml += `
             <div class="flex items-center gap-2.5 text-xs">
-              <img src="${item.image}" class="w-10 h-10 rounded-lg object-cover border" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
+              <img src="${item.image}" class="w-10 h-10 rounded-lg object-cover border">
               <div class="flex-1">
-                <p class="font-bold text-xs leading-tight line-clamp-1">${item.name} (${item.qty}x)</p>
+                <p class="font-bold text-xs line-clamp-1">${item.name} (${item.qty}x)</p>
                 <p class="text-[10px] text-gray-500">${item.color} | Size: ${item.size}</p>
               </div>
             </div>
@@ -1496,6 +1463,21 @@
 
       function closeCheckoutModal() {
         document.getElementById('checkoutModal').classList.add('hidden');
+      }
+
+      function updateCityOptions() {
+        const provinceSelect = document.getElementById('buyerProvince');
+        const citySelect = document.getElementById('buyerCity');
+        const selectedProv = provinceSelect.value;
+
+        citySelect.innerHTML = '<option value="" disabled selected>-- Pilih Kota / Kabupaten --</option>';
+
+        if (cityTariffs[selectedProv]) {
+          cityTariffs[selectedProv].forEach(cityObj => {
+            citySelect.innerHTML += `<option value="${cityObj.name}" data-tariff="${cityObj.tariff}">${cityObj.name} (Estimasi Rp ${cityObj.tariff.toLocaleString('id-ID')})</option>`;
+          });
+        }
+        calculateTotal();
       }
 
       function applyVoucher() {
@@ -1513,9 +1495,7 @@
           voucherStatus.innerText = "✕ Kode voucher tidak valid!";
           voucherStatus.classList.remove('hidden');
           voucherStatus.className = "text-xs font-semibold text-red-500";
-          setTimeout(() => {
-            voucherStatus.className = "text-xs font-semibold text-emerald-600";
-          }, 2000);
+          setTimeout(() => { voucherStatus.className = "text-xs font-semibold text-emerald-600"; }, 2000);
         }
         calculateTotal();
       }
@@ -1524,9 +1504,9 @@
         let subtotal = 0;
         cartItems.forEach(item => { subtotal += item.priceValue * item.qty; });
 
-        const select = document.getElementById('shippingExpedition');
-        const selectedOption = select.options[select.selectedIndex];
-        const shippingCost = selectedOption && selectedOption.value ? parseInt(selectedOption.getAttribute('data-cost')) || 0 : 0;
+        const citySelect = document.getElementById('buyerCity');
+        const selectedCityOption = citySelect.options[citySelect.selectedIndex];
+        const shippingCost = selectedCityOption && selectedCityOption.getAttribute('data-tariff') ? parseInt(selectedCityOption.getAttribute('data-tariff')) : 0;
 
         let total = subtotal + shippingCost - appliedDiscount;
         if (total < 0) total = 0;
@@ -1554,10 +1534,13 @@
 
         const name = document.getElementById('buyerName').value;
         const phone = document.getElementById('buyerPhone').value;
+        const province = document.getElementById('buyerProvince').value;
+        const city = document.getElementById('buyerCity').value;
         const address = document.getElementById('buyerAddress').value;
-        const expeditionSelect = document.getElementById('shippingExpedition');
-        const expedition = expeditionSelect.value;
-        const shippingCost = parseInt(expeditionSelect.options[expeditionSelect.selectedIndex].getAttribute('data-cost')) || 0;
+        const expedition = document.getElementById('shippingExpedition').value;
+        
+        const citySelect = document.getElementById('buyerCity');
+        const shippingCost = parseInt(citySelect.options[citySelect.selectedIndex].getAttribute('data-tariff')) || 0;
 
         let subtotal = 0;
         let itemsListStr = "";
@@ -1569,133 +1552,74 @@
         let finalTotal = subtotal + shippingCost - appliedDiscount;
         if (finalTotal < 0) finalTotal = 0;
 
-        const waMessage = `Halo Angsana Activewear, saya ingin memesan produk berikut:
+        const waMessage = `Halo Angsana, saya ingin memesan produk berikut:
 
 *DETAIL KERANJANG:*
 ${itemsListStr}
-*DATA PENGIRIMAN PELANGGAN:*
+*DATA PENGIRIMAN & EKSPEDISI:*
 - Nama Penerima: ${name}
-- Nomor Telepon: ${phone}
-- Alamat Lengkap: ${address}
+- Nomor WhatsApp: ${phone}
+- Provinsi: ${province}
+- Kota/Kabupaten: ${city}
+- Alamat: ${address}
 - Ekspedisi Kurir: ${expedition} (${formatRupiah(shippingCost)})
-${appliedVoucherName ? `- Voucher Digunakan: ${appliedVoucherName}` : ''}
+${appliedVoucherName ? `- Voucher: ${appliedVoucherName}` : ''}
 
 *RINCIAN PEMBAYARAN:*
 - Subtotal: ${formatRupiah(subtotal)}
-- Ongkir: ${formatRupiah(shippingCost)}
+- Ongkir (${city}): ${formatRupiah(shippingCost)}
 ${appliedDiscount > 0 ? `- Diskon: -${formatRupiah(appliedDiscount)}` : ''}
 *TOTAL PEMBAYARAN:* ${formatRupiah(finalTotal)}
 
-Mohon informasi nomor rekening/pembayaran selanjutnya. Terima kasih!`;
+Mohon informasi nomor rekening pembayaran. Terima kasih!`;
 
-        const encodedMessage = encodeURIComponent(waMessage);
-        window.open(`https://wa.me/6281268888651?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/6281268888651?text=${encodeURIComponent(waMessage)}`, '_blank');
         closeCheckoutModal();
         cartItems = [];
         updateCartUI();
       }
 
-      const heroSlidesData = [
-        { 
-          title: "VEST RUNNING APOLLO", 
-          price: "Rp 299.000", 
-          category: "VEST RUNNING", 
-          photos: [
-            "id-11134201-81zto-mrmffbdl5p8hdf.jpeg",
-            "id-11134207-81ztq-mqvlth3z124qc8.jpeg"
-          ]
-        },
-        { 
-          title: "VEST RUNNING ARTEMIS", 
-          price: "Rp 379.000", 
-          category: "VEST RUNNING", 
-          photos: [
-            "id-11134207-81zth-mr5euy1id9n0db.jpeg",
-            "id-11134207-81zti-mr5evbhodhxg34.jpeg"
-          ] 
-        },
-        { 
-          title: "BASELAYER INFINITY", 
-          price: "Rp 189.000", 
-          category: "BASELAYER", 
-          photos: [
-            "Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg",
-            "p5_img1.png"
-          ] 
-        }
-      ];
-
       let currentSlide = 0;
-      let currentPhotoIndex = 0;
-      let slideInterval = null;
-      const intervalDuration = 4500;
       const slides = document.querySelectorAll('.hero-slide');
+      let slideTimer = setInterval(autoSlide, 6000);
 
-      function updateSlideUI() {
-        slides.forEach((slide, idx) => {
-          if (idx === currentSlide) { slide.classList.add('active'); } else { slide.classList.remove('active'); }
+      function updateSlideDisplay() {
+        slides.forEach((s, idx) => {
+          const dot = document.getElementById(`dot-${idx}`);
+          if (idx === currentSlide) {
+            s.classList.add('active');
+            if (dot) dot.className = "w-8 h-2 rounded-full bg-brand-amber transition-all";
+          } else {
+            s.classList.remove('active');
+            if (dot) dot.className = "w-3 h-2 rounded-full bg-white/50 hover:bg-white transition-all";
+          }
         });
-        currentPhotoIndex = 0;
-        renderFeaturedCard();
-      }
-
-      function renderFeaturedCard() {
-        const data = heroSlidesData[currentSlide];
-        if (!data) return;
-
-        if (document.getElementById('cardTitle')) document.getElementById('cardTitle').innerText = data.title;
-        if (document.getElementById('cardPrice')) document.getElementById('cardPrice').innerText = data.price;
-        if (document.getElementById('cardCategory')) document.getElementById('cardCategory').innerText = data.category;
-        
-        const activePhoto = data.photos[currentPhotoIndex] || data.photos[0];
-        if (document.getElementById('cardImage')) document.getElementById('cardImage').src = activePhoto;
-
-        const thumbContainer = document.getElementById('featuredThumbnails');
-        if (thumbContainer) {
-          thumbContainer.innerHTML = '';
-          data.photos.forEach((photoUrl, idx) => {
-            const isActive = idx === currentPhotoIndex;
-            thumbContainer.innerHTML += `
-              <button onclick="setFeaturedPhoto(${idx})" class="w-10 h-8 sm:w-12 sm:h-10 rounded-lg overflow-hidden border-2 transition-all flex-shrink-0 ${isActive ? 'border-brand-amber scale-105 shadow' : 'border-white/20 opacity-60 hover:opacity-100'}">
-                <img src="${photoUrl}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/1A1919/D28835?text=Angsana';">
-              </button>
-            `;
-          });
-        }
-      }
-
-      function setFeaturedPhoto(idx) {
-        currentPhotoIndex = idx;
-        renderFeaturedCard();
-      }
-
-      function nextFeaturedPhoto() {
-        const data = heroSlidesData[currentSlide];
-        currentPhotoIndex = (currentPhotoIndex + 1) % data.photos.length;
-        renderFeaturedCard();
-      }
-
-      function prevFeaturedPhoto() {
-        const data = heroSlidesData[currentSlide];
-        currentPhotoIndex = (currentPhotoIndex - 1 + data.photos.length) % data.photos.length;
-        renderFeaturedCard();
       }
 
       function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
-        updateSlideUI();
+        updateSlideDisplay();
+        resetSlideTimer();
       }
 
-      function startAutoplay() {
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalDuration);
-        updateSlideUI();
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlideDisplay();
+        resetSlideTimer();
+      }
+
+      function autoSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlideDisplay();
+      }
+
+      function resetSlideTimer() {
+        clearInterval(slideTimer);
+        slideTimer = setInterval(autoSlide, 6000);
       }
 
       document.addEventListener('DOMContentLoaded', () => {
-        renderCategoryTabs();
-        renderCatalog();
-        startAutoplay();
+        selectBrandCatalog('ANGSANA OUTDOOR');
       });
     </script>
 </body>
