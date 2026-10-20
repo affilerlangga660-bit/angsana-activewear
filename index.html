@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ANGSANA OUTDOOR & ACTIVEWEAR - Premium Gear & Sportswear</title>
+    <Link rel="icon" type="image/x-icon" href="ee382de1-0f03-45b8-8d62-e919c1d744c2.png"/>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -19,9 +20,9 @@
           extend: {
             colors: {
               brand: {
-                tan: '#C17F44',
-                amber: '#D28835',
-                darktan: '#9F602F',
+                tan: '#33373D',
+                amber: '#33373D',
+                // darktan: '#9F602F',
                 charcoal: '#1A1919',
                 sand: '#F6F4EF',
                 khaki: '#D2CEBD',
@@ -39,7 +40,7 @@
 
     <style>
       .glass-header {
-        background: rgba(17, 17, 17, 0.92);
+        background: rgb(0, 0, 0);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
@@ -77,7 +78,7 @@
         background: #1A1919;
       }
       ::-webkit-scrollbar-thumb {
-        background: #C17F44;
+        background: #0e0e0e;
         border-radius: 4px;
       }
 
@@ -184,23 +185,23 @@
     <!-- MOBILE HAMBURGER DROPDOWN MENU -->
     <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
       <div class="px-6 py-6 space-y-4">
-        <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-house text-brand-amber w-6"></i> Beranda
+        <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-house text-brand-amber w-6"></i> Home
         </a>
-        <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-building text-brand-amber w-6"></i> Tentang Kami
+        <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-building text-brand-amber w-6"></i> About
         </a>
-        <a href="catalog.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-layer-group text-brand-amber w-6"></i> Katalog Produk
+        <a href="catalog.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-layer-group text-brand-amber w-6"></i> Catalog
         </a>
-        <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-hands-holding-child text-brand-amber w-6"></i> Layanan Kami
+        <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-hands-holding-child text-brand-amber w-6"></i> Services
         </a>
-        <a href="marketplace.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-store text-brand-amber w-6"></i> Marketplace Resmi
+        <a href="marketplace.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-store text-brand-amber w-6"></i> Marketplace 
         </a>
-        <a href="features.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2">
-          <i class="fa-solid fa-shield-halved text-brand-amber w-6"></i> Keunggulan
+        <a href="features.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2">
+          <i class="fa-solid fa-shield-halved text-brand-amber w-6"></i> Features
         </a>
         <div class="pt-4 flex items-center justify-around gap-2 border-t border-white/10">
           <a href="https://www.instagram.com/angsana_activewear/" target="_blank" class="p-2.5 rounded-xl bg-pink-600/20 text-pink-400 border border-pink-500/30 flex items-center justify-center flex-1">
@@ -217,32 +218,13 @@
     </div>
 
     <!-- MOBILE BOTTOM NAVBAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-1.5 py-2 flex items-center justify-around shadow-2xl">
-      <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-house text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Beranda</span>
-      </a>
-      <a href="catalog.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-layer-group text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Katalog</span>
-      </a>
-      <a href="services.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-hands-holding-child text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Layanan</span>
-      </a>
-      <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-400 hover:text-brand-amber relative py-0.5">
-        <div class="relative">
-          <i class="fa-solid fa-cart-shopping text-sm"></i>
-          <span id="mobileBottomCartBadge" class="absolute -top-2 -right-3 bg-brand-accent text-white font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-        </div>
-        <span class="text-[8px] font-medium mt-0.5">Keranjang</span>
-      </button>
-      <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-0.5">
-        <i class="fa-brands fa-whatsapp text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">WhatsApp</span>
-      </a>
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-black backdrop-blur-md border-t border-white/10 z-40 px-2 py-2 flex items-center justify-around shadow-2xl text-white text-[9px]">
+      <a href="index.html" class="flex flex-col items-center text-brand-amber font-bold"><i class="fa-solid fa-house text-sm"></i><span>Home</span></a>
+      <a href="about.html" class="flex flex-col items-center"><i class="fa-solid fa-building text-sm"></i><span>About</span></a>
+      <a href="catalog.html" class="flex flex-col items-center"><i class="fa-solid fa-layer-group text-sm"></i><span>Katalog</span></a>
+      <a href="services.html" class="flex flex-col items-center"><i class="fa-solid fa-hands-holding-child text-sm"></i><span>Layanan</span></a>
+      <a href="marketplace.html" class="flex flex-col items-center"><i class="fa-solid fa-store text-sm"></i><span>Marketplace</span></a>
     </div>
-
     
 
     <!-- HERO SECTION -->
@@ -251,23 +233,30 @@
       <!-- SLIDE 1 -->
       <div class="hero-slide active" data-index="0">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Stay cool and comfortable all day long. This cotton running shirt is made of super-soft fabric t.jpg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('potone layar depan.png');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url(4bef5a74-7c79-411a-a311-3a757a6359f1.jpg);"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <!-- SLIDE 2 -->
       <div class="hero-slide" data-index="1">
-        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('New - Montana Trail Pants.Character -• Breathable Coolmax Technology• Multifunction Pocket• Elas.jpg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5892.JPG');"></div>
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_b05u9yb05u9yb05u.jpeg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('1efae9a5-a223-4201-89db-1758581815c6.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <!-- SLIDE 3 -->
       <div class="hero-slide" data-index="2">
-        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('p5_img1.png');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('IMG_5893.JPG');"></div>
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Less than 4 days to the long journey around aosta valley @tordesgeants  this adventure that can .jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
+      <!-- SLIDE 4 -->
+      <div class="hero-slide" data-index="2">
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr.jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_brp9otbrp9otbrp9.jpeg');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
+      </div>
+
 
       <!-- TOMBOL PANAH KIRI & KANAN -->
       <button onclick="prevSlide()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-brand-tan text-white backdrop-blur-md flex items-center justify-center transition-all shadow-lg focus:outline-none">
@@ -301,10 +290,10 @@
             </p>
 
             <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <a href="#katalog" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
+              <a href="catalog.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
                 <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
               </a>
-              <a href="#layanan" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
+              <a href="services.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
                 <i class="fa-solid fa-hands-holding-child mr-2"></i> Layanan Kami
               </a>
             </div>
@@ -315,113 +304,8 @@
     </section>
 
     <!-- TENTANG PERUSAHAAN SECTION -->
-    <section id="tentang-perusahaan" class="py-12 sm:py-20 bg-white border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">COMPANY PROFILE ANGSANA</span>
-          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Angsana Outdoor & Angsana Activewear</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Menghadirkan perlengkapan luar ruang tangguh serta pakaian olahraga dinamis yang bebas bergerak.</p>
-        </div>
-
-        <div class="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 no-scrollbar">
-          <button onclick="switchCompanyTab('tentang')" id="tabBtn-tentang" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0">
-            Tentang Perusahaan
-          </button>
-          <button onclick="switchCompanyTab('visi-misi')" id="tabBtn-visi-misi" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
-            Visi & Misi
-          </button>
-          <button onclick="switchCompanyTab('tujuan')" id="tabBtn-tujuan" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
-            Tujuan Kami
-          </button>
-          <button onclick="switchCompanyTab('sejarah')" id="tabBtn-sejarah" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0">
-            Sejarah Perusahaan
-          </button>
-        </div>
-
-        <div class="bg-brand-sand rounded-3xl p-6 sm:p-10 border border-brand-khaki/40 shadow-sm">
-          <!-- TENTANG PERUSAHAAN -->
-          <div id="companyTab-tentang" class="company-tab-content grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-6 space-y-4">
-              <span class="px-3 py-1 rounded-full bg-brand-tan/20 text-brand-tan text-xs font-bold uppercase">Berdiri Sejak 2017 & 2024</span>
-              <h3 class="font-heading font-extrabold text-xl sm:text-3xl text-brand-charcoal">Produsen Perlengkapan Petualangan & Sportswear Performa Tinggi</h3>
-              <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
-                <strong>Angsana Outdoor</strong> berfokus pada penyediaan perlengkapan mendaki gunung, berkemah, dan aktivitas alam bebas yang tangguh. Sementara <strong>Angsana Activewear</strong> merupakan lini khusus yang menghadirkan pakaian lari (road & trail), gym, serta athleisure yang dinamis dan ringan.
-              </p>
-              <div class="pt-2 flex items-center gap-4 text-xs font-bold text-brand-charcoal">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-brand-tan"></i> Kota Tangerang, Banten</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-industry text-brand-tan"></i> Pabrik & Konveksi Sendiri</div>
-              </div>
-            </div>
-            <div class="lg:col-span-6 grid grid-cols-2 gap-4">
-              <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="p2_img1.png" alt="Angsana Outdoor" class="w-full h-64 sm:h-80 object-cover">
-              </div>
-              <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="p3_img1.jpg" alt="Angsana Activewear" class="w-full h-64 sm:h-80 object-cover">
-              </div>
-            </div>
-          </div>
-
-          <!-- VISI & MISI -->
-          <div id="companyTab-visi-misi" class="company-tab-content hidden grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div class="lg:col-span-6 space-y-6">
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider text-brand-tan">Visi Kami</span>
-                <h3 class="font-heading font-extrabold text-lg sm:text-2xl text-brand-charcoal mt-1">
-                  Menjadi merek perlengkapan outdoor dan sportswear lokal terdepan yang mendunia melalui inovasi kualitas dan kenyamanan maksimal.
-                </h3>
-              </div>
-            </div>
-            <div class="lg:col-span-6">
-              <div class="rounded-2xl overflow-hidden shadow-lg border border-white">
-                <img src="Take each step at your own pace.with Baseyaler Infnity - Tropic-dry Tech.Thermo-Balance Technolo.jpg" alt="Visi Misi" class="w-full h-72 sm:h-96 object-cover">
-              </div>
-            </div>
-          </div>
-
-          <!-- TUJUAN KAMI -->
-          <div id="companyTab-tujuan" class="company-tab-content hidden space-y-6">
-            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Tujuan Utama Angsana</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Ketahanan Ekstrem</h4>
-                <p class="text-xs text-gray-600">Menyediakan produk outdoor yang tangguh menghadapi medan pegunungan dan cuaca ekstrem.</p>
-              </div>
-              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Kenyamanan Olahraga</h4>
-                <p class="text-xs text-gray-600">Mendukung penggiat lari dan gym dengan kain berteknologi Tropic-Dry & Breathable.</p>
-              </div>
-              <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-2">
-                <h4 class="font-bold text-sm sm:text-base text-brand-charcoal">Inklusif & Terjangkau</h4>
-                <p class="text-xs text-gray-600">Menjangkau seluruh kalangan penggiat gaya hidup aktif di Indonesia dengan harga kompetitif.</p>
-              </div>
-            </div>
-          </div>
-          
-
-          <!-- SEJARAH -->
-          <div id="companyTab-sejarah" class="company-tab-content hidden space-y-6">
-            <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-charcoal text-center mb-6">Perjalanan Perusahaan</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div class="bg-white p-6 rounded-2xl shadow-sm">
-                <span class="px-2.5 py-1 rounded-lg bg-brand-charcoal text-white text-xs font-bold">2017</span>
-                <h4 class="font-bold text-base text-brand-charcoal mt-2 mb-1">Pendirian Angsana Outdoor</h4>
-                <p class="text-xs text-gray-600">Memulai produksi perlengkapan dan tas pendakian gunung berkualitas tinggi di Tangerang.</p>
-              </div>
-              <div class="bg-white p-6 rounded-2xl shadow-sm">
-                <span class="px-2.5 py-1 rounded-lg bg-brand-tan text-white text-xs font-bold">2024</span>
-                <h4 class="font-bold text-base text-brand-charcoal mt-2 mb-1">Peluncuran Angsana Activewear</h4>
-                <p class="text-xs text-gray-600">Memperluas lini produk ke segmen pakaian lari, vest running, dan sportswear modern.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KATALOG PRODUK -->
-    <section id="katalog" class="py-8 sm:py-20 bg-brand-sand border-t border-gray-200">
+     <!-- KATALOG PRODUK -->
+ <section id="katalog" class="py-8 sm:py-20 bg-brand-sand border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
