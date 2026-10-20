@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ANGSANA OUTDOOR & ACTIVEWEAR - Premium Gear & Sportswear</title>
+    <Link rel="icon" type="image/x-icon" href="ee382de1-0f03-45b8-8d62-e919c1d744c2.png"/>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
@@ -13,15 +14,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
     
-    <script>
+   <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               brand: {
-                tan: '#C17F44',
-                amber: '#D28835',
-                darktan: '#9F602F',
+                tan: '#33373D',
+                amber: '#33373D',
+                // darktan: '#9F602F',
                 charcoal: '#1A1919',
                 sand: '#F6F4EF',
                 khaki: '#D2CEBD',
@@ -39,7 +40,7 @@
 
     <style>
       .glass-header {
-        background: rgba(17, 17, 17, 0.92);
+        background: rgb(0, 0, 0);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
       }
@@ -189,22 +190,22 @@
     <!-- MOBILE HAMBURGER DROPDOWN MENU -->
     <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
       <div class="px-6 py-6 space-y-4">
-        <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+        <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-house text-brand-amber w-6"></i> Home
         </a>
-        <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+        <a href="about.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-building text-brand-amber w-6"></i> About
         </a>
-        <a href="catalog.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
-          <i class="fa-solid fa-layer-group text-brand-amber w-6"></i>Catalog
+        <a href="catalog.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+          <i class="fa-solid fa-layer-group text-brand-amber w-6"></i> Catalog
         </a>
-        <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+        <a href="services.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-hands-holding-child text-brand-amber w-6"></i> Services
         </a>
-        <a href="marketplace.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
+        <a href="marketplace.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-store text-brand-amber w-6"></i> Marketplace 
         </a>
-        <a href="features.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-white font-bold text-sm tracking-wider uppercase py-2">
+        <a href="features.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2">
           <i class="fa-solid fa-shield-halved text-brand-amber w-6"></i> Features
         </a>
         <div class="pt-4 flex items-center justify-around gap-2 border-t border-white/10">
@@ -221,32 +222,9 @@
       </div>
     </div>
 
+
     <!-- MOBILE BOTTOM NAVBAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-1.5 py-2 flex items-center justify-around shadow-2xl">
-      <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-house text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Beranda</span>
-      </a>
-      <a href="catalog.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-layer-group text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Katalog</span>
-      </a>
-      <a href="services.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-hands-holding-child text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Layanan</span>
-      </a>
-      <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-400 hover:text-brand-amber relative py-0.5">
-        <div class="relative">
-          <i class="fa-solid fa-cart-shopping text-sm"></i>
-          <span id="mobileBottomCartBadge" class="absolute -top-2 -right-3 bg-brand-accent text-white font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-        </div>
-        <span class="text-[8px] font-medium mt-0.5">Keranjang</span>
-      </button>
-      <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-0.5">
-        <i class="fa-brands fa-whatsapp text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">WhatsApp</span>
-      </a>
-    </div>
+    
 
     <!-- KATALOG CONTENT -->
     <main class="flex-1 py-8 sm:py-16">
@@ -448,7 +426,7 @@
     </footer>
 
     <!-- MOBILE BOTTOM NAVBAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-2 py-2 flex items-center justify-around shadow-2xl text-gray-400 text-[9px]">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-black backdrop-blur-md border-t border-white/10 z-40 px-2 py-2 flex items-center justify-around shadow-2xl text-white text-[9px]">
       <a href="index.html" class="flex flex-col items-center"><i class="fa-solid fa-house text-sm"></i><span>Home</span></a>
       <a href="about.html" class="flex flex-col items-center"><i class="fa-solid fa-building text-sm"></i><span>About</span></a>
       <a href="catalog.html" class="flex flex-col items-center text-brand-amber font-bold"><i class="fa-solid fa-layer-group text-sm"></i><span>Catalog</span></a>
