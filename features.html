@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
     
-   <script>
+    <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -100,33 +100,33 @@
           </button>
 
           <!-- Logo Brand -->
-                 <a href="index.html" class="flex items-center gap-0 sm:gap-0 cursor-pointer group flex-shrink-0">
+               <a href="index.html" class="flex items-center gap-0 sm:gap-0 cursor-pointer group flex-shrink-0">
   <!-- Perbesar ukuran tinggi logo di sini -->
-               <img src="Code_Generated_Image (1).png" alt="Logo Angsana" width="130" height="130" class="object-contain">
-                 <div class="flex flex-col justify-center">
-             <span class="font-heading font-black text-lg sm:text-2xl tracking-wide text-white block leading-none group-hover:text-brand-amber transition-colors">
-                 ANGSANA
-             </span>
-         </div>
-        </a>
+         <img src="Code_Generated_Image (1).png" alt="Logo Angsana" width="130" height="130" class="object-contain">
+         <div class="flex flex-col justify-center">
+       <span class="font-heading font-black text-lg sm:text-2xl tracking-wide text-white block leading-none group-hover:text-brand-amber transition-colors">
+         ANGSANA
+    </span>
+  </div>
+</a>
            <nav class="hidden md:flex items-center gap-4 lg:gap-6 font-medium text-xs lg:text-sm tracking-wider uppercase">
-             <a href="index.html" class="hover:text-brand-amber transition-colors flex items-center gap-1.5 font-bold">Home</a>
-             <a href="about.html" class="hover:text-brand-amber transition-colors">About</a>
-             <a href="catalog.html" class="hover:text-brand-amber transition-colors">Catalog</a>
-             <a href="services.html" class="hover:text-brand-amber transition-colors">Services</a>
-             <a href="marketplace.html" class="hover:text-brand-amber transition-colors">Marketplace</a>
-             <a href="features.html" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
-              <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Features
+            <a href="index.html" class="hover:text-brand-amber transition-colors flex items-center gap-1.5 font-bold">Home</a>
+            <a href="about.html" class="hover:text-brand-amber transition-colors">About</a>
+            <a href="catalog.html" class="hover:text-brand-amber transition-colors">Catalog</a>
+            <a href="services.html" class="hover:text-brand-amber transition-colors">Services</a>
+            <a href="marketplace.html" class="text-brand-amber transition-colors flex items-center gap-1.5 font-bold">
+              <span class="w-2 h-2 rounded-full bg-brand-amber"></span> Marketplace
             </a>
 
 
           <!-- Desktop Navigation -->
           <!-- <nav class="hidden md:flex items-center gap-4 lg:gap-6 font-medium text-xs lg:text-sm tracking-wider uppercase"> -->
- 
- 
- 
-  
-  <!-- <a href="features.html" class="hover:text-brand-amber transition-colors">Features</a> -->
+  <!-- <a href="index.html" class="hover:text-brand-amber transition-colors flex items-center gap-1.5 font-bold">Home/a> -->
+  <!-- <a href="about.html" class="hover:text-brand-amber transition-colors">About</a> -->
+  <!-- <a href="catalog.html" class="hover:text-brand-amber transition-colors">Catalog</a> -->
+  <!-- <a href="services.html" class="hover:text-brand-amber transition-colors">Services</a> -->
+  <!-- <a href="marketplace.html" class="hover:text-brand-amber transition-colors">Marketplace</a> -->
+  <a href="features.html" class="hover:text-brand-amber transition-colors">Features</a>
 </nav>
                     <!-- Search Bar & Action Buttons -->
           <div class="flex items-center gap-2 sm:gap-3">
@@ -135,7 +135,7 @@
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
               <input 
-                type="text" 
+                 type="text" 
                 id="searchInput" 
                 onfocus="openSearchOverlay()"
                 oninput="handleTypingSearch(this.value)"
@@ -177,13 +177,14 @@
               <i class="fa-solid fa-magnifying-glass text-xs"></i>
             </span>
             <input 
-               type="text" 
+              type="text" 
               id="mobileSearchInput" 
               onfocus="openSearchOverlay()"
               oninput="handleTypingSearch(this.value)"
               onkeydown="checkSearchSubmit(event, this.value)"
               placeholder="Cari produk Angsana..." 
-              />
+              class="w-full pl-9 pr-8 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
+            />
             <button onclick="clearSearch()" id="clearSearchBtn" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hidden">
               <i class="fa-solid fa-circle-xmark text-xs"></i>
             </button>
@@ -194,6 +195,7 @@
     </header>
 
     <!-- MOBILE HAMBURGER DROPDOWN MENU -->
+  <!-- MOBILE HAMBURGER DROPDOWN MENU -->
     <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
       <div class="px-8 py-10 space-y-4">
         <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
@@ -228,35 +230,7 @@
       </div>
     </div>
 
-
-    <!-- MOBILE BOTTOM NAVBAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-brand-charcoal/95 backdrop-blur-md border-t border-white/10 z-40 px-1.5 py-2 flex items-center justify-around shadow-2xl">
-      <a href="index.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-house text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Home</span>
-      </a>
-      <a href="catalog.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-layer-group text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Catalog</span>
-      </a>
-      <a href="services.html" class="flex flex-col items-center text-gray-400 hover:text-brand-amber active:text-brand-amber py-0.5">
-        <i class="fa-solid fa-hands-holding-child text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">Services</span>
-      </a>
-      <button onclick="toggleCartDrawer()" class="flex flex-col items-center text-gray-400 hover:text-brand-amber relative py-0.5">
-        <div class="relative">
-          <i class="fa-solid fa-cart-shopping text-sm"></i>
-          <span id="mobileBottomCartBadge" class="absolute -top-2 -right-3 bg-brand-accent text-white font-black text-[9px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
-        </div>
-        <span class="text-[8px] font-medium mt-0.5">Keranjang</span>
-      </button>
-      <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20tanya%20produk" target="_blank" class="flex flex-col items-center text-emerald-400 hover:text-emerald-300 py-0.5">
-        <i class="fa-brands fa-whatsapp text-sm"></i>
-        <span class="text-[8px] font-medium mt-0.5">WhatsApp</span>
-      </a>
-    </div>
-
-    <!-- MAIN FEATURES -->
+ <!-- MAIN FEATURES -->
     <main class="flex-1 py-12 sm:py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
