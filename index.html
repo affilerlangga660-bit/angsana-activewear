@@ -52,7 +52,7 @@
         height: 100%;
         opacity: 0;
         transition: opacity 1000ms ease-in-out, transform 8000ms ease-out;
-        transform: scale(1.08);
+        transform: scale(1.00);
         pointer-events: none;
       }
 
@@ -231,64 +231,94 @@
     </div>
     
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+   <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-brand-charcoal">
       
       <!-- SLIDE 1 -->
       <div class="hero-slide active" data-index="0">
-        <!-- <a href="halaman-produk-anda.html"></a> -->
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr.jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('4bef5a74-7c79-411a-a311-3a757a6359f1.jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Konten Tombol Tengah (Gstyle BRODO) -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-30 text-center px-4">
+          <span class="text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-2 drop-shadow-md">
+            Windbreaker 
+          </span>
+          <button onclick="openProductDetailModal(11)" class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-white/50 hover:bg-white text-white/90 text-[10px] sm:text-xs font-medium tracking-widest uppercase mb-1.5 drop-shadow-md">
+            WINDBREAKER AEROPHILE
+          </button>
+        </div>
       </div>
 
       <!-- SLIDE 2 -->
       <div class="hero-slide" data-index="1">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Konten Tombol Tengah (Gstyle BRODO) -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-30 text-center px-4">
+          <span class="text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-2 drop-shadow-md">
+            SHIBORI
+          </span>
+         <button onclick="openProductDetailModal(5)" class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-white/50 hover:bg-white text-white/90 text-[10px] sm:text-xs font-medium tracking-widest uppercase mb-1.5 drop-shadow-md">
+            JERSESY SHIBORI
+          </button>>
+        </div>
       </div>
 
       <!-- SLIDE 3 -->
       <div class="hero-slide" data-index="2">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Less than 4 days to the long journey around aosta valley @tordesgeants  this adventure that can .jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('1efae9a5-a223-4201-89db-1758581815c6.jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Konten Tombol Tengah (Gstyle BRODO) -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-30 text-center px-4">
+          <span class="text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-2 drop-shadow-md">
+            GOOSE DOWN
+          </span>
+           <button onclick="openProductDetailModal(15)" class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-white/50 hover:bg-white text-white/90 text-[10px] sm:text-xs font-medium tracking-widest uppercase mb-1.5 drop-shadow-md">
+            JAKET GOOSE DOWN
+          </button>
+        </div>
       </div>
+
       <!-- SLIDE 4 -->
-      <div class="hero-slide" data-index="2">
+      <div class="hero-slide" data-index="3">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Thumbnail ig (1).jpg');"></div>
         <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Desain tanpa judul.jpg');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Konten Tombol Tengah (Gstyle BRODO) -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center z-30 text-center px-4">
+          <span class="text-white/90 text-xs sm:text-sm font-medium tracking-widest uppercase mb-2 drop-shadow-md">
+            NEW Collection
+          </span>
+        <button onclick="openProductDetailModal(9)" class="px-6 py-2.5 sm:px-8 sm:py-3 rounded-full border border-white/50 hover:bg-white text-white/90 text-[10px] sm:text-xs font-medium tracking-widest uppercase mb-1.5 drop-shadow-md">
+            MUSCLE BOXY TEE
+          </button>
+        </div>
       </div>
 
-
       <!-- TOMBOL PANAH KIRI & KANAN -->
-      <button onclick="prevSlide()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-brand-tan text-white backdrop-blur-md flex items-center justify-center transition-all shadow-lg focus:outline-none">
+      <button onclick="prevSlide()" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/30 hover:bg-white hover:text-black text-white backdrop-blur-md flex items-center justify-center transition-all focus:outline-none">
         <i class="fa-solid fa-chevron-left text-sm sm:text-base"></i>
       </button>
-      <button onclick="nextSlide()" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/40 hover:bg-brand-tan text-white backdrop-blur-md flex items-center justify-center transition-all shadow-lg focus:outline-none">
+      <button onclick="nextSlide()" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/30 hover:bg-white hover:text-black text-white backdrop-blur-md flex items-center justify-center transition-all focus:outline-none">
         <i class="fa-solid fa-chevron-right text-sm sm:text-base"></i>
       </button>
 
       <!-- INDIKATOR DOTS -->
       <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
-        <button onclick="currentSlide = 0; updateSlideDisplay(); resetSlideTimer();" id="dot-0" class="w-8 h-2 rounded-full bg-brand-amber transition-all"></button>
-        <button onclick="currentSlide = 1; updateSlideDisplay(); resetSlideTimer();" id="dot-1" class="w-3 h-2 rounded-full bg-white/50 hover:bg-white transition-all"></button>
-        <button onclick="currentSlide = 2; updateSlideDisplay(); resetSlideTimer();" id="dot-2" class="w-3 h-2 rounded-full bg-white/50 hover:bg-white transition-all"></button>
+        <button onclick="currentSlide = 0; updateSlideDisplay(); resetSlideTimer();" id="dot-0" class="w-8 h-2 rounded-full bg-white transition-all"></button>
+        <button onclick="currentSlide = 1; updateSlideDisplay(); resetSlideTimer();" id="dot-1" class="w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+        <button onclick="currentSlide = 2; updateSlideDisplay(); resetSlideTimer();" id="dot-2" class="w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+        <button onclick="currentSlide = 3; updateSlideDisplay(); resetSlideTimer();" id="dot-3" class="w-3 h-2 rounded-full bg-white/40 hover:bg-white transition-all"></button>
       </div>
 
-      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full pointer-events-none">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          
-            </div>
-          </div>
-
-        </div>
-      </div>
     </section>
-
     <!-- TENTANG PERUSAHAAN SECTION -->
      <!-- KATALOG PRODUK -->
  <section id="katalog" class="py-8 sm:py-20 bg-brand-sand border-t border-gray-200">
@@ -611,7 +641,7 @@
     <script>
       const catalogProducts = [
         {
-          id: "tas-gunung-merbabu",
+          id: "0",
           brand: "ANGSANA OUTDOOR",
           name: "Carrier Tas Gunung Angsana Merbabu 60 Liter",
           category: "CARRIER",
@@ -627,7 +657,7 @@
           ]
         },
         {
-          id: "celana-montana-trail",
+          id: "1",
           brand: "ANGSANA OUTDOOR",
           name: "Montana Trail Pants Outdoor Series",
           category: "CELANA",
@@ -643,7 +673,7 @@
           ]
         },
         {
-          id: "jaket-ultralight-angsana",
+          id: "2",
           brand: "ANGSANA OUTDOOR",
           name: "Jaket Windbreaker Waterproof Angsana Outdoor",
           category: "JAKET",
@@ -659,7 +689,7 @@
           ]
         },
         {
-          id: "vest-running-apollo",
+          id: "3",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Vest Running Angsana series Apollo 7,5 Liter",
           category: "VEST RUNNING",
@@ -677,7 +707,7 @@
           ]
         },
         {
-          id: "vest-running-athena",
+          id: "4",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Vest Running Angsana series Athena 10 Liter",
           category: "VEST RUNNING",
@@ -693,7 +723,7 @@
           ]
         },
         {
-          id: "jersey-running-memphis",
+          id: "5",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Running Jersey Short Angsana Super Light Anti UV",
           category: "JERSEY",
@@ -711,7 +741,7 @@
           ]
         },
         {
-          id: "topi-running-404nf",
+          id: "6",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Angsana 404 NF Running Cap Ultralight Quickdry",
           category: "TOPI",
@@ -728,7 +758,7 @@
           ]
         },
          {
-          id: "vest artemis",
+          id: "7",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Vest Trail Running Angsana series ARTEMIS Breathable Hydro-tech",
           category: "VEST RUNNING",
@@ -745,7 +775,7 @@
           ]
         },
          {
-          id: "KAOS-running-boxy short",
+          id: "8",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Running Boxy Short Sleeve Tee Cotton Washed smooth",
           category: "KAOS",
@@ -765,7 +795,7 @@
         },
         
         {
-         id: "KAOS-running-boxy muscle",
+         id: "9",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Running Boxy Muscle Tee for Daily Run & Post Run ",
           category: "KAOS",
@@ -784,7 +814,7 @@
           ]
         },
         {
-         id: "CELANA-running-apex",
+         id: "10",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Celana Running & Trailrunning Angsana APEX Aerotech Series Breathable woman",
           category: "CELANA",
@@ -805,7 +835,7 @@
           ]
         },
          {
-         id: "JAKET-running-windbreaker",
+         id: "11",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Jaket Windbreaker Ultralight Angsana AEROPHILE Packable Trail Running",
           category: "JAKET",
@@ -827,7 +857,7 @@
           ]
         },
           {
-         id: "kaos-running-ornamen",
+         id: "12",
           brand: "ANGSANA ACTIVEWEAR",
           name: "long sleeved T shirt Cotton SPANTECH ORNAMEN SERIES",
           category: "KAOS",
@@ -849,7 +879,7 @@
           ]
         },
          {
-         id: "celana-running-montana",
+         id: "13",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Celana Trail Running Angsana MONTANA series",
           category: "CELANA",
@@ -871,7 +901,7 @@
           ]
         },
          {
-         id: "COMPRESSION-SOCK-ANGSANA",
+         id: "14",
           brand: "ANGSANA ACTIVEWEAR",
           name: "Compression Socks Angsana Long Ultra",
           category: "COMPRESSION SOCK",
@@ -885,6 +915,29 @@
           variants: [
             { colorName: "Crew", colorHex: "black", stock: 10, gallery: ["id-11134207-81ztl-mesahmiqiy9v93.webp","id-11134207-81zth-mesahmilvsp177.webp","id-11134207-81ztf-mesahmiuff2fb0.webp","id-11134207-81zto-metxwr785dl382.webp"] },
             { colorName: "long", colorHex: "black", stock: 10, gallery: ["id-11134207-7rbk7-m9n586n161ot64.webp","id-11134207-7rbk5-m9n59t3bxw7yd7.webp","id-11134207-7rbk8-m9n57vkbdiij3e.webp","id-11134207-7rbk2-m9n58uz9jrrya1.webp"] },
+
+            // { colorName: "GREEN SAGE", colorHex: "#95A68F", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.57.jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
+            // { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
+            // { colorName: "DARK NAVY", colorHex: "#1B263B", stock: 14, gallery: ["id-11134207-822wt-mlyitvba7oy7ca.webp"] }
+
+
+          ]
+        },
+        {
+         id: "15",
+          brand: "ANGSANA OUTDOOR",
+          name: "Jaket Goose Down Angsana Outdoor Real Bulu Angsa 100% Insulated Bahan waterproof 3 layer",
+          category: "JAKET",
+          rating: "4.9 (78)",
+          description: "lasan anda tepat !! Pilih produk Angsana yang Real Goose Down 100% bukan yang sintetik, apalagi campuran dalam Insulated Concept. reduce the amount of heat your body loses to the atmosphere in cold conditions❄️ Analogi shuttlecock yang teruji di (BWF) dan tak mungkin tergantikan ke alamian di ranah nya. CMIIW. Yang Juara dari produk Jaket Angsana Outdoor Original Goose Down ini adalah dengan Gramasi Nylon 150 gsm sangat berkelas dan sejajar bila di bandingkan produk Internasional. Serta Bulu Angsa Real 100% Grade A. Menjadi Racikan ini pertama di Indonesia untuk segmen Produk Bulu Angsa ter Qualified untuk Iklim Extreme.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "L",
+          sizePrices: { "M":795000,"L":795000,"XL":795000},
+          sizes: ["M","L","XL"],
+          variants: [
+            { colorName: "BLACK", colorHex: "black", stock: 10, gallery: ["id-11134207-7rasa-m1qk0yxo7xh7b8.webp","id-11134207-7rasj-m1qk0yxo6iwrcf.webp","id-11134207-7ras8-m1qk0yxo2b7f78.webp","id-11134207-7r98y-lyq9u7xeto7y45.webp","id-11134207-23010-vvurpeakcgmv37 (1).webp"] },
+            // { colorName: "long", colorHex: "black", stock: 10, gallery: ["id-11134207-7rbk7-m9n586n161ot64.webp","id-11134207-7rbk5-m9n59t3bxw7yd7.webp","id-11134207-7rbk8-m9n57vkbdiij3e.webp","id-11134207-7rbk2-m9n58uz9jrrya1.webp"] },
 
             // { colorName: "GREEN SAGE", colorHex: "#95A68F", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.57.jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
             // { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
