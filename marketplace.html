@@ -135,9 +135,11 @@
                 <i class="fa-solid fa-magnifying-glass text-xs"></i>
               </span>
               <input 
-                type="text" 
+                 type="text" 
                 id="searchInput" 
-                oninput="handleSearch(this.value)"
+                onfocus="openSearchOverlay()"
+                oninput="handleTypingSearch(this.value)"
+                onkeydown="checkSearchSubmit(event, this.value)"
                 placeholder="Cari produk..." 
                 class="w-full pl-9 pr-4 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber transition-all"
               >
@@ -177,7 +179,9 @@
             <input 
               type="text" 
               id="mobileSearchInput" 
-              oninput="handleSearch(this.value)"
+              onfocus="openSearchOverlay()"
+              oninput="handleTypingSearch(this.value)"
+              onkeydown="checkSearchSubmit(event, this.value)"
               placeholder="Cari produk Angsana..." 
               class="w-full pl-9 pr-8 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
             />
@@ -191,8 +195,9 @@
     </header>
 
     <!-- MOBILE HAMBURGER DROPDOWN MENU -->
-   <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
-      <div class="px-6 py-6 space-y-4">
+  <!-- MOBILE HAMBURGER DROPDOWN MENU -->
+    <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
+      <div class="px-8 py-10 space-y-4">
         <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-house text-brand-amber w-6"></i> Home
         </a>
@@ -336,6 +341,46 @@
       <a href="catalog.html" class="flex flex-col items-center"><i class="fa-solid fa-layer-group text-sm"></i><span>Catalog</span></a>
       <a href="services.html" class="flex flex-col items-center"><i class="fa-solid fa-hands-holding-child text-sm"></i><span>Services</span></a>
       <a href="marketplace.html" class="flex flex-col items-center text-brand-amber font-bold"><i class="fa-solid fa-store text-sm"></i><span>Marketplace</span></a>
+    </div>
+    <!-- SEARCH OVERLAY POPUP -->
+    <div id="searchOverlay" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex flex-col transition-all duration-300">
+      <div class="max-w-3xl w-full mx-auto p-4 sm:p-6 flex-1 flex flex-col">
+        <div class="flex items-center justify-between pb-4 border-b border-white/20 gap-3">
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </span>
+            <input 
+              type="text" 
+              id="overlaySearchInput" 
+              oninput="handleTypingSearch(this.value)"
+              onkeydown="checkSearchSubmit(event, this.value)"
+              placeholder="Search our products (Tekan Enter untuk cari)..." 
+              class="w-full pl-10 pr-10 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
+            >
+            <button onclick="clearSearchOverlay()" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white">
+              <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+          </div>
+          <button onclick="closeSearchOverlay()" class="text-white hover:text-brand-amber font-bold text-sm px-2 py-1">
+            Batal
+          </button>
+        </div>
+
+        <div class="py-6 space-y-4 overflow-y-auto">
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block">Popular Search Terms</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="applySearchTag('CARRIER')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">CARRIER</button>
+              <button onclick="applySearchTag('VEST RUNNING')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">VEST RUNNING</button>
+              <button onclick="applySearchTag('JERSEY')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">JERSEY</button>
+              <button onclick="applySearchTag('CELANA')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">CELANA</button>
+              <button onclick="applySearchTag('JAKET')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">JAKET</button>
+              <button onclick="applySearchTag('TOPI')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">TOPI</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
      <script>
       const catalogProducts = [
@@ -499,7 +544,6 @@
           { name: "Makassar / Sulawesi Selatan", tariff: 55000 }
         ]
       };
-
       let cartItems = [];
       let appliedDiscount = 0;
       let appliedVoucherName = "";
@@ -523,23 +567,149 @@
         }
       }
 
+      function openSearchOverlay() {
+        const overlay = document.getElementById('searchOverlay');
+        const input = document.getElementById('overlaySearchInput');
+        if (overlay) {
+          overlay.classList.remove('hidden');
+          if (input) input.focus();
+        }
+      }
+
+      function closeSearchOverlay() {
+        const overlay = document.getElementById('searchOverlay');
+        if (overlay) overlay.classList.add('hidden');
+      }
+
+      function clearSearchOverlay() {
+        const input = document.getElementById('overlaySearchInput');
+        if (input) input.value = '';
+        clearSearch();
+      }
+
+      function applySearchTag(keyword) {
+        const overlayInput = document.getElementById('overlaySearchInput');
+        const desktopInput = document.getElementById('searchInput');
+        const mobileInput = document.getElementById('mobileSearchInput');
+
+        if (overlayInput) overlayInput.value = keyword;
+        if (desktopInput) desktopInput.value = keyword;
+        if (mobileInput) mobileInput.value = keyword;
+
+        executeSearch(keyword);
+        closeSearchOverlay();
+      }
+
+      // Deteksi otomatis brand saat mengetik
+      function handleTypingSearch(query) {
+        const desktopInput = document.getElementById('searchInput');
+        const mobileInput = document.getElementById('mobileSearchInput');
+        const overlayInput = document.getElementById('overlaySearchInput');
+
+        if (desktopInput && desktopInput !== document.activeElement) desktopInput.value = query;
+        if (mobileInput && mobileInput !== document.activeElement) mobileInput.value = query;
+        if (overlayInput && overlayInput !== document.activeElement) overlayInput.value = query;
+
+        searchQuery = query.toLowerCase().trim();
+        const clearBtn = document.getElementById('clearSearchBtn');
+        if (clearBtn) {
+          if (searchQuery !== "") clearBtn.classList.remove('hidden');
+          else clearBtn.classList.add('hidden');
+        }
+
+        // Cek apakah produk yang dicari termasuk brand Activewear (misal: vest, running, jersey, topi)
+        if (searchQuery !== "") {
+          const matchingProduct = catalogProducts.find(p => 
+            p.name.toLowerCase().includes(searchQuery) || 
+            p.category.toLowerCase().includes(searchQuery) ||
+            p.description.toLowerCase().includes(searchQuery)
+          );
+          
+          if (matchingProduct && matchingProduct.brand !== selectedBrand) {
+            selectedBrand = matchingProduct.brand;
+            updateBrandTabUI();
+            renderCategoryTabs();
+          }
+        }
+
+        renderCatalog();
+      }
+
+      function checkSearchSubmit(event, query) {
+        if (event.key === 'Enter') {
+          executeSearch(query);
+        }
+      }
+      function executeSearch(query) {
+  searchQuery = query.toLowerCase().trim();
+  const clearBtn = document.getElementById('clearSearchBtn');
+  
+  if (clearBtn) {
+    if (searchQuery !== "") clearBtn.classList.remove('hidden');
+    else clearBtn.classList.add('hidden');
+  }
+
+  if (searchQuery !== "") {
+    // Cek apakah elemen katalog ada di halaman ini (jika single page / index)
+    const catalogSection = document.getElementById('katalog');
+    
+    if (catalogSection) {
+      // Otomatis deteksi brand (Outdoor / Activewear)
+      const matchingProduct = catalogProducts.find(p => 
+        p.name.toLowerCase().includes(searchQuery) || 
+        p.category.toLowerCase().includes(searchQuery) ||
+        p.description.toLowerCase().includes(searchQuery)
+      );
+      
+      if (matchingProduct && matchingProduct.brand !== selectedBrand) {
+        selectedBrand = matchingProduct.brand;
+        updateBrandTabUI();
+        renderCategoryTabs();
+      }
+
+      // Scroll langsung ke produk
+      catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      closeSearchOverlay();
+    } else {
+      // Jika berada di halaman lain (misal about.html), lempar ke halaman katalog dengan membawa parameter URL
+      window.location.href = `catalog.html?search=${encodeURIComponent(searchQuery)}`;
+      return;
+    }
+  }
+
+  renderCatalog();
+}
+
+      
+
+      function clearSearch() {
+        searchQuery = "";
+        if (document.getElementById('searchInput')) document.getElementById('searchInput').value = "";
+        if (document.getElementById('mobileSearchInput')) document.getElementById('mobileSearchInput').value = "";
+        if (document.getElementById('overlaySearchInput')) document.getElementById('overlaySearchInput').value = "";
+        if (document.getElementById('clearSearchBtn')) document.getElementById('clearSearchBtn').classList.add('hidden');
+        renderCatalog();
+      }
+
       function selectBrandCatalog(brandName) {
         selectedBrand = brandName;
         selectedCategory = "SEMUA";
+        updateBrandTabUI();
+        renderCategoryTabs();
+        renderCatalog();
+      }
 
+      function updateBrandTabUI() {
         const btnOutdoor = document.getElementById('brandTabOutdoor');
         const btnActivewear = document.getElementById('brandTabActivewear');
 
-        if (brandName === "ANGSANA OUTDOOR") {
+        if (selectedBrand === "ANGSANA OUTDOOR") {
           btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
           btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
         } else {
           btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
           btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
         }
-
-        renderCategoryTabs();
-        renderCatalog();
       }
 
       function getProductPrice(product, size) {
@@ -547,44 +717,6 @@
           return product.sizePrices[size];
         }
         return product.sizePrices[product.sizes[0]] || 100000;
-      }
-
-      function switchCompanyTab(tabId) {
-        const tabs = ['tentang', 'visi-misi', 'tujuan', 'sejarah'];
-        tabs.forEach(t => {
-          const contentEl = document.getElementById(`companyTab-${t}`);
-          const btnEl = document.getElementById(`tabBtn-${t}`);
-          if (t === tabId) {
-            contentEl.classList.remove('hidden');
-            if (t === 'tentang' || t === 'visi-misi') contentEl.classList.add('grid');
-            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0";
-          } else {
-            contentEl.classList.add('hidden');
-            contentEl.classList.remove('grid');
-            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0";
-          }
-        });
-      }
-
-      function handleSearch(query) {
-        searchQuery = query.toLowerCase().trim();
-        const clearBtn = document.getElementById('clearSearchBtn');
-        if (clearBtn) {
-          if (searchQuery !== "") clearBtn.classList.remove('hidden');
-          else clearBtn.classList.add('hidden');
-        }
-        if (searchQuery !== "") {
-          document.getElementById('katalog').scrollIntoView({ behavior: 'smooth' });
-        }
-        renderCatalog();
-      }
-
-      function clearSearch() {
-        searchQuery = "";
-        document.getElementById('searchInput').value = "";
-        document.getElementById('mobileSearchInput').value = "";
-        document.getElementById('clearSearchBtn').classList.add('hidden');
-        renderCatalog();
       }
 
       function selectCategory(category) {
@@ -902,7 +1034,6 @@
       function updateCartUI() {
         const container = document.getElementById('cartItemsContainer');
         const badge = document.getElementById('cartBadge');
-        const mobileBottomBadge = document.getElementById('mobileBottomCartBadge');
         const countHeader = document.getElementById('cartCountHeader');
         const subtotalEl = document.getElementById('cartSubtotal');
         const checkoutBtn = document.getElementById('checkoutCartBtn');
@@ -939,7 +1070,6 @@
         }
 
         if (badge) badge.innerText = totalQty;
-        if (mobileBottomBadge) mobileBottomBadge.innerText = totalQty;
         if (countHeader) countHeader.innerText = totalQty;
         if (subtotalEl) subtotalEl.innerText = formatRupiah(subtotal);
       }
@@ -1138,3 +1268,4 @@ Mohon informasi nomor rekening pembayaran. Terima kasih!`;
 </body>
 </html>
 
+      
