@@ -129,7 +129,9 @@
               <input 
                 type="text" 
                 id="searchInput" 
-                oninput="handleSearch(this.value)"
+                onfocus="openSearchOverlay()"
+                oninput="handleTypingSearch(this.value)"
+                onkeydown="checkSearchSubmit(event, this.value)"
                 placeholder="Cari produk..." 
                 class="w-full pl-9 pr-4 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber transition-all"
               >
@@ -167,9 +169,11 @@
               <i class="fa-solid fa-magnifying-glass text-xs"></i>
             </span>
             <input 
-              type="text" 
+             type="text" 
               id="mobileSearchInput" 
-              oninput="handleSearch(this.value)"
+              onfocus="openSearchOverlay()"
+              oninput="handleTypingSearch(this.value)"
+              onkeydown="checkSearchSubmit(event, this.value)"
               placeholder="Cari produk Angsana..." 
               class="w-full pl-9 pr-8 py-2 bg-white/10 border border-white/20 rounded-xl text-xs text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
             />
@@ -184,7 +188,7 @@
 
     <!-- MOBILE HAMBURGER DROPDOWN MENU -->
     <div id="mobileMenuDropdown" class="fixed inset-x-0 top-16 bg-brand-charcoal/98 backdrop-blur-xl border-b border-white/10 z-30 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
-      <div class="px-6 py-6 space-y-4">
+      <div class="px-8 py-10 space-y-4">
         <a href="index.html" onclick="toggleMobileMenu()" class="flex items-center gap-3 text-black font-bold text-sm tracking-wider uppercase py-2 border-b border-white/10">
           <i class="fa-solid fa-house text-brand-amber w-6"></i> Home
         </a>
@@ -232,29 +236,29 @@
       
       <!-- SLIDE 1 -->
       <div class="hero-slide active" data-index="0">
-        <a href="halaman-produk-anda.html"></a>
-        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Stay cool and comfortable all day long. This cotton running shirt is made of super-soft fabric t.jpg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url(4bef5a74-7c79-411a-a311-3a757a6359f1.jpg);"></div>
+        <!-- <a href="halaman-produk-anda.html"></a> -->
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr.jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('4bef5a74-7c79-411a-a311-3a757a6359f1.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <!-- SLIDE 2 -->
       <div class="hero-slide" data-index="1">
-        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_b05u9yb05u9yb05u.jpeg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('1efae9a5-a223-4201-89db-1758581815c6.jpg');"></div>
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
       <!-- SLIDE 3 -->
       <div class="hero-slide" data-index="2">
         <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Less than 4 days to the long journey around aosta valley @tordesgeants  this adventure that can .jpg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr (1).jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('1efae9a5-a223-4201-89db-1758581815c6.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
       <!-- SLIDE 4 -->
       <div class="hero-slide" data-index="2">
-        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Even now, I am still trying to process how I managed to finish without sleeping from day one thr.jpg');"></div>
-        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Gemini_Generated_Image_brp9otbrp9otbrp9.jpeg');"></div>
+        <div class="block md:hidden absolute inset-0 bg-cover bg-center" style="background-image: url('Thumbnail ig (1).jpg');"></div>
+        <div class="hidden md:block absolute inset-0 bg-cover bg-center" style="background-image: url('Desain tanpa judul.jpg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-transparent to-transparent opacity-90"></div>
       </div>
 
@@ -277,26 +281,7 @@
       <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 w-full pointer-events-none">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- <div class="lg:col-span-7 text-white space-y-4 sm:space-y-6 text-center lg:text-left pointer-events-auto">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-brand-amber/20 border border-brand-amber/50 backdrop-blur-md">
-              <span class="relative flex h-2.5 w-2.5"> -->
-                <!-- <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span> -->
-                <!-- <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span> -->
-              <!-- <span class="text-[10px] sm:text-xs font-bold tracking-wider uppercase text-brand-amber">ANGSANA ADVENTURE</span>
-            </div> -->
-
-            <!-- <p class="text-gray-300 text-xs sm:text-base lg:text-lg max-w-xl leading-relaxed font-light mx-auto lg:mx-0">
-              Pusat perlengkapan petualangan luar ruang (Angsana Outdoor) dan pakaian olahraga performa tinggi (Angsana Activewear) berstandar kualitas premium.
-            </p> -->
-
-            <!-- <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <a href="catalog.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-tan to-brand-amber hover:from-brand-amber hover:to-brand-darktan text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-xl shadow-brand-tan/30 transform hover:-translate-y-0.5 transition-all text-center">
-                <i class="fa-solid fa-bag-shopping mr-2"></i> Lihat Katalog Produk
-              </a>
-              <a href="services.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all text-center">
-                <i class="fa-solid fa-hands-holding-child mr-2"></i> Layanan Kami
-              </a> -->
+          
             </div>
           </div>
 
@@ -338,135 +323,9 @@
       </div>
     </section>
 
-    <!-- FITUR BARU: LAYANAN KAMI (SERVICES SECTION) -->
-    <section id="layanan" class="py-12 sm:py-20 bg-white border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-widest text-brand-tan block mb-2">LAYANAN PROFESIONAL ANGSANA</span>
-          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Solusi & Layanan Khusus</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Selain memproduksi perlengkapan berkualitas, kami menyediakan layanan pendukung bagi komunitas dan instansi.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          
-          <!-- Layanan 1 -->
-          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-brand-charcoal text-brand-amber flex items-center justify-center text-xl mb-4 shadow-md">
-                <i class="fa-solid fa-shirt"></i>
-              </div>
-              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Custom Jersey & Uniform Klub</h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                Layanan pembuatan jersey lari, kaos komunitas, atau seragam outdoor kustom dengan desain eksklusif, teknologi anti-UV, dan bahan quick-dry pilihan Anda.
-              </p>
-            </div>
-            <div>
-              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Min. order fleksibel</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Sublimasi warna tajam</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Konsultasi desain gratis</li>
-              </ul>
-              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20tertarik%20dengan%20layanan%20Custom%20Jersey%20%26%20Uniform" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Layanan 2 -->
-          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-brand-tan text-white flex items-center justify-center text-xl mb-4 shadow-md">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-              </div>
-              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Perawatan & Reparasi Gear</h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                Layanan perawatan, perbaikan jahitan carrier, penggantian buckle, serta perbaikan tenda dan perlengkapan mendaki agar kembali prima di petualangan berikutnya.
-              </p>
-            </div>
-            <div>
-              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengecekan kondisi gratis</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Material original tahan lama</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengerjaan tenaga ahli</li>
-              </ul>
-              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20ingin%20menggunakan%20layanan%20Perawatan%20%26%20Reparasi%20Gear" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Layanan 3 -->
-          <div class="bg-brand-sand rounded-3xl p-6 sm:p-8 border border-brand-khaki/40 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl mb-4 shadow-md">
-                <i class="fa-solid fa-handshake"></i>
-              </div>
-              <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-2">Kerjasama B2B & Wholesale</h3>
-              <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                Peluang kemitraan grosir (wholesale), reseller resmi, serta pengadaan korporat untuk instansi, event organizer, atau toko retail perlengkapan outdoor di seluruh Indonesia.
-              </p>
-            </div>
-            <div>
-              <ul class="text-[11px] text-gray-500 space-y-1 mb-5">
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Harga khusus grosir</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Dukungan promosi & katalog</li>
-                <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pengiriman logistik terpercaya</li>
-              </ul>
-              <a href="https://wa.me/6281268888651?text=Halo%20Angsana,%20saya%20tertarik%20dengan%20Kerjasama%20B2B%20%26%20Wholesale" target="_blank" class="w-full py-3 rounded-xl bg-brand-charcoal hover:bg-brand-tan text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-                <span>Konsultasi Layanan</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
+    
     <!-- SEKSI MARKETPLACE RESMI -->
-    <section id="marketplace-section" class="py-12 sm:py-20 bg-gradient-to-b from-brand-sand to-white border-t border-gray-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-          <span class="px-3 py-1 rounded-full bg-brand-amber/20 text-brand-amber text-xs font-bold uppercase tracking-wider inline-block mb-2">Official Store</span>
-          <h2 class="font-heading font-black text-2xl sm:text-4xl text-brand-charcoal">Belanja di Marketplace Resmi Kami</h2>
-          <p class="text-xs sm:text-sm text-gray-600 mt-2">Pilih platform belanja online favorit Anda untuk kemudahan transaksi dan promo menarik.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="bg-white rounded-3xl p-6 shadow-lg border border-orange-100 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-orange-600 text-white flex items-center justify-center text-3xl shadow-md mb-4">
-              <i class="fa-solid fa-bag-shopping"></i>
-            </div>
-            <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">Shopee</h3>
-            <p class="text-xs text-gray-500 mb-6">Nikmati voucher diskon dan gratis ongkir setiap hari.</p>
-            <a href="https://shopee.co.id/angsana_outdoor?shopCollection=255494148#product_list" target="_blank" class="w-full py-3 rounded-xl bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi Shopee</span> <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-200 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-black text-white flex items-center justify-center text-3xl shadow-md mb-4">
-              <i class="fa-brands fa-tiktok"></i>
-            </div>
-            <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">TikTok Shop</h3>
-            <p class="text-xs text-gray-500 mb-6">Temukan video ulasan produk langsung dan live shopping interaktif.</p>
-            <a href="https://www.tiktok.com/@angsanaoutdoor" target="_blank" class="w-full py-3 rounded-xl bg-black hover:bg-gray-800 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi TikTok</span> <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="bg-white rounded-3xl p-6 shadow-lg border border-emerald-100 flex flex-col items-center text-center group hover:-translate-y-1 transition-all duration-300">
-            <div class="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-3xl shadow-md mb-4">
-              <i class="fa-solid fa-store"></i>
-            </div>
-            <h3 class="font-heading font-extrabold text-lg text-brand-charcoal mb-1">Tokopedia</h3>
-            <p class="text-xs text-gray-500 mb-6">Belanja aman dan cepat dengan berbagai pilihan pengiriman instan.</p>
-            <a href="https://www.tokopedia.com/angsanashop" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
-              <span>Kunjungi Tokopedia</span> <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- MODAL DETAIL PRODUK -->
     <div id="productDetailModal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm hidden p-0 sm:p-6 overflow-y-auto">
@@ -707,6 +566,46 @@
         </div>
       </div>
     </footer>
+    <!-- !-- SEARCH OVERLAY POPUP --> 
+    <div id="searchOverlay" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex flex-col transition-all duration-300">
+      <div class="max-w-3xl w-full mx-auto p-4 sm:p-6 flex-1 flex flex-col">
+        <div class="flex items-center justify-between pb-4 border-b border-white/20 gap-3">
+          <div class="relative flex-1">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </span>
+            <input 
+              type="text" 
+              id="overlaySearchInput" 
+              oninput="handleTypingSearch(this.value)"
+              onkeydown="checkSearchSubmit(event, this.value)"
+              placeholder="Search our products (Tekan Enter untuk cari)..." 
+              class="w-full pl-10 pr-10 py-3 bg-white/10 border border-white/20 rounded-xl text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-amber"
+            >
+            <button onclick="clearSearchOverlay()" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white">
+              <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+          </div>
+          <button onclick="closeSearchOverlay()" class="text-white hover:text-brand-amber font-bold text-sm px-2 py-1">
+            Batal
+          </button>
+        </div>
+
+        <div class="py-6 space-y-4 overflow-y-auto">
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block">Popular Search Terms</span>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="applySearchTag('CARRIER')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">CARRIER</button>
+              <button onclick="applySearchTag('VEST RUNNING')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">VEST RUNNING</button>
+              <button onclick="applySearchTag('JERSEY')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">JERSEY</button>
+              <button onclick="applySearchTag('CELANA')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">CELANA</button>
+              <button onclick="applySearchTag('JAKET')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">JAKET</button>
+              <button onclick="applySearchTag('TOPI')" class="px-4 py-1.5 rounded-full bg-white/10 hover:bg-brand-amber text-white text-xs font-semibold transition-all">TOPI</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
@@ -769,12 +668,12 @@
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: { "S": 290000, "M": 299000, "L": 299000, "XL": 310000, "XXL": 325000 },
-          sizes: ["S", "M", "L", "XL", "XXL"],
+          sizePrices: { "S": 290000, "M": 299000, "L": 299000, "XL": 299000 },
+          sizes: ["S", "M", "L", "XL"],
           variants: [
-            { colorName: "Candy Pink", colorHex: "#E86361", stock: 6, gallery: ["id-11134207-81ztq-mqvlth3z124qc8.jpeg", "id-11134207-8224s-mgxg9i0yv8r034.jpeg"] },
-            { colorName: "Blue Sky", colorHex: "#87CEEB", stock: 6, gallery: ["id-11134201-81zto-mrmffbdl5p8hdf.jpeg", "id-11134207-81ztp-mqvluxmxq41x87.jpeg"] },
-            { colorName: "Tan", colorHex: "#B07548", stock: 6, gallery: ["id-11134207-822wi-mp2cqi1dvqbx48.jpeg"] }
+            { colorName: "Candy Pink", colorHex: "#E86361", stock: 6, gallery: ["id-11134207-81ztq-mqvlth3z124qc8.jpeg","id-11134207-8224s-mgxg9i0yv8r034.jpeg"] },
+            { colorName: "Blue Sky", colorHex: "#87CEEB", stock: 6, gallery: ["id-11134201-81zto-mrmffbdl5p8hdf.jpeg", "id-11134207-81ztp-mqvluxmxq41x87.jpeg","id-11134207-8224s-mgxg9i0yv8r034.jpeg"] },
+            { colorName: "Tan", colorHex: "#B07548", stock: 6, gallery: ["id-11134207-822wi-mp2cqi1dvqbx48.jpeg","id-11134207-822wo-mp2cpgenej9c91.jpeg","id-11134207-8224s-mgxg9i0yv8r034.jpeg"] },
           ]
         },
         {
@@ -787,10 +686,10 @@
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: { "M": 315000, "L": 315000, "XL": 330000, "XXL": 345000 },
-          sizes: ["M", "L", "XL", "XXL"],
+          sizePrices: { "S": 315000,"M": 315000, "L": 315000, "XL": 315000, "XXL": 345000 },
+          sizes: [ "S","M", "L", "XL"],
           variants: [
-            { colorName: "Dark Grey", colorHex: "#1A1919", stock: 4, gallery: ["id-11134201-81ztj-mthvqj6c45c597.jpeg", "id-11134201-81ztc-mthvqj6nfi16f1.jpeg"] }
+            { colorName: "Dark Grey", colorHex: "#1A1919", stock: 4, gallery: ["id-11134201-81ztj-mthvqj6c45c597.jpeg", "id-11134201-81ztc-mthvqj6nfi16f1.jpeg","id-11134201-81ztj-mthvqj4keade5d.jpeg","id-11134201-81zto-mthvqj7z4007df.jpeg"] }
           ]
         },
         {
@@ -803,11 +702,12 @@
           selectedImageIndex: 0,
           selectedVariantIndex: 0,
           selectedSize: "M",
-          sizePrices: { "S": 140000, "M": 149000, "L": 149000, "XL": 160000, "XXL": 175000 },
-          sizes: ["S", "M", "L", "XL", "XXL"],
+          sizePrices: { "S": 140000, "M": 149000, "L": 149000, "XL": 149000, "XXL": 175000 },
+          sizes: ["S", "M", "L", "XL"],
           variants: [
-            { colorName: "Shibori Short", colorHex: "#7A7F84", stock: 10, gallery: ["id-11134207-8224y-mgwzk74lp1cce0.jpeg"] },
-            { colorName: "Memphis", colorHex: "#3A638E", stock: 8, gallery: ["id-11134207-8224u-mgwzk74lruh851.jpeg"] }
+            { colorName: "Shibori Short", colorHex: "#7A7F84", stock: 10, gallery: ["id-11134207-8224y-mgwzk74lp1cce0.jpeg","id-11134207-82251-mgwzk74fq4g958.jpeg","id-11134207-8224x-mgwzk74lktn01c.jpeg"] },
+            { colorName: "Memphis", colorHex: "#3A638E", stock: 8, gallery: ["id-11134207-8224u-mgwzk74lruh851.jpeg","id-11134207-8224s-mgwzk74li0i41d.jpeg","id-11134207-8224x-mgwzk74lktn01c.jpeg"] },
+            { colorName: "Geo", colorHex: "#E8DEC8", stock: 8, gallery: ["id-11134207-8224p-mgwzk74lunm4d0.jpeg","id-11134207-8224q-mgwzk74lqfws9b.jpeg","id-11134207-8224x-mgwzk74lktn01c.jpeg"] }
           ]
         },
         {
@@ -823,8 +723,174 @@
           sizePrices: { "All Size": 115000 },
           sizes: ["All Size"],
           variants: [
-            { colorName: "Khaki", colorHex: "#9EAAA1", stock: 10, gallery: ["id-11134201-81ztj-mryctz4dce8182.jpeg"] },
-            { colorName: "Black", colorHex: "#111111", stock: 14, gallery: ["id-11134201-81ztj-mryctznh8mbo76.jpeg"] }
+            { colorName: "Khaki", colorHex: "#9EAAA1", stock: 10, gallery: ["id-11134201-81ztj-mryctz4dce8182.jpeg","id-11134201-81ztl-mryctyz7rtaa18.jpeg","id-11134201-81ztm-mrvxn9gx569x49.webp","id-11134207-81ztf-mqvlhu9uefif84.jpeg"] },
+            { colorName: "Black", colorHex: "#111111", stock: 14, gallery: ["id-11134207-81zto-mrvxo6ie62h3a2.webp","id-11134201-81ztp-mryctyiqyr5z03.jpeg","id-11134207-81ztj-mrvxo6ie4nwn75.webp","id-11134207-81ztf-mqvlhu9uefif84.jpeg "] }
+          ]
+        },
+         {
+          id: "vest artemis",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Vest Trail Running Angsana series ARTEMIS Breathable Hydro-tech",
+          category: "VEST RUNNING",
+          rating: "4.9 (78)",
+          description: "Vest Running seri Artemis 8 Liter cocok dipakai untuk Training Endurance, Peak Training, short Trail event dengan kapabilitas sesuai kebutuhan Fun Runners :), Ergonomis Design :Fit Pattern Untuk kenyamanan yang pas cuttingan mole nya disesuaikan Lekuk tubuh sehingga Fit dipakai,Jahitan halus (berkualitas) meminimalkan gesekan tubuh ketika pergerakan maksimal sehingga seamlis dipakai,Technology, Material yang digunakan super nyaman, kuat, elastis, sejuk (Breathable) Fit Body, dan tentunya Functional Fiture.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 379000,"M":379000,"L":379000,"XL":379000 },
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "DARK GREY", colorHex: "#3A414A", stock: 10, gallery: ["id-11134207-81ztm-mr5euy1kv5z44e.jpeg","id-11134207-81ztj-mr5euy22duz085.jpeg","id-11134207-81zti-mr5evbhodhxg34.jpeg","id-11134201-81ztq-msgj914hahhg7c.jpeg"] },
+            // { colorName: "Black", colorHex: "#111111", stock: 14, gallery: ["id-11134207-81zto-mrvxo6ie62h3a2.webp","id-11134201-81ztp-mryctyiqyr5z03.jpeg","id-11134207-81ztj-mrvxo6ie4nwn75.webp","id-11134207-81ztf-mqvlhu9uefif84.jpeg "] }
+          ]
+        },
+         {
+          id: "KAOS-running-boxy short",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Running Boxy Short Sleeve Tee Cotton Washed smooth",
+          category: "KAOS",
+          rating: "4.9 (78)",
+          description: "Kaos yang lahir dari karakter Tropical Cotton memberikan efek sejuk dan nyaman dipakai serta finishing Washed yang memberi kesan tersendiri. Dengan konsep design berkarakter memberikan kesan stylist dipakai,Enjoy Running ,Material : Cotton Combed 20s 200gsm, Washed finishing smooth, Technology : Coolbreeze Technology, For : Unisex,Pattern : Boxy Tee,Spesification : * Faded Effect by Organic Distressed Wash * Screen Printed with Plastisol Ink * UV Protection Fabrics * Anti-Odor",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 179000,"M":179000,"L":179000,"XL":179000 },
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "PROPELLER", colorHex: "#3A414A", stock: 10, gallery: ["id-11134201-81ztl-msqlsjytccnc46.webp","id-11134201-81ztc-msqlq72r3z7r4e.webp","id-11134207-81zto-mq5wl6e0purx49@resize_w900_nl.webp"] },
+            { colorName: "ANXIETY RELIEF", colorHex: "#3A414A", stock: 14, gallery: ["id-11134201-81ztl-msr04nwqf1my62.webp","id-11134207-81ztn-mq5wl6e0og7h70.webp","id-11134207-81zto-mq5wl6e0purx49@resize_w900_nl.webp "] },
+            { colorName: "TWINKLING", colorHex: "#3A414A", stock: 14, gallery: ["id-11134201-81ztd-msqlq6ys5af5b8.webp","id-11134201-81ztg-msqlq6xq7wua9f.webp","id-11134207-81zto-mq5wl6e0purx49@resize_w900_nl.webp "] }
+
+          ]
+        },
+        
+        {
+         id: "KAOS-running-boxy muscle",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Running Boxy Muscle Tee for Daily Run & Post Run ",
+          category: "KAOS",
+          rating: "4.9 (78)",
+          description: "Material : Cotton Combed 20s 200gsm, Technology : Coolbreeze Technology, For : Unisex, Pattern : Muscle Boxy Tee, Spesification : * Faded Effect by Organic Distressed Wash * Screen Printed with Plastisol Ink * UV Protection Fabrics * Anti-Odor",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 170000,"M":170000,"L":170000,"XL":170000 },
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "FBL 01", colorHex: "#3A414A", stock: 10, gallery: ["Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech.jpg","Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (1).jpg","Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (2).jpg","Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (3).jpg","Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (4).jpg"] },
+            { colorName: "FBL 02", colorHex: "#3A414A", stock: 14, gallery: ["/Users/macbook/Documents/latihan/ecb57071-bb60-4322-91a0-bbf420eb16c4.jpg","/Users/macbook/Documents/latihan/2b34e3c0-29f3-4482-b1c9-dca9ed960e2a.jpg","/Users/macbook/Documents/latihan/57e3a4a5-6938-43e3-bb37-051b4e4ceb5a.jpg ","/Users/macbook/Documents/latihan/Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (3).jpg","/Users/macbook/Documents/latihan/Running Boxy Muscle Tee for Daily Run & Post Run - FBL 01Material - Cotton Combed 20s 200gsmTech (4).jpg"] },
+            // { colorName: "TWINKLING", colorHex: "#3A414A", stock: 14, gallery: ["id-11134201-81ztd-msqlq6ys5af5b8.webp","id-11134201-81ztg-msqlq6xq7wua9f.webp","id-11134207-81zto-mq5wl6e0purx49@resize_w900_nl.webp "] }
+
+          ]
+        },
+        {
+         id: "CELANA-running-apex",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Celana Running & Trailrunning Angsana APEX Aerotech Series Breathable woman",
+          category: "CELANA",
+          rating: "4.9 (78)",
+          description: "Celana Angsana Apex series hadir untuk dipakai wanita Olahraga Running & Trail running dengan teknologi Durable & High Breathable Aero dynamic menjadi kan celana yang tangguh dipakai di berbagai rute Trail namun tetap sejuk digunakan. Kelebihan lain dari Celana Apex, akse kantong yang banyak dan luas untuk menyimpan bahan bakar / snack / fit bar dan fueling lainnya sehingga mudah di akses penyimpanan. Selain itu juga sudah dilengkapi Pengikat Trekking Pole dengan Adjustable String yang bisa di bongkar pasang. Jadi efektif digunakan sesuai kebutuhan. Dibagian belakang juga dilengkapi pocket dengan zipper untul menyimpan Ponsel.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 139000,"M":139000,"L":139000,"XL":139000 },
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "TAN", colorHex: "#D26939", stock: 10, gallery: ["id-11134207-822wl-mpnfe7i98agy67.webp","id-11134201-81zti-mrimmets0m4o0a.webp","id-11134207-822wo-mpnfe7i9ci6a01.webp","id-11134201-81ztf-mrv98fe1eqrk11.webp"] },
+            { colorName: "IVORY WHITE", colorHex: "#E2E8F0", stock: 10, gallery: ["id-11134207-822wm-mpnfe74vmiv6a0.webp","Id-11134207-822wr-mpnfe74vl4aq30.webp","id-11134201-81zti-mrimmets0m4o0a.webp","id-11134207-822wo-mpnfe7i9ci6a01.webp","id-11134201-81ztf-mrv98fe1eqrk11.webp"] },
+            { colorName: "BLUE SKY", colorHex: "#87CEEB", stock: 10, gallery: ["id-11134207-822wg-mpnfe7i9fbb648.webp","id-11134201-81zti-mrimmets0m4o0a.webp","id-11134207-822wo-mpnfe7i9ci6a01.webp","id-11134201-81ztf-mrv98fe1eqrk11.webp"] },
+
+            // { colorName: "TWINKLING", colorHex: "#3A414A", stock: 14, gallery: ["id-11134201-81ztd-msqlq6ys5af5b8.webp","id-11134201-81ztg-msqlq6xq7wua9f.webp","id-11134207-81zto-mq5wl6e0purx49@resize_w900_nl.webp "] }
+
+          ]
+        },
+         {
+         id: "JAKET-running-windbreaker",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Jaket Windbreaker Ultralight Angsana AEROPHILE Packable Trail Running",
+          category: "JAKET",
+          rating: "4.9 (78)",
+          description: "Aerophile series sebutan untuk Artikel Ultralight Jaket Windbreaker Angsana_activeware sudah menggunakan Material High performa Fabric Nylon Ripstop 15D sehingga sangat mumpuni untuk Proteksi Angin. Technology : - Ultralight sub 80gr - Slimfit - Material Nylon Ripstop 15D - Pockatable - 3M - Stylist",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 199000,"M":199000,"L":199000,"XL":199000 },
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "WHITE", colorHex: "#FFFFFF", stock: 10, gallery: ["id-11134201-81ztf-mswllh8m5a0x49.webp","id-11134201-81zth-mswllgro6614d9.webp","id-11134201-81ztq-mswllguytr0g57.webp","id-11134201-81ztd-mswlmqnoz85jbe.webp"] },
+            { colorName: "MUSTARD", colorHex: "#D4A017", stock: 10, gallery: ["id-11134201-81ztf-mswllqijug3o41.webp","id-11134201-81ztq-mswllrb6h72h32.webp","Id-11134201-81ztd-mswlmqnoz85jbe.webp"] },
+            { colorName: "BROWN", colorHex: "#6B6E4E", stock: 10, gallery: ["id-11134207-822wh-mlyp8o88wu0xd8.webp"] },
+            { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
+            { colorName: "DARK NAVY", colorHex: "#1B263B", stock: 14, gallery: ["id-11134207-822wt-mlyitvba7oy7ca.webp"] }
+
+
+          ]
+        },
+          {
+         id: "kaos-running-ornamen",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "long sleeved T shirt Cotton SPANTECH ORNAMEN SERIES",
+          category: "KAOS",
+          rating: "4.9 (78)",
+          description: "Longs Sleeve Ornamen series dibuat dengan Teknologi Super Nyaman memberikan kelembutan pada kulit anda baik bersantai maupun beraktifitas.Dengan Material dari Cotton mix Spandek terbaik memberikan efek sejuk dan super lembut ketika dipakai. Spesifikasi : * Terbuat dari bahan Cotton mix Spandek cool * Bahan Halus dan lembut. * Type T-shirt O-neck * Gramasi 170gr/m2 untuk bahan putih",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "M",
+          sizePrices: { "S": 149000,"M":149000,"L":149000,"XL":149000,"XXL":159000},
+          sizes: ["S","M","L","XL","XXL"],
+          variants: [
+            { colorName: "BLACK", colorHex: "BLACK", stock: 10, gallery: ["id-11134207-81ztf-mtowdhvihkhs99.jpeg","id-11134201-81ztn-mtkx1imsb4ld40.webp","id-11134201-81ztn-mtow6uh8owsi19.jpeg","id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"] },
+            { colorName: "SALMON", colorHex: "#9E4F5D", stock: 10, gallery: ["id-11134207-81ztf-mtowdkud9zb4ce.jpeg","id-11134201-81ztq-mtkx1i6hs7wkd6.webp","id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"] },
+            { colorName: "GREEN SAGE", colorHex: "#6B6E4E", stock: 10, gallery: ["id-11134201-81ztl-mtkx1i6x1hj781.webp","id-11134201-81ztq-mtow6uj54nb82b (1).jpeg","id-11134201-81ztm-mtow6un2vsht63 (1).jpeg"] },
+            // { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
+            // { colorName: "DARK NAVY", colorHex: "#1B263B", stock: 14, gallery: ["id-11134207-822wt-mlyitvba7oy7ca.webp"] }
+
+
+          ]
+        },
+         {
+         id: "celana-running-montana",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Celana Trail Running Angsana MONTANA series",
+          category: "CELANA",
+          rating: "4.9 (78)",
+          description: "Celana yang di design khusus dengan tools & teknologi yang diantaranya berfungsi sebagai : - Pengikat Trekking Pole (bisa bongkar pasang ketika tidak digunakan) - penyimpanan Fueling, gel, fitbar, dll - Pocket zipper bisa untuk ponsel - String adjustable untuk nomor BIB",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "S",
+          sizePrices: { "S": 179000,"M":179000,"L":179000,"XL":179000},
+          sizes: ["S","M","L","XL"],
+          variants: [
+            { colorName: "IVORY WHITE", colorHex: "#F3F4EE", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.58 (3).jpeg","WhatsApp Image 2026-10-22 at 20.13.51.jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (1).jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
+            { colorName: "BLUE SKY", colorHex: "#8AA8AD", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.57 (8).jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
+            { colorName: "GREEN SAGE", colorHex: "#95A68F", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.57.jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
+            // { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
+            // { colorName: "DARK NAVY", colorHex: "#1B263B", stock: 14, gallery: ["id-11134207-822wt-mlyitvba7oy7ca.webp"] }
+
+
+          ]
+        },
+         {
+         id: "COMPRESSION-SOCK-ANGSANA",
+          brand: "ANGSANA ACTIVEWEAR",
+          name: "Compression Socks Angsana Long Ultra",
+          category: "COMPRESSION SOCK",
+          rating: "4.9 (78)",
+          description: "Compression Socks Angsana Long Ultra Dengan bangga Angsana Activewear menghadirkan Kaus kaki ini dirancang untuk meningkatkan aliran darah dari kaki ke jantung, membantu mencegah pembengkakan, dan mengurangi rasa sakit atau ketidaknyamanan akibat aktivitas yang lama.",
+          selectedImageIndex: 0,
+          selectedVariantIndex: 0,
+          selectedSize: "Crew",
+          sizePrices: { "Crew":89000,"Long":99000},
+          sizes: ["Crew","Long"],
+          variants: [
+            { colorName: "Crew", colorHex: "black", stock: 10, gallery: ["id-11134207-81ztl-mesahmiqiy9v93.webp","id-11134207-81zth-mesahmilvsp177.webp","id-11134207-81ztf-mesahmiuff2fb0.webp","id-11134207-81zto-metxwr785dl382.webp"] },
+            { colorName: "long", colorHex: "black", stock: 10, gallery: ["id-11134207-7rbk7-m9n586n161ot64.webp","id-11134207-7rbk5-m9n59t3bxw7yd7.webp","id-11134207-7rbk8-m9n57vkbdiij3e.webp","id-11134207-7rbk2-m9n58uz9jrrya1.webp"] },
+
+            // { colorName: "GREEN SAGE", colorHex: "#95A68F", stock: 10, gallery: ["WhatsApp Image 2026-10-22 at 20.13.57.jpeg","WhatsApp Image 2026-10-22 at 20.13.58 (8).jpeg"] },
+            // { colorName: "BLUE", colorHex: "#2C4C6F", stock: 14, gallery: ["id-11134207-822wi-mlyitvba4vtb91.webp"] },
+            // { colorName: "DARK NAVY", colorHex: "#1B263B", stock: 14, gallery: ["id-11134207-822wt-mlyitvba7oy7ca.webp"] }
+
+
           ]
         }
       ];
@@ -872,7 +938,7 @@
         ]
       };
 
-      let cartItems = [];
+     let cartItems = [];
       let appliedDiscount = 0;
       let appliedVoucherName = "";
       let activeDetailProductIndex = null;
@@ -895,23 +961,140 @@
         }
       }
 
+      function openSearchOverlay() {
+        const overlay = document.getElementById('searchOverlay');
+        const input = document.getElementById('overlaySearchInput');
+        if (overlay) {
+          overlay.classList.remove('hidden');
+          if (input) input.focus();
+        }
+      }
+
+      function closeSearchOverlay() {
+        const overlay = document.getElementById('searchOverlay');
+        if (overlay) overlay.classList.add('hidden');
+      }
+
+      function clearSearchOverlay() {
+        const input = document.getElementById('overlaySearchInput');
+        if (input) input.value = '';
+        clearSearch();
+      }
+
+      function applySearchTag(keyword) {
+        const overlayInput = document.getElementById('overlaySearchInput');
+        const desktopInput = document.getElementById('searchInput');
+        const mobileInput = document.getElementById('mobileSearchInput');
+
+        if (overlayInput) overlayInput.value = keyword;
+        if (desktopInput) desktopInput.value = keyword;
+        if (mobileInput) mobileInput.value = keyword;
+
+        executeSearch(keyword);
+        closeSearchOverlay();
+      }
+
+      // Deteksi otomatis brand saat mengetik
+      function handleTypingSearch(query) {
+        const desktopInput = document.getElementById('searchInput');
+        const mobileInput = document.getElementById('mobileSearchInput');
+        const overlayInput = document.getElementById('overlaySearchInput');
+
+        if (desktopInput && desktopInput !== document.activeElement) desktopInput.value = query;
+        if (mobileInput && mobileInput !== document.activeElement) mobileInput.value = query;
+        if (overlayInput && overlayInput !== document.activeElement) overlayInput.value = query;
+
+        searchQuery = query.toLowerCase().trim();
+        const clearBtn = document.getElementById('clearSearchBtn');
+        if (clearBtn) {
+          if (searchQuery !== "") clearBtn.classList.remove('hidden');
+          else clearBtn.classList.add('hidden');
+        }
+
+        // Cek apakah produk yang dicari termasuk brand Activewear (misal: vest, running, jersey, topi)
+        if (searchQuery !== "") {
+          const matchingProduct = catalogProducts.find(p => 
+            p.name.toLowerCase().includes(searchQuery) || 
+            p.category.toLowerCase().includes(searchQuery) ||
+            p.description.toLowerCase().includes(searchQuery)
+          );
+          
+          if (matchingProduct && matchingProduct.brand !== selectedBrand) {
+            selectedBrand = matchingProduct.brand;
+            updateBrandTabUI();
+            renderCategoryTabs();
+          }
+        }
+
+        renderCatalog();
+      }
+
+      function checkSearchSubmit(event, query) {
+        if (event.key === 'Enter') {
+          executeSearch(query);
+        }
+      }
+
+      function executeSearch(query) {
+        searchQuery = query.toLowerCase().trim();
+        const clearBtn = document.getElementById('clearSearchBtn');
+        
+        if (clearBtn) {
+          if (searchQuery !== "") clearBtn.classList.remove('hidden');
+          else clearBtn.classList.add('hidden');
+        }
+
+        if (searchQuery !== "") {
+          const matchingProduct = catalogProducts.find(p => 
+            p.name.toLowerCase().includes(searchQuery) || 
+            p.category.toLowerCase().includes(searchQuery) ||
+            p.description.toLowerCase().includes(searchQuery)
+          );
+          
+          if (matchingProduct && matchingProduct.brand !== selectedBrand) {
+            selectedBrand = matchingProduct.brand;
+            updateBrandTabUI();
+            renderCategoryTabs();
+          }
+
+          const catalogSection = document.getElementById('katalog');
+          if (catalogSection) {
+            catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          closeSearchOverlay();
+        }
+
+        renderCatalog();
+      }
+
+      function clearSearch() {
+        searchQuery = "";
+        if (document.getElementById('searchInput')) document.getElementById('searchInput').value = "";
+        if (document.getElementById('mobileSearchInput')) document.getElementById('mobileSearchInput').value = "";
+        if (document.getElementById('overlaySearchInput')) document.getElementById('overlaySearchInput').value = "";
+        if (document.getElementById('clearSearchBtn')) document.getElementById('clearSearchBtn').classList.add('hidden');
+        renderCatalog();
+      }
+
       function selectBrandCatalog(brandName) {
         selectedBrand = brandName;
         selectedCategory = "SEMUA";
+        updateBrandTabUI();
+        renderCategoryTabs();
+        renderCatalog();
+      }
 
+      function updateBrandTabUI() {
         const btnOutdoor = document.getElementById('brandTabOutdoor');
         const btnActivewear = document.getElementById('brandTabActivewear');
 
-        if (brandName === "ANGSANA OUTDOOR") {
+        if (selectedBrand === "ANGSANA OUTDOOR") {
           btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
           btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
         } else {
           btnActivewear.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-brand-charcoal text-white shadow-lg";
           btnOutdoor.className = "p-4 sm:p-5 rounded-2xl font-heading font-extrabold text-xs sm:text-lg transition-all text-center flex flex-col sm:flex-row items-center justify-center gap-2 bg-white text-brand-charcoal border border-gray-200 hover:bg-gray-100 shadow-sm";
         }
-
-        renderCategoryTabs();
-        renderCatalog();
       }
 
       function getProductPrice(product, size) {
@@ -919,44 +1102,6 @@
           return product.sizePrices[size];
         }
         return product.sizePrices[product.sizes[0]] || 100000;
-      }
-
-      function switchCompanyTab(tabId) {
-        const tabs = ['tentang', 'visi-misi', 'tujuan', 'sejarah'];
-        tabs.forEach(t => {
-          const contentEl = document.getElementById(`companyTab-${t}`);
-          const btnEl = document.getElementById(`tabBtn-${t}`);
-          if (t === tabId) {
-            contentEl.classList.remove('hidden');
-            if (t === 'tentang' || t === 'visi-misi') contentEl.classList.add('grid');
-            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-charcoal text-white shadow-md flex-shrink-0";
-          } else {
-            contentEl.classList.add('hidden');
-            contentEl.classList.remove('grid');
-            btnEl.className = "px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-sand text-gray-700 hover:bg-gray-200 flex-shrink-0";
-          }
-        });
-      }
-
-      function handleSearch(query) {
-        searchQuery = query.toLowerCase().trim();
-        const clearBtn = document.getElementById('clearSearchBtn');
-        if (clearBtn) {
-          if (searchQuery !== "") clearBtn.classList.remove('hidden');
-          else clearBtn.classList.add('hidden');
-        }
-        if (searchQuery !== "") {
-          document.getElementById('katalog').scrollIntoView({ behavior: 'smooth' });
-        }
-        renderCatalog();
-      }
-
-      function clearSearch() {
-        searchQuery = "";
-        document.getElementById('searchInput').value = "";
-        document.getElementById('mobileSearchInput').value = "";
-        document.getElementById('clearSearchBtn').classList.add('hidden');
-        renderCatalog();
       }
 
       function selectCategory(category) {
@@ -1274,7 +1419,6 @@
       function updateCartUI() {
         const container = document.getElementById('cartItemsContainer');
         const badge = document.getElementById('cartBadge');
-        const mobileBottomBadge = document.getElementById('mobileBottomCartBadge');
         const countHeader = document.getElementById('cartCountHeader');
         const subtotalEl = document.getElementById('cartSubtotal');
         const checkoutBtn = document.getElementById('checkoutCartBtn');
@@ -1311,7 +1455,6 @@
         }
 
         if (badge) badge.innerText = totalQty;
-        if (mobileBottomBadge) mobileBottomBadge.innerText = totalQty;
         if (countHeader) countHeader.innerText = totalQty;
         if (subtotalEl) subtotalEl.innerText = formatRupiah(subtotal);
       }
